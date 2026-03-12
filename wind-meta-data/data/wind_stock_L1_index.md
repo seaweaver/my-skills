@@ -1,0 +1,856 @@
+# Wind股票知识库 - 索引
+
+> 快速定位相关表，找到后查 Level 2 摘要或 Level 3 详情。
+
+---
+
+## A股相关 (298张表)
+
+- **中国A股IPO类型** `AShareIPOClass` - 记录A股IPO公司采用的发行制度，包括注册制、核准制、审批制等
+- **中国A股PEVC投资机构** `AsharePEVCInvestment` - 记录A股公司PEVC投资机构
+- **中国A股TTM与MRQ** `AShareTTMAndMRQ` - 记录A股TTM与MRQ指标，本表指标无报告期参数，不区分新旧准则，全部用新准则数据计算
+- **中国A股TTM指标历史数据** `AShareTTMHis` - 记录A股公司的营业总收入、归属母公司净利润等几个重要财务指标各报告期的TTM数据
+- **中国A股WIND计算调整后财务指标** `AShareReportperiodindex` - 记录A股公司因发行、分配、吸收合并等原因导致部分财务指标发生变动，为弥补财务报表的时滞性，Wind资讯即时计算出调整后财
+- **中国A股Wind概念板块** `AShareConseption` - 记录A股Wind概念板块
+- **中国A股Wind行业分类** `AShareIndustriesClass` - 记录A股公司所属wind行业分类
+- **中国A股Wind行业指数日行情** `AIndexWindIndustriesEOD` - 记录A股Wind行业指数的日收盘行情
+- **中国A股万得指数成份股** `AIndexMembersWIND` - 记录A股万得指数的成份明细数据
+- **中国A股上市公司信息披露考评结果** `AShareCompDisclosureResults` - 记录上、深交所对于上市公司每年信息披露进行考评的评级结果数据，包括考评结果、考评起始日期及考评终止日期等信息。
+- **中国A股上市定价预测** `AShareIPOPricingForecast` - 记录新股上市当天各大机构对价格的预测情况
+- **中国A股上证所行业分类** `AShareSSEIndustriesClass` - 记录A股公司所属上证所行业分类
+- **中国A股业绩快报** `AShareProfitExpress` - 记录A股公司业绩快报中披露的相关财务数据
+- **中国A股业绩预告** `AShareProfitNotice` - 记录A股公司在财务报告公布前发布的业绩预告
+- **中国A股中信指数成份股** `AIndexMembersCITICS` - 记录A股中信行业一级分类信息
+- **中国A股中信指数成份股三级** `AIndexMembersCITICS3` - 记录A股中信行业三级分类信息
+- **中国A股中信指数成份股二级** `AIndexMembersCITICS2` - 记录A股中信行业二级分类信息
+- **中国A股中信行业分类** `AShareIndustriesClassCITICS` - 记录A股中信行业分类数据
+- **中国A股中信行业指数日行情** `AIndexIndustriesEODCITICS` - 记录A股中信行业指数的日收盘行情
+- **中国A股中证指数备选成分股名单** `AIndexAlternativeMembers` - 记录A股中证指数备选成份股名单、日期及排序。加工频率：每年
+- **中国A股中证行业成分明细** `AShareCSIndustriesClass` - 记录A股中证行业二级分类成份明细
+- **中国A股主营业务构成** `AShareSalesSegment` - 记录A股公司按行业、项目、地区、产品分类的主营收入、主营利润、主营成本的金额及比例
+- **中国A股主要其它应收款明细** `AshareMajorreceivables` - 记录A股公司主要其它应收款明细
+- **中国A股事件日期信息** `AShareEventdateinformation` - 记录A股事件发生信息，如发生日期、事件类型等
+- **中国A股交易异动** `AShareStrangeTradedetail` - 记录A股交易异常或深交所权证而披露的交易公开信息
+- **中国A股交易日历** `AShareCalendar` - 记录A股沪深交易所具体交易日期信息
+- **中国A股企业地域板块** `AShareRegional` - 记录A股公司注册省份、城市
+- **中国A股企业所有制板块** `AShareOwnership` - 记录A股公司企业所有制情况，如国有、民营等
+- **中国A股保险专用指标** `AShareInsuranceIndicator` - 记录A股保险类上市公司的一些特殊的财务指标
+- **中国A股停复牌信息** `AShareTradingSuspension` - 记录A股停牌、复牌信息
+- **中国A股公司产品** `Ashareproduct` - 记录A股公司的产品
+- **中国A股公司会计变更** `AShareAccountingChange` - 记录A股公司会计科目变更事项及影响金额
+- **中国A股公司供应商** `AshareSupplier` - 记录A股公司的供应商
+- **中国A股公司公告(废弃)** `AShareCompanyfilings` - 
+- **中国A股公司员工持股计划基本资料** `AShareEsopDescription` - 记录A股公司员工持股计划的基本信息，关联上市公司ID、初始资金规模等
+- **中国A股公司员工持股计划股票买卖情况** `AShareEsopTradingInfo` - 记录A股公司员工持股计划的买卖情况，一般包含成交均价、成交数量等
+- **中国A股公司客户** `AshareCustomer` - 记录A股公司的客户
+- **中国A股公司应付账款** `AshareAccountspayable` - 记录A股公司的应付账款
+- **中国A股公司所属集团信息** `AshareGroup` - 记录中国A股公司所属集团信息，包括公司ID、集团公司名称、集团公司中文简称等。
+- **中国A股公司扶贫情况统计** `ASharePovertyAlleviationData` - 记录中国A股公司扶贫情况统计信息，包括精准扶贫发生额、扶贫捐款发生额、精准贷款发生额等。
+- **中国A股公司曾用名** `CompanyPreviousName` - 记录A股公司历次更名信息
+- **中国A股公司概念板块** `AshareConceptualplate` - 记录A股公司所属概念板块
+- **中国A股公司监事成员** `AshareSupervisor` - 记录A股公司的监事成员
+- **中国A股公司税率明细** `AShareTaxrate` - 记录A股公司每年的所得税税率水平
+- **中国A股公司简介** `AShareIntroduction` - 记录A股公司的名称、注册地址、注册资本等公司基础信息
+- **中国A股公司简介(回测)** `AShareIntroductionBT` - 记录用于回测的中国A股公司简介，包括历史数据，以满足回测策略的需求。
+- **中国A股公司管理层成员** `AShareManagement` - 记录A股公司董、监、高成员的个人简历信息
+- **中国A股公司管理层持股及报酬** `AShareManagementHoldReward` - 记录A股公司历次财务报告中公布的董监事会成员和高管成员的持股和报酬情况
+- **中国A股公司董事成员** `AshareDirector` - 记录A股公司的董事成员
+- **中国A股公司诉讼-原告** `AsharePlaintiff` - 记录A股公司的涉诉信息（原告）
+- **中国A股公司诉讼-被告** `AshareDefendant` - 记录A股公司的涉诉信息（被告）
+- **中国A股公司货币资金明细** `AshareMonetaryfunds` - 记录A股公司货币资金明细数据
+- **中国A股公司资本运作** `AShareCOCapitaloperation` - 记录A股公司资本运作的情况，如融资进程、融资利率、融资金额等
+- **中国A股公司集团信息** `AshareGroupinformation` - 记录A股公司集团信息
+- **中国A股公司高管成员** `AshareAdministration` - 记录A股公司的高管成员
+- **中国A股公布重要财务指标** `AShareANNFinancialIndicator` - 记录A股公司在定期报告中公布的财务指标和分配预案
+- **中国A股关联事件** `RelatedEvent` - 记录A股公司并购事件的关联事件信息
+- **中国A股关联交易** `AShareRalatedTrade` - 记录A股公司与各种控制或非控制主体之间的详细交易记录
+- **中国A股关联方债务** `Asharerelatedpartydebt` - 记录A股公司的关联方债务
+- **中国A股关联方债权** `AshareCreditorrights` - 记录A股公司的关联方债权信息
+- **中国A股关联方债权债务往来** `AShareRelatedclaimsdebts` - 记录A股公司关联债权债务往来
+- **中国A股关联方往来及委托理财合计** `AShareTrustinvestmentTOT` - 记录A股公司在定期报告中披露的重要事项
+- **中国A股其它应收款大股东欠款** `AshareOtherreceivables` - 记录A股公司其它应收款大股东欠款
+- **中国A股其它应收款帐龄结构** `AshareOtherAccountsreceivable` - 记录A股公司其它应收款帐龄结构
+- **中国A股内部人交易** `AShareInsiderTrade` - 记录A股公司董事、监事、高级管理人员持有本公司股份变动情况
+- **中国A股函件内容表** `AShareCorpoLetInfor` - 记录中国A股公司函件内容信息，包括函件事件ID、问题文本、回答文本等。
+- **中国A股函件基本资料** `AShareCorpoLetDescription` - 记录中国A股函件基本资料信息，包括发函日期、函件标题、函件类型等。
+- **中国A股分红** `AShareDividend` - 记录A股分红的全程记录，从董事会预案开始，历经股东大会通过（或否决）、实施、缴款，直到红股上市流通
+- **中国A股利润表** `AShareIncome` - 记录A股公司的利润表，根据2007年1月1日以后实施的会计准则编制
+- **中国A股券商专用指标** `AShareIBrokerIndicator` - 记录A股证券类上市公司的一些特殊的财务指标
+- **中国A股前十大股东** `AShareInsideHolder` - 记录A股公司股东持有的份额数量、比例和性质
+- **中国A股前瞻性情报** `MergerIntelligence` - 记录A股公司交易事件的前瞻性情报
+- **中国A股募集资金用途** `AShareFundUsing` - 记录A股发行、增发、配股中募集资金的具体投向
+- **中国A股发行中介机构** `AShareAgency` - 记录A股发行所参与的中介结构，如会计师事务所、财务顾问、律师事务所等
+- **中国A股发行主承销商** `AShareLeadUnderwriter` - 记录A股发行所参与的保荐机构
+- **中国A股发行审核一览** `AShareIssueCommAudit` - 记录A股IPO发行审核信息
+- **中国A股召开股东大会** `AShareholdersmeeting` - 记录A股公司预告股东大会的召开时间及审议事项
+- **中国A股员工人数变更** `AShareStaff` - 记录A股公司各报告期的员工人数
+- **中国A股员工构成** `AShareStaffStructure` - 记录A股公司人才级别的分类信息
+- **中国A股回购** `AshareStockRepo` - 记录A股回购数量、回购金额、股份注销等信息
+- **中国A股国民经济行业分类** `AShareNEIndustriesClass` - 记录A股公司所属国民经济行业分类
+- **中国A股国证行业分类** `AShareCNIIndustriesClass` - 记录A股公司所属国证行业分类
+- **中国A股坏帐准备提取比例** `AshareProvisionbaddebts` - 记录A股公司应收帐款和其他应收款的坏帐提取比例
+- **中国A股基本资料** `AShareDescription` - 记录A股代码、上市日期、上市板等基础信息
+- **中国A股增发** `AShareSEO` - 记录A股增发的全程记录，从董事会预案开始，历经股东大会通过（或否决）、获准（或否决）、实施、缴款，直到增发股份上市流通
+- **中国A股增发(回测)** `AShareSEOBT` - 记录用于回测的中国A股增发信息，包含所有数据的历次修改都有记录，满足回测策略对于数据准确性要求。
+- **中国A股大宗交易数据** `AShareBlockTrade` - 记录A股大宗交易具体信息
+- **中国A股存货明细** `AshareInventorydetails` - 记录A股公司每一类存货的金额及相应计提数
+- **中国A股定期报告披露日期** `AShareIssuingDatePredict` - 记录A股公司财务报告的预计披露日期
+- **中国A股定期报告披露日期(回测)** `AShareIssuingDatePredictBT` - 记录用于回测的中国A股定期报告披露日期数据，包括修改时间、实际披露日期、更正公告披露日期等。
+- **中国A股审计事项描述** `AShareAuditDescription` - 记录A股公司审计报告中公布的审计事项
+- **中国A股审计意见** `AShareAuditOpinion` - 记录A股公司历次财务报告（如经审计）的审计机构、审计费用及审计结果
+- **中国A股并购事件** `MergerEvent` - 记录A股公司并购事件信息，如交易标的、交易完成日期、评估价值等
+- **中国A股并购事件中介机构** `MergerAgency` - 记录A股公司并购事件的各家中介机构
+- **中国A股并购事件参与方** `MergerParticipant` - 记录A股公司并购事件各参与方
+- **中国A股并购出售标的** `AshareSellsubject` - 记录A股公司的并购出售标的信息
+- **中国A股并购标的** `AshareMergersubject` - 记录A股公司并购的标的信息
+- **中国A股应交税费明细** `AshareTaxespayable` - 记录A股公司应交税费明细信息（原名应交税金明细表，2007年半年报起改为应交税费明细表。核算内容除原应交税金科目外，还包
+- **中国A股应收账款** `AshareReceivables` - 记录A股公司的应收账款
+- **中国A股应收账款余额前五名** `Top5ByAccountsReceivable` - 记录A股公司应收账款前五名的公司名称、欠款金额及拖欠原因
+- **中国A股应收账款大股东欠款** `AshareAccountsReceivable` - 记录A股公司所有持股5％以上大股东的欠款金额
+- **中国A股应收账款账龄结构** `AshareAgingstructure` - 记录A股公司不同期限每类应收账款的金额及其计提数
+- **中国A股强弱与趋向技术指标(不复权)** `Ashareintensitytrend` - 记录A股强弱、趋向指标，如MA5、MA10、MA20、MA30
+- **中国A股强弱与趋向技术指标(后复权)** `AshareintensitytrendADJ` - 记录A股强弱、趋向指标，如MA5、MA10、MA20、MA30
+- **中国A股成交量技术指标** `AShareTechIndicators` - 记录A股成交量技术指标，如量比、成交量简单移动平均
+- **中国A股投资PEVC基金** `AshareInvestmentPEVC` - 记录A股公司投资PEVC基金的信息
+- **中国A股投资评级明细** `AShareStockRating` - 记录研究机构对A股的投资评级明细数据
+- **中国A股投资评级汇总** `AShareStockRatingConsus` - 记录A股投资评级，此数据是wind根据机构对个股的投资评级汇总计算得出的
+- **中国A股担保** `Ashareguaranteerelationship` - 记录A股公司的担保情况
+- **中国A股担保事件** `AShareGuarantee` - 记录A股公司及其控股子公司对外担保信息
+- **中国A股担保统计** `AshareGuaranteestatistics` - 记录A股公司在定期报告中公布的担保合计数据
+- **中国A股指数估值数据** `AIndexValuation` - 记录A股指数的估值衍生指标，如市盈率、市净率、当日总市值等
+- **中国A股指数基本资料** `AIndexDescription` - 记录A股指数的名称、发布单位和简介
+- **中国A股指数基本资料(增量)** `AIndexDescriptionZL` - 
+- **中国A股指数成份股** `AIndexMembers` - 记录A股指数的成份明细数据
+- **中国A股指数日行情** `AIndexEODPrices` - 记录A股指数的日收盘行情
+- **中国A股指数行情衍生指标** `SIndexPerformance` - 记录A股指数的行情衍生指标，如周涨跌幅、月涨跌幅等
+- **中国A股指数财务衍生指标** `AIndexFinancialderivative` - 记录A股指数的财务衍生指标，如成份股数量、总资产、营业收入、净利润等
+- **中国A股控参股** `AshareHolding` - 记录A股公司的控股参股信息
+- **中国A股控股参股** `AShareCompanyHoldShares` - 记录A股公司参控其他公司的信息
+- **中国A股控股参股公司经营情况** `AShareholdingoperate` - 记录A股公司主要控股参股公司经营信息
+- **中国A股摆动与反趋向技术指标(不复权)** `AShareswingReversetrend` - 记录A股股票摆动、反趋向、超买超卖技术指标，如RC变化率等
+- **中国A股摆动与反趋向技术指标(后复权)** `AShareswingReversetrendADJ` - 记录A股股票摆动、反趋向、超买超卖技术指标，如RC变化率等
+- **中国A股收购兼并（恒指专用）** `AShareMergersAcquisitions` - 
+- **中国A股政府补助明细** `AShareGovernmentgrants` - 记录A股公司获得政府补助的明细信息
+- **中国A股新股中签数据** `AShareWinning` - 记录A股IPO时的中签数据
+- **中国A股日收益率** `AShareYield` - 记录A股每天的收益率、换手率、成交金额等信息
+- **中国A股日行情** `AShareEODPrices` - 记录沪深交易所自营业以来A股日行情数据
+- **中国A股日行情估值指标** `AShareEODDerivativeIndicator` - 记录A股每个交易日的当日总市值、PE、PB、当日总股本等信息
+- **中国A股机构持股** `Asharemechanismownership` - 记录A股公司的机构持股信息
+- **中国A股机构持股衍生数据** `AShareinstHolderDerData` - 记录A股股东总持股数、持有流通A股数量
+- **中国A股机构调研参与主体** `AShareISParticipant` - 记录A股公司投资者关系活动的参与者、任职机构信息
+- **中国A股机构调研活动** `AshareISActivity` - 记录A股公司投资者关系活动信息
+- **中国A股机构调研问答明细** `AShareISQA` - 记录A股公司机构调研的问答明细信息
+- **中国A股沪深交易所盘后行情** `AShareAfterEODPrices` - 记录沪深交易所盘后交易行情
+- **中国A股流通股东** `AShareFloatHolder` - 记录A股公司前十位流通股东持有的份额数量、性质等
+- **中国A股流通股东持股比例** `AshareCirculatingholders` - 记录A股公司的流通股东持股比例
+- **中国A股特别处理** `AShareST` - 记录A股被特别处理的实施和撤销、暂停/恢复上市，以及退市记录及原因
+- **中国A股现金流量表** `AShareCashFlow` - 记录A股公司的现金流量表，根据2007年1月1日以后实施的会计准则编制
+- **中国A股盈利承诺明细表** `CommitProfit` - 记录A股公司并购事件的盈利承诺明细数据
+- **中国A股盈利承诺汇总表** `CommitProfitSummary` - 记录A股公司并购事件的盈利承诺汇总数据
+- **中国A股盈利预测明细** `AShareEarningEst` - 记录研究机构的研究员对A股的盈利预测数据
+- **中国A股盈利预测汇总** `AShareConsensusData` - 记录万得根据机构对个股的盈利预测汇总计算的综合值
+- **中国A股盘后盘口指标** `AShareAfterEODPIndicators` - 
+- **中国A股科创板上市概念板块** `AShareSTIBConceptualPlate` - 记录科创板上市概念板块信息
+- **中国A股科创板公司股东表决权** `AShareSTIBHolderVote` - 记录科创板公司股东表决权信息
+- **中国A股科创板战投出借信息** `AShareSTIBInvestmentIending` - 记录科创板公司战略投资出借信息
+- **中国A股科创板所属新兴产业分类** `AShareSTIBEmergingIndustries` - 记录科创板公司所属新兴产业信息
+- **中国A股科创板股份权益概念** `AShareSTIBInterest` - 记录科创板公司股份权益信息
+- **中国A股立案调查** `AShareRegInv` - 记录A股公司被证监会等监管机构立案调查的信息
+- **中国A股网下配售机构获配明细** `ASharePlacementDetails` - 记录A股战略投资者和A类机构投资者（基金）在历次发行和增发中获配数量和冻结期限
+- **中国A股网下配售机构获配统计** `ASharePlacementInfo` - 记录按投资者类型统计的A股发行网下中签率、配售数量
+- **中国A股股东** `Ashareholder` - 记录A股公司的股东
+- **中国A股股东增持计划** `AShareMajorHolderPlanHold` - 记录A股公司大股东增持计划，如增持触发价格、增持数量上下限等
+- **中国A股股东大会投票情况** `AShareholdersmeetingVotes` - 记录A股公司股东大会投票信息
+- **中国A股股东大会议案网络投票表决情况** `AShareInternetvoting` - 记录A股公司股东大会议案网络投票表决信息
+- **中国A股股东户数** `AShareHolderNumber` - 记录A股公司股东户数
+- **中国A股股东拟增减持计划** `ASarePlanTrade` - 记录A股公司股东拟增减持计划
+- **中国A股股本** `AShareCapitalization` - 记录A股各种类型股份的变动记录及变动原因
+- **中国A股股权关系** `AShareEquityRelationships` - 记录A股公司前10名股东关联关系及前10名流通股东关联关系
+- **中国A股股权冻结信息** `AShareEquFroInfo` - 记录A股股票冻结信息
+- **中国A股股权冻结质押情况(报告期)** `AEquFroPleInfoRepperend` - 记录A股股票被股东质押或被冻结的数量
+- **中国A股股权分置方案** `AShareEquityDivision` - 记录A股股权分置信息
+- **中国A股股权分置除权** `AShareDivisionElimination` - 记录A股股权分置对价因子、复权因子、实施复牌日等信息
+- **中国A股股权激励基本资料** `AShareIncDescription` - 记录A股公司股权激励的基础信息
+- **中国A股股权激励数量与价格** `AShareIncQuantityPrice` - 记录A股公司股权激励的数量与价格
+- **中国A股股权激励数量明细** `AShareIncQuantityDetails` - 记录A股公司股权激励期权的数量明细
+- **中国A股股权激励期权行权数量与价格** `AShareIncExecQtyPri` - 记录A股公司股权激励期权行权明细数量、合计数量、行权价格
+- **中国A股股权激励期权行权比例** `AShareIncExercisePct` - 记录A股公司股权激励期权每年的行权比例及行权条件
+- **中国A股股权质押信息** `AShareEquityPledgeInfo` - 记录A股公司股东质押股权的信息
+- **中国A股股权转让(恒指专用)** `AShareEquityTransfer` - 
+- **中国A股股票发行数量** `AShareIPOAmount` - 记录A股发行股份数、限售股数、无限售股份数等信息
+- **中国A股股票置换** `AShareStockSwap` - 记录A股公司股份换为其他公司股份(换股前后流通股东持股数量有变化)
+- **中国A股股票质押比例** `ASharePledgeproportion` - 记录A股单一股票质押的信息
+- **中国A股能量、量价与压力支撑技术指标(不复权)** `AShareEnergyindex` - 记录A股能量、量价与压力支撑技术指标，如BOLL布林带等
+- **中国A股能量、量价与压力支撑技术指标(复权)** `AShareEnergyindexADJ` - 记录A股能量、量价与压力支撑技术指标，如BOLL布林带等
+- **中国A股自由流通股本** `AShareFreeFloat` - 记录A股自由流通股本，此数据为wind计算
+- **中国A股营业收入前五名** `Top5ByOperatingIncome` - 记录A股公司往来资金前五名公司明细数据
+- **中国A股融资融券交易明细** `AShareMarginTrade` - 记录A股融资融券交易明细数据
+- **中国A股融资融券交易汇总** `AShareMarginTradeSum` - 记录沪深交易所公布的融资融券交易统计数据
+- **中国A股融资融券标的及担保物** `AShareMarginSubject` - 记录A股融资融券的保证金比例、折算率等信息
+- **中国A股融资融券费率** `AShareMarginShortFeeRate` - 记录A股融资融券的具体费率信息
+- **中国A股行业投资评级** `AShareIndusRating` - 记录研究机构对wind行业的投资评级数据
+- **中国A股行政许可事项进度表** `AShareAdmPermitSchedule` - 记录A股公司申请资质的行政许可事项进度信息
+- **中国A股被担保** `AshareBeguaranteed` - 记录A股公司的被担保情况
+- **中国A股要约收购** `AshareOfferforoffer` - 记录A股公司要约收购基本资料
+- **中国A股证券交易异动营业部买卖信息** `AShareStrangeTrade` - 记录A股交易异动的证券及证券公司交易席位的买卖信息
+- **中国A股证券投资** `AShareCapitalOperation` - 记录A股公司投资其他上市公司股票及基金
+- **中国A股证券曾用名** `ASharePreviousName` - 记录A股名称历次更名情况，包括特别处理更名
+- **中国A股证券曾用英文名** `ASharePreviousENName` - 记录A股英文名称历次更名信息
+- **中国A股证监会新版行业分类** `AShareSECNIndustriesClass` - 记录A股公司所属新版证监会行业分类
+- **中国A股证监会行业分类** `AShareSECIndustriesClass` - 记录A股公司所属旧版证监会行业分类
+- **中国A股诉讼事件** `AShareProsecution` - 记录A股公司作为原告或被告的涉案情况和案件审理、判决、执行、上诉及二审判决情况
+- **中国A股财务指标** `AShareFinancialIndicator` - 记录A股公司的财务衍生数据，如每股营收、每股净资产、每股收益等
+- **中国A股财务科目与附注对应表(废弃)** `AshareFinancialaccounts` - 
+- **中国A股财务衍生指标表** `AShareFinancialderivative` - 记录A股公司衍生财务指标数据
+- **中国A股财务费用明细** `AShareFinancialExpense` - 记录A股公司财务费用明细信息
+- **中国A股财务附注--一年内到期的非流动负债** `AShareNonCurrentLiabilities1Y` - 记录A股公司财务附注表中的一年内到期的非流动负债科目
+- **中国A股财务附注--买入返售金融资产** `AshareBuyRESaleFINAssets` - 记录A股公司财务附注表中的买入返售金融资产科目
+- **中国A股财务附注--交易性金融资产** `AShareTradingfinancialassets` - 记录A股公司财务附注表中的交易性金融资产，提供合并报表数据。
+- **中国A股财务附注--债权投资** `AShareDebtinvestment` - 记录A股公司财务附注表中的债权投资科目，提供合并报表数据。
+- **中国A股财务附注--公允价值变动收益** `AShareFairValueChange` - 记录A股公司财务附注表中的公允价值变动收益科目
+- **中国A股财务附注--其他债权投资** `AShareOtherdebtinvestment` - 记录A股公司财务附注表中的其他债权投资科目，提供合并报表数据。
+- **中国A股财务附注--其他应付款** `AShareOtherPayables` - 记录A股公司财务附注表中的其他应付款科目
+- **中国A股财务附注--其他收益** `AShareOtherincome` - 记录A股公司财务附注表中的其他收益科目
+- **中国A股财务附注--其他权益工具投资** `AShareOthereqtyinstrtinvesmt` - 记录A股公司财务附注表中的其他权益工具投资，提供合并报表数据。
+- **中国A股财务附注--其他流动负债** `AShareOtherCurrentLiabilities` - 记录A股公司财务附注表中的其他流动负债科目
+- **中国A股财务附注--其他流动资产** `AShareOtherCurrentAssets` - 记录A股公司财务附注表中的其他流动资产科目
+- **中国A股财务附注--其他综合收益** `AShareOtherCOMPREHIncome` - 记录A股公司财务附注表中的其他综合收益科目
+- **中国A股财务附注--其他非流动负债** `AShareOtherNoncurrentLIAB` - 记录A股公司财务附注表中的其他非流动负债科目
+- **中国A股财务附注--其他非流动资产** `AShareOtherNoncurrentAssets` - 记录A股公司财务附注表中的其他非流动资产科目
+- **中国A股财务附注--内含价值变动分析** `AShareEMBValueChangeANAL` - 记录A股公司财务附注表中的内含价值变动分析科目
+- **中国A股财务附注--内含价值评估结果** `AShareEMBValueASSESSResults` - 记录A股公司财务附注表中的内含价值评估结果科目
+- **中国A股财务附注--商誉** `AShareGoodwill` - 记录A股公司财务附注表中的商誉科目
+- **中国A股财务附注--商誉减值准备** `AShareGoodwillDEValue` - 记录A股公司财务附注表中的商誉减值准备科目
+- **中国A股财务附注--固定资产** `AShareFixedAssets` - 记录A股公司财务附注表中的固定资产科目
+- **中国A股财务附注--在建工程** `AShareEngineering` - 记录A股公司财务附注表中的在建工程科目
+- **中国A股财务附注--存货跌价准备** `AShareINVEFallPriceRES` - 记录A股公司财务附注表中的存货跌价准备科目
+- **中国A股财务附注--应交税费** `AShareTaxesPay` - 记录A股公司财务附注表中的应交税费科目
+- **中国A股财务附注--应付利息** `AShareINTPayable` - 记录A股公司财务附注表中的应付利息科目
+- **中国A股财务附注--应付票据** `AShareNotesPayable` - 记录A股公司财务附注表中的应付票据科目
+- **中国A股财务附注--应付职工薪酬** `AShareCompensationPayable` - 记录A股公司财务附注表中的应付职工薪酬科目
+- **中国A股财务附注--应付账款** `FinNotesAccountsPayable` - 记录A股公司财务附注表中的应付账款科目
+- **中国A股财务附注--应收利息** `AShareInterestReceivable` - 记录A股公司财务附注表中的应收利息科目
+- **中国A股财务附注--应收票据** `AShareNotesReceivable` - 记录A股公司财务附注表中的应收票据科目
+- **中国A股财务附注--总投资收益** `AShareTotalInvest` - 记录A股公司财务附注表中的总投资收益科目
+- **中国A股财务附注--总资产减值损失** `AShareIMPAIRLossAssets` - 记录A股公司财务附注表中的总资产减值损失科目
+- **中国A股财务附注--所得税** `AShareIncomeTax` - 记录A股公司财务附注表中的所得税科目
+- **中国A股财务附注--所得税调整过程** `AShareIncomeTaxADJProc` - 记录A股公司财务附注表中的所得税调整过程科目
+- **中国A股财务附注--投资性房地产** `AShareInvestmentRealEstate` - 记录A股公司财务附注表中的投资性房地产科目
+- **中国A股财务附注--投资收益** `AShareInvestmentIncome` - 记录A股公司财务附注表中的投资收益科目
+- **中国A股财务附注--拆入资金** `AShareLoansOTHBanks` - 记录A股公司财务附注表中的拆入资金科目
+- **中国A股财务附注--敏感性分析** `AShareSensitAnalysis` - 记录A股公司财务附注表中的敏感性分析科目
+- **中国A股财务附注--无形资产** `AShareIntangibleAssets` - 记录A股公司财务附注表中的无形资产科目
+- **中国A股财务附注--期限划分下的各类逾期贷款** `AShareKindsOveLoansTerm` - 记录A股公司财务附注表中的期限划分下的各类逾期贷款科目
+- **中国A股财务附注--未分配利润** `AShareUndistributedProfit` - 记录A股公司财务附注表中的未分配利润科目
+- **中国A股财务附注--流动性风险** `AShareLiquidityRisk` - 记录A股公司财务附注表中的流动性风险科目
+- **中国A股财务附注--现金及存放中央银行款项** `AShareCashADepositsWithCB` - 记录A股公司财务附注表中的现金及存放中央银行款项科目
+- **中国A股财务附注--盈余公积** `AShareSurplusReserve` - 记录A股公司财务附注表中的盈余公积科目
+- **中国A股财务附注--短期借款** `AShareSTLoan` - 记录A股公司财务附注表中的短期借款科目
+- **中国A股财务附注--研发支出** `AShareRDexpenditure` - 记录A股公司财务附注表中的研发支出科目
+- **中国A股财务附注--研发费用** `AShareRDExpense` - 记录A股公司财务附注表中的研发费用科目
+- **中国A股财务附注--管理费用明细** `AShareManagementExpense` - 记录A股公司财务附注表中的管理费用明细科目
+- **中国A股财务附注--营业外支出** `AShareNONOPEREXP` - 记录A股公司财务附注表中的营业外支出科目
+- **中国A股财务附注--营业外收入** `AShareNONOPERREV` - 记录A股公司财务附注表中的营业外收入科目
+- **中国A股财务附注--营业收入和营业成本** `AShareOPERREVAndCOST` - 记录A股公司财务附注表中的营业收入和营业成本科目
+- **中国A股财务附注--营业税金及附加** `AShareTaxSurcharge` - 记录A股公司财务附注表中的营业税金及附加科目
+- **中国A股财务附注--融出证券合计** `AShareFinancialSecurities` - 记录A股公司财务附注表中的融出证券合计科目
+- **中国A股财务附注--财务费用** `AShareFinancialEXP` - 记录A股公司财务附注表中的财务费用科目
+- **中国A股财务附注--货币资金(按项目)** `AshareMonetaryfundOfProj` - 记录A股公司财务附注表中的货币资金(按项目)科目
+- **中国A股财务附注--资本公积** `AShareCapitalSurplus` - 记录A股公司财务附注表中的资本公积科目
+- **中国A股财务附注--递延所得税负债** `AShareDeferredTaxLiability` - 记录A股公司财务附注表中的递延所得税负债科目
+- **中国A股财务附注--递延所得税资产** `AShareDeferredTaxAssets` - 记录A股公司财务附注表中的递延所得税资产科目
+- **中国A股财务附注--递延收益政府补助** `AShareGovernmentSubsidyDEFIN` - 记录A股公司财务附注表中的递延收益政府补助科目
+- **中国A股财务附注--销售费用明细** `AShareSaleExpense` - 记录A股公司财务附注表中的销售费用明细科目
+- **中国A股财务附注--长期借款** `AShareLTLoan` - 记录A股公司财务附注表中的长期借款科目
+- **中国A股财务附注--长期应付款** `AShareLTPayables` - 记录A股公司财务附注表中的长期应付款科目
+- **中国A股财务附注--长期待摊费用** `AShareLTPrepaidEXP` - 记录A股公司财务附注表中的长期待摊费用科目
+- **中国A股财务附注--长期股权投资** `AShareLTEQYInvest` - 记录A股公司财务附注表中的长期股权投资科目
+- **中国A股财务附注--预付账款** `AShareAdvancePayment` - 记录A股公司财务附注表中的预付账款科目
+- **中国A股财务附注--预收款项** `AShareAdvanceReceipt` - 记录A股公司财务附注表中的预收款项科目
+- **中国A股财务附注-利率风险** `AShareInterestRateRisk` - 记录A股公司利率风险明细信息
+- **中国A股财务附注明细** `FinNotesDetail` - 记录A股公司财务附注的明细数据，如坏账损失、商誉减值损失等
+- **中国A股购买理财产品** `AShareCorporateFinance` - 记录A股公司购买理财产品的信息
+- **中国A股贷款明细** `AShareLoandetails` - 记录A股公司贷款明细信息
+- **中国A股资产减值准备明细表** `AShareDevaluationPreparation` - 记录A股公司八项计提(2001年中报以后整体公布)，期末数
+- **中国A股资产负债表** `AShareBalanceSheet` - 记录A股公司的资产负债表，根据2007年1月1日以后实施的会计准则编制
+- **中国A股资金流向数据** `AShareMoneyFlow` - 记录根据level-2数据计算的A股资金流向数据
+- **中国A股路演推介信息** `AShareIPORoadshow` - 记录中国A股路演推介信息，包括路演类型、路演方式、路演日期等。
+- **中国A股运营事件** `AShareOperationEvent` - 记录A股公司运营事件信息
+- **中国A股违规事件** `AShareIllegality` - 记录各级主管部门公布的对A股公司违规行为的调查结果与处理决定
+- **中国A股配股** `AShareRightIssue` - 记录A股配股的全程记录，从董事会预案开始，历经股东大会通过（或否决）、获准（或否决）、实施、缴款，直到配股上市流通
+- **中国A股重大事件汇总** `AShareMajorEvent` - 记录A股公司证券和公司各类事件
+- **中国A股重大重组事件** `AshareRestructuringEvents` - 记录A股公司重大重组事件信息，如交易标的、交易完成日期、评估价值等
+- **中国A股重要股东增减持** `AShareMjrHolderTrade` - 记录A股公司流通股票发生增持或减持
+- **中国A股金融机构经营分部业务数据** `AShareFinSegmentinfo` - 记录A股金融类公司分地区、分业务的各项目的经营数据
+- **中国A股银行专用指标** `AShareBankIndicator` - 记录A股银行类公司公布的一些特殊的财务指标
+- **中国A股长期借款** `AshareLongLoan` - 记录A股公司的长期借款
+- **中国A股长期借款前五名** `Top5ByLongTermBorrowing` - 记录A股公司长期借款前五名公司明细数据
+- **中国A股长江证券行业分类** `AShareCJZQIndustriesClass` - 记录中国A股长江证券行业分类信息，包括wind代码、行业代码、剔除日期等。
+- **中国A股限售股流通日历** `AShareFreeFloatCalendar` - 记录A股限售股上市日期、上市流通股份数量
+- **中国A股限售股解禁公司明细** `AShareCompRestricted` - 记录A股限售股流通日期、可流通数量等信息
+- **中国A股除权除息记录** `AShareEXRightDividendRecord` - 记录A股发行、配股、增发、分红等信息
+- **中国A股非经常性损益** `Asharenonprofitloss` - 记录A股公司新准则下的报告期非经常性损益明细
+- **中国A股首次公开发行数据** `AShareIPO` - 记录A股首次发行记录，含异种股票增发记录（如原先发行B股的公司增发A股）
+- **中国债券债券行情(沪深交易所)** `CBondEODPrices` - 记录沪深交易所债券的行情数据
+- **沪深300免费指数权重** `AIndexHS300FreeWeight` - 记录沪深300免费指数成份股的权重信息
+- **沪深300指数成份股当日收盘权重** `AIndexHS300CloseWeight` - 记录沪深300指数成份股当日收盘权重信息
+- **沪深300指数成份股次日开盘权重** `AIndexHS300Weight` - 记录沪深300指数成份股次日开盘权重信息
+- **沪深300指数日行情** `HS300IEODPrices` - 记录沪深300指数的日行情数据
+- **沪深交易所交易日** `TB_OBJECT_1010` - 
+- **沪深交易所复权行情** `TB_OBJECT_1425` - 
+- **沪深交易所行情** `TB_OBJECT_1120` - 
+- **沪深公司公告信息** `AShareAnnInf` - 记录沪深公司发布的公告详细信息
+- **沪深公司公告文本** `AShareAnnText` - 
+- **沪深公司公告栏目** `AShareAnnColumn` - 记录沪深公司公告栏目信息
+- **沪深市场总体指标(月)** `AShareMarketOverallindex` - 记录沪深交易所每月各项总体指标值及变动幅度
+- **沪深市场总体指标(月)** `AShareMarketOverallindex` - 记录沪深交易所每月各项总体指标值及变动幅度
+
+## 债券相关 (143张表)
+
+- **万得中国债券指数基本资料** `CBIndexDescriptionWIND` - 记录万得债券指数的基本资料
+- **万得中国债券指数成份** `CBIndexMembersWIND` - 记录万得债券指数的成份股信息
+- **万得中国债券指数日行情** `CBIndexEODPricesWIND` - 记录万得债券指数的日收盘行情
+- **上海清算所债券估值** `CBondAnalysisSHC` - 记录上海清算所债券估值数据
+- **中债-1-3年国开行债券财富(总值)指数权重** `CBACDB1To3IndexWeight` - 记录中债-1-3年国开行债券财富(总值)指数成份权重数据
+- **中债-高信用等级债券财富(总值)指数权重** `CBAHGBIndexTOTRTWeight` - 记录中债-高信用等级债券财富(总值)指数成份权重数据
+- **中债登债券估值数据** `TB_OBJECT_1804` - 
+- **中债登债券投资者统计** `CNBDInvestorStatistics` - 记录中国债券网每月投资者类型统计信息
+- **中债登债券收益率曲线** `CBondCurveCNBD` - 记录中债登债券收益率曲线，包含到期、即期
+- **中国Wind债券分类板块(新)** `CBondNIndustryWind` - 记录债券的Wind债券分类信息，包括分类的历史变动数据
+- **中国债券Wind代码变更表** `CBondChangeWindcode` - 
+- **中国债券Wind分类板块** `CBondIndustryWind` - 记录债券的Wind债券分类信息
+- **中国债券Wind概念板块** `CBondPlateWind` - 记录债券的Wind概念板块信息
+- **中国债券业务代码及简称** `CBondCodeAndSName` - 
+- **中国债券中介机构** `CBondAgency` - 记录债券发行时的中介机构信息
+- **中国债券中债登债券分类板块** `CBondIndustryCNBD` - 记录债券的中债登债券分类信息
+- **中国债券主体信用评级观察名单明细** `CBondIssuerRatingWatchlist` - 记录债券主体评级被列入评级观察名单的信息
+- **中国债券主体国内办公城市(海外)** `CBondIssuerOfficeCity` - 记录发债主体为海外公司其在内地的办公地址
+- **中国债券主体地域板块** `CBondRegional` - 记录发债公司的地域信息
+- **中国债券事件日期信息** `CBONDEventdateinformation` - 记录债券事件发生信息，如发生日期、事件类型等
+- **中国债券交易日历** `CBondCalendar` - 记录债券市场的交易日信息
+- **中国债券付息和兑付** `CBondPayment` - 记录附息债券历次付息记录
+- **中国债券份额变动** `CBondAmount` - 记录债券的份额和变动原因
+- **中国债券信用等级定义** `CreditRatingDescription` - 记录评级机构对信用等级的分类及定义
+- **中国债券信用评估机构名单** `CBondRatingdefinition` - 记录信用评级机构代码(自定义)及名称
+- **中国债券信用评级** `CBondRating` - 记录评级机构对债券的信用评级
+- **中国债券信用评级观察名单明细** `CBondRatingWatchlist` - 记录债券评级被列入评级观察名单的信息
+- **中国债券信用风险缓释工具基本资料** `CRMWDescription` - 记录CRMW、CLN等信用风险缓释工具的基本资料
+- **中国债券停复牌信息** `CBondTradingSuspension` - 记录债券停牌、复牌信息
+- **中国债券公司简介** `CBondIntroduction` - 
+- **中国债券关键年期久期** `BondKeyTermDuration` - 记录债券关键年期久期信息
+- **中国债券利率品种简介条款** `InterestrateIntroduction` - 记录债券利率品种的简介条款
+- **中国债券募集资金用途** `CBondFundUsing` - 记录发债主体募集资金的具体用途
+- **中国债券发行主体** `CBondIssuer` - 记录债券、发债主体之间的关系
+- **中国债券发行主体TTM财务指标** `CBondTTMHis` - 记录发债公司TTM与MRQ指标的历史数据
+- **中国债券发行主体主营业务构成** `CBondSalesSegment` - 记录发债公司主营业务构成数据
+- **中国债券发行主体信用评级** `CBondIssuerRating` - 记录评级机构对发债公司的信用评级
+- **中国债券发行主体公司曾用名** `CBondCompanyPreviousName` - 记录发债公司历次变更信息
+- **中国债券发行主体公布重要指标** `CBONDImportantindicators` - 记录发债公司在定期报告中公布的财务指标和分配预案
+- **中国债券发行主体利润表** `CBondIncome` - 记录发债公司的利润表，根据2007年1月1日以后实施的会计准则编制
+- **中国债券发行主体前十大股东** `CBondInsideHolder` - 记录发债公司的前十大股东持股信息
+- **中国债券发行主体定期报告披露日期** `CBondIssuingDatePredict` - 记录发债公司财务报告的预计披露日期
+- **中国债券发行主体实际控制人** `CBondEquityRelationships` - 记录发债公司的股权关系、实际控制人信息
+- **中国债券发行主体审计意见** `CBondAuditOpinion` - 记录发债公司历次财务报告（如经审计）的审计机构、审计费用及审计结果
+- **中国债券发行主体担保数据(合计)** `CbondGuaranteeTotal` - 记录发债公司对外担保合计数据
+- **中国债券发行主体担保数据(明细)** `CbondGuaranteeDetail` - 记录发债公司对外担保明细数据
+- **中国债券发行主体控股参股** `CBondCompanyHoldShares` - 记录发债公司的控股参股信息
+- **中国债券发行主体现金流量表** `CBondCashFlow` - 记录发债公司的现金流量表，根据2007年1月1日以后实施的会计准则编制
+- **中国债券发行主体管理层成员** `CbondIssuerManagement` - 记录发债公司董、监、高成员的个人简历信息
+- **中国债券发行主体管理层持股及报酬** `CBondManagementHoldReward` - 记录发债公司管理层持股和其薪酬信息
+- **中国债券发行主体财务指标** `CBondFinancialIndicator` - 记录发债公司的财务衍生数据，如每股营收、每股净资产、每股收益等
+- **中国债券发行主体财务费用明细** `CBondFinancialExpense` - 记录发债公司财务费用明细数据
+- **中国债券发行主体资产负债表** `CBondBalanceSheet` - 记录发债公司的资产负债表，根据2007年1月1日以后实施的会计准则编制
+- **中国债券发行主体违规事件** `CBondCompanyIllegality` - 记录各级主管部门公布的对发债公司违规行为的调查结果与处理决定
+- **中国债券发行主体银行授信额度** `CompanyLineofCredit` - 记录发债公司获得的银行/商业信用明细
+- **中国债券发行主承销商承销金额** `CBondLeadUnderwriter` - 记录可转债发行、债券发行的主承销商承销数据
+- **中国债券发行涉及银行账号** `AccountRelatedWithBondIssue` - 记录债券发行时涉及的银行账号信息
+- **中国债券可转债回售赎回条款** `CBondConvertiblePACTerms` - 记录可转债回售、赎回条款信息
+- **中国债券同业拆借日行情** `CBondRepoAndIBLEODPrices` - 记录债券市场债券回购、同业拆借的行情数据
+- **中国债券回售条款执行说明** `CBondPut` - 记录债券回售条款执行说明，如回售日、回售代码、回售价格等
+- **中国债券国债预发行资料** `CBondPreRelease` - 记录国债预发行的信息，如预发行代码、交易日等
+- **中国债券国民经济行业分类** `CBondNEIndustriesClass` - 记录债券国民经济行业分类信息
+- **中国债券基本资料** `CBondDescription` - 记录固定收益类证券(不含央行票据)的基本资料(票面利率、发行量、发行人、付息方式、相关日期等数据)
+- **中国债券基本资料(增量)** `CBondDescriptionZL` - 
+- **中国债券大宗交易** `CBondBlockTrade` - 记录沪深交易所每天进行大宗交易的债券交易信息
+- **中国债券存款机构间回购行情** `CBondPricesRepo` - 记录交易所和银行间的质押式回购的日行情数据
+- **中国债券实际现金流发生表** `CBondActualCF` - 记录债券实际发生的现金流
+- **中国债券市场承销团成员明细** `CBondUnderwritingmember` - 记录银行间债券市场各类承销团（国债承销团、国家开发银行金融债承销团、中国进出口银行金融债承销团、凭证式国债承销团）的成员
+- **中国债券应计利息** `CBondAccruedInterest` - 记录债券当天的应计利息
+- **中国债券抵押品信息** `CBondCollateralinformation` - 记录债券的抵押品信息
+- **中国债券担保人** `CbondGuaranteeInfo` - 记录债券和担保人之间的关系信息
+- **中国债券担保人利润表** `CBondGuaranteeIncome` - 记录债券担保人的利润表，根据2007年1月1日以后实施的会计准则编制
+- **中国债券担保人现金流量表** `CBondGuaranteeCashFlow` - 记录债券担保人的现金流量表，根据2007年1月1日以后实施的会计准则编制
+- **中国债券担保人资产负债表** `CBondGuaranteeBalanceSheet` - 记录债券担保人的资产负债表，根据2007年1月1日以后实施的会计准则编制
+- **中国债券担保信息(增量)** `CbondGuaranteeInfoZL` - 
+- **中国债券招标** `CBondTender` - 记录债券招投标发行的信息，如招标日、招标方式、招标对象等
+- **中国债券招标结果** `CBondTenderResult` - 记录债券招投标的结果信息，如投标家数、投标笔数、中标总量等
+- **中国债券持有人** `CBondHolder` - 记录可转债、公司债的前十大持有人
+- **中国债券持有人大会通知** `CBondholdersmeeting` - 记录股东大会的召开时间及审议事项
+- **中国债券指数业绩表现** `CBondIndexPerformance` - 记录债券指数的衍生指标，如周涨跌幅、月涨跌幅、年化收益等
+- **中国债券指数基本资料** `CBIndexDescription` - 记录债券指数的基本资料
+- **中国债券指数成分** `CBIndexMembers` - 记录债券指数的成份股信息
+- **中国债券指数日行情** `CBIndexEODPrices` - 记录债券指数的日收盘行情
+- **中国债券指数权重** `CBIndexWeight` - 记录债券指数的成份股权重信息
+- **中国债券曾用名** `CBondPreviousName` - 记录债券的曾用名信息
+- **中国债券本金提前偿还明细** `CBondERepayPrincipal` - 记录债券本金提前偿还明细
+- **中国债券板块代码** `CBondIndustriesCode` - 记录债券板块代码和名称的映射关系
+- **中国债券浮息债基础利率属性** `CBondFloatingRate` - 记录浮动利率债券的特有属性，如基准利率、利率精度、首个定价日等信息
+- **中国债券特别处理** `CBondST` - 记录债券被特别处理的实施和撤销、暂停/恢复上市，以及退市记录及原因
+- **中国债券特殊条款** `CBondSpecialConditions` - 记录债券回售、赎回、延期等特殊条款信息
+- **中国债券现金流** `CBondCF` - 记录债券现金流信息
+- **中国债券申万行业分类（不建议使用）** `CBondSWIndustriesClass` - 
+- **中国债券短融投资评级(中金)** `CBondRatingCICC` - 记录机构对短期融资券给予的投资评级
+- **中国债券票面利率调整幅度** `CBondrateadjustment` - 记录债券票面利率调整幅度数据和后期变动情况
+- **中国债券第三方信用评级(中债资信)** `CBondThirdPartyRating` - 记录中债资信对发债主体的信用评级信息
+- **中国债券行情-全价** `CBondPrices` - 记录债券的全价行情数据
+- **中国债券行情-净价** `CBondPricesNet` - 记录债券的净价行情数据
+- **中国债券衍生指标** `CBondValuation` - 记录债券(不包括可转债)风险收益率指标
+- **中国债券证券关系表** `CBondRalatedSecuritiesCode` - 
+- **中国债券证监会行业分类** `CBondSECIndustriesClass` - 记录债券新版证监会行业分类信息
+- **中国债券证监会行业分类(旧)** `CBondOldSECIndustriesClass` - 记录债券旧版证监会行业分类信息
+- **中国债券评级定价估值(银行间)** `CBondPricingValuation` - 记录中国银行间市场交易商协会公布的债券定价估值数据
+- **中国债券评级机构客户名单** `ClientOfCreditratingAgency` - 记录评级机构新承做信用评级企业名单
+- **中国债券调换条款执行说明** `CBondChangeclause` - 记录债券可调换条款的执行说明，如行权日期、调换比例等
+- **中国债券负面事件** `CBondNegativeCreditEvent` - 记录债券、发债主体相关负面事件信息
+- **中国债券质押券代码** `PledgeCode` - 记录债券的质押券代码信息
+- **中国债券赎回条款执行说明** `CBondCall` - 记录债券赎回条款执行说明，如赎回日、赎回代码、赎回价格等
+- **中国债券远期交易行情(银行间)** `CBondForwardMarketN` - 记录中国银行间债券远期交易的行情数据，包括远期期限品种、前收盘净价、开盘净价、收盘净价及涨跌幅等信息。
+- **中国债券违约兑付表** `CBondDefaultPayment` - 记录违约债券实际兑付的情况
+- **中国债券违约报表** `CBondDefaultReportform` - 记录在国内公开市场发行交易的债券违约及违约相关事件详细信息表
+- **中国债券配售机构获配明细** `CBondPlacementDetails` - 记录战略投资者和A类机构投资者在债券发行中获配数量
+- **中国债券重大事件汇总** `CBondMajorEvent` - 记录债券和对应发债公司的重大事件信息
+- **中国可转债修正条款** `CCBondConversionreset` - 记录可转债的股价修正条件
+- **中国可转债发行** `CCBondIssuance` - 记录可转债的基本资料和发行情况
+- **中国可转债有条件回售价格和触发比例** `CCBondRepurchasePriceRate` - 记录可转债有条件回售的价格和触发比例信息
+- **中国可转债有条件赎回价格和触发比例** `CCBondRedemptionPriceRate` - 记录可转债有条件赎回的价格和触发比例信息
+- **中国可转债衍生指标** `CCBondValuation` - 记录可转债的衍生数据，如应急利息、剩余期限、纯债价值、转股价值等
+- **中国可转债转股** `CCBondConversion` - 记录可转债转股的转换条件和转换情况
+- **中国可转债转股价格变动** `CBondConvPrice` - 记录可转债转股价格历次变动情况
+- **中国可转换债券份额变动** `CCBondAmount` - 记录可转债的份额和变动原因
+- **中证债券估值数据** `TB_OBJECT_1991` - 
+- **债券份额变动** `TB_OBJECT_1640` - 
+- **债券信用评级** `TB_OBJECT_1735` - 
+- **债券公告信息** `BondAnnInf` - 记录发债公司发布的公告详细信息
+- **债券公告栏目** `BondAnnColumn` - 记录发债公司公告栏目信息
+- **债券回售条款执行说明** `TB_OBJECT_1708` - 
+- **债券基本资料** `TB_OBJECT_1429` - 
+- **债券担保物明细** `TB_OBJECT_2080` - 
+- **债券招投标发行资料** `TB_OBJECT_1710` - 
+- **债券本金提前偿还明细** `TB_OBJECT_1932` - 
+- **债券现金流表** `TB_OBJECT_1703` - 
+- **债券行情(全价)** `TB_OBJECT_1448` - 
+- **债券行情(净价)** `TB_OBJECT_1621` - 
+- **债券调换条款执行说明** `TB_OBJECT_2075` - 
+- **债券负面新闻** `BondNegativeNews` - 记录债券负面新闻信息，包括新闻标题、新闻内容、新闻来源、新闻链接等。
+- **债券负面新闻V2018** `BondNegativeNews2` - 记录2018年债券负面新闻信息，包括新闻标题、新闻内容、新闻来源、新闻链接等。
+- **债券赎回条款执行说明** `TB_OBJECT_1707` - 
+- **债券远期交易行情** `TB_OBJECT_1767` - 
+- **银行柜台债券行情** `CBondCounterPrice` - 记录银行柜台债券市场交易品种的行情数据
+- **银行间债券市场回购行情** `TB_OBJECT_1343` - 
+- **银行间债券市场现券行情** `CFETSEODPrice` - 记录银行间债券市场现券品种的日行情数据
+- **银行间债券市场现券行情** `CFETSEODPrice` - 记录银行间债券市场现券品种的日行情数据
+- **非可转债特殊条款** `TB_OBJECT_1705` - 
+
+## 其他 (155张表)
+
+- **AB股周收益率** `TB_OBJECT_5005` - 
+- **AB股月收益率** `TB_OBJECT_5006` - 
+- **AH股关联证券** `SHSZRelatedsecurities` - 记录港股和A股代码的对应关系
+- **FileSync转档时间** `FileSyncTimeSchedule` - 记录FileSync产品的转档时间
+- **IPO初步询价明细** `IPOInquiryDetails` - 记录A股IPO询价对象、配售对象、申报价格、配售数量等信息
+- **IPO审核申报企业情况** `IPOCompRFA` - 记录A股IPO申报预计发行股数、募集资金额度、中介机构等信息
+- **IPO申报预披露日** `IPODeclareDisclosureDate` - 记录A股IPO起始申报披露日
+- **Wind代码变更表** `ChangeWindcode` - 记录证券代码变更的情况
+- **Wind兼容代码** `WindCustomCode` - 记录Wind定义的唯一标识证券的代码
+- **Wind标准证券代码表** `TB_OBJECT_0001` - 
+- **[内部]信用评估机构** `TB_OBJECT_1738` - 
+- **上证所固定收益平台成交明细** `SSETransactionDetails` - 记录上证所固定收益平台成交明细数据
+- **上证所固定收益平台成交行情** `SSEFixedIncomePlatformPrice` - 记录上证所固定收益平台成交行情数据
+- **上证所固定收益平台确定报价行情** `CBondFixedincomeplatform` - 记录上证所固定收益平台发布的确定报价行情数据
+- **业务代码及简称** `CodeAndSName` - 记录基金前后端代码，配股代码，跨市场债券等信息，不保留历史信息
+- **个人代码表** `TB_OBJECT_1014` - 
+- **中介机构** `TB_OBJECT_1517` - 
+- **中介机构代码表** `TB_OBJECT_1021` - 
+- **中债登估值(CRMW)** `CBondAnalysisCNBD8` - 记录中债登对CRMW的估值
+- **中债登估值(中票短融)** `CBondAnalysisCNBD2` - 记录中债登对中期票据、短融、超短融的估值
+- **中债登估值(中资美元债)** `CBondAnalysisCNBD9` - 记录中债登对中资美元债的估值
+- **中债登估值(优先股及其他)** `CBondAnalysisCNBD7` - 记录中债登对优先股及其他性质证券的估值
+- **中债登估值(债务融资工具)** `CBondAnalysisCNBD3` - 记录中债登对PPN和其他债务融资工具的估值
+- **中债登估值(公司债)** `CBondAnalysisCNBD5` - 记录中债登对公司债的估值
+- **中债登估值(同业存单)** `CBondAnalysisCNBD4` - 记录中债登对同业存单的估值
+- **中债登估值(国债金融债企债)** `CBondAnalysisCNBD1` - 记录中债登对国债、地方政府债、政策性银行债、企业债、商业银行债、银行间资产支持证券的估值
+- **中债登估值(废弃)** `CBondAnalysisCNBD` - 
+- **中债登收益率曲线成分样本** `CBondCurveMembersCNBD` - 记录中债登收益率曲线和成份债券间的对应关系
+- **中债登收益率曲线数据** `TB_OBJECT_1805` - 
+- **中国B股停复牌信息** `BShareTradingSuspension` - 记录B股的停、复牌信息
+- **中国B股日行情** `BShareEODPrices` - 记录B股的日收盘行情
+- **中国优先股分红** `CPSDividend` - 记录优先股的分红信息
+- **中国优先股发行** `CPSSEO` - 记录A股公司发行优先股的发行日期、发行价格、募集资金合计等信息
+- **中国优先股发行中介机构** `CPSAgency` - 记录A股公司发行优先股的中介机构信息
+- **中国优先股发行获配明细** `CPSPlacementDetails` - 记录优先股发行时的获配明细
+- **中国优先股基本资料** `CPSDescription` - 记录A股公司发行优先股的基本资料
+- **中国优先股日行情** `CPSEODPrices` - 记录中国优先股日行情信息，包括开盘价、收盘价、涨跌幅、成交量等。
+- **中国优先股股本** `CPSCapitalization` - 记录优先股的股本信息
+- **中国券商月报** `AShareMonthlyReportsofBrokers` - 记录证券公司月度披露的营业收入、净利润、股权权益等数据
+- **中国券商集合理财分红** `ChinaInhouseFundDividend` - 记录券商理财的分红信息
+- **中国券商集合理财经营业绩表** `SAMFundIncome` - 记录集合理财收入、费用、支出等财务信息
+- **中国含权债票面利率变动** `OptionEmbeddedBondRate` - 记录累计利率债券的利率变动情况
+- **中国含权债行权衍生指标** `COptionEmbeddedBondValuation` - 记录含权债的行权衍生数据，如行权收益率、行权剩余期限、行权久期等
+- **中国国债基准收益率** `CGBbenchmark` - 记录中国国债基准收益率信息
+- **中国外汇交易行情** `FXEODPrices` - 记录每天外汇交易行情数据
+- **中国外汇牌价** `FXRMBMidRate` - 记录每一工作日人民币中间价及人民币兑西方23种主要货币的牌价
+- **中国存托凭证IPO初步询价明细** `CDRIPOInquiryDetails` - 记录中国存托凭证IPO初步询价明细，包括询价对象名称、投资者类别代码、配售对象名称等。
+- **中国存托凭证IPO类型** `CDRIPOClass` - 记录中国存托凭证的IPO类型信息，包括公司名称、分类代码、剔除和纳入日期等。
+- **中国存托凭证主要控股参股公司经营情况** `CDRholdingoperate` - 记录存托凭证发行公司主要控股参股公司经营情况
+- **中国存托凭证公司简介** `CDRIntroduction` - 记录存托凭证发行公司的基本信息
+- **中国存托凭证分红条款** `CDRDividend` - 记录存托凭证的分红条款
+- **中国存托凭证发行中介机构** `CDRAgency` - 记录存托凭证发行的相关中介机构
+- **中国存托凭证发行主承销商** `CDRLeadUnderwriter` - 记录中国存托凭证发行主承销商信息，包括发行类型、募集资金合计、参与主承销商个数等。
+- **中国存托凭证发行审核一览** `CDRIssueCommAudit` - 记录存托凭证的发行审核情况
+- **中国存托凭证员工人数变更** `CDRStaff` - 记录存托凭证发行公司的员工人数变更信息
+- **中国存托凭证员工构成** `CDRStaffStructure` - 记录存托凭证发行公司的员工构成情况
+- **中国存托凭证基本资料** `CDRDescription` - 记录存托凭证的基本资料
+- **中国存托凭证审核申报企业情况** `CDRCompRFA` - 记录存托凭证注册审核申报的情况
+- **中国存托凭证审计意见** `CDRAuditOpinion` - "记录中国存托凭证审计意见信息，包括审计结果类别、会计师事务所、签字会计师等。"
+- **中国存托凭证控股参股** `CDRCompanyHoldShares` - 记录存托凭证发行公司的控股参股信息
+- **中国存托凭证日行情** `CDREODPrices` - 记录存托凭证的日收盘行情
+- **中国存托凭证管理层成员** `CDRManagement` - 记录存托凭证发行公司的管理层成员简历信息
+- **中国存托凭证网下配售机构获配明细** `CDRPlacementDetails` - 记录中国存托凭证网下配售机构获配明细，包括股东名称、法人投资者类型、有效报价的申购数量等。
+- **中国存托凭证网下配售机构获配统计** `CDRPlacementInfo` - 记录中国存托凭证网下配售机构获配统计，包括Wind代码、投资者类型代码、网下中签率等。
+- **中国存托凭证股本** `CDRCapitalization` - 记录中国存托凭证股本信息，包括总股本、流通股、限售A股(万股)等。
+- **中国存托凭证询价基本资料** `CDRInquiryDetailsInfo` - 记录中国存托凭证询价基本资料，包括初步询价公告日、网下配售发行公告日、网下申购配售比例（%）等。
+- **中国存托凭证限售股解禁公司明细** `CDRCompRestricted` - 记录中国存托凭证限售股解禁公司明细，包括wind代码、可流通日期、股份类型等。
+- **中国存托凭证首次公开发行数据** `CDRIPO` - 记录中国存托凭证首次发行记录
+- **中国权证基本资料** `CWarrantDescription` - 记录中国权证的基本资料
+- **中国权证持有人** `CWarrantHolder` - 记录中国权证的持有人信息
+- **中国浮息债票面利率变动** `FloatingCouponsRate` - 记录浮息债历次利率调整情况
+- **中国黄金现货基本资料** `CGoldSpotDescription` - 记录中国黄金现货的基本资料
+- **中国黄金现货日行情** `CGoldSpotEODPrices` - 记录中国黄金现货的日收盘行情
+- **中小微企业分类** `EnterpriseDivision` - 记录中小微企业的分类数据，包括公司名称和企业类型。
+- **中证估值** `CBondAnalysisCSI` - 记录中证债券估值数据
+- **中证收益率曲线** `CBondCurveCSI` - 记录中证指数提供的债券收益率曲线，债券类型包括国债、金融债、企业债、固定收益平台国债
+- **中资美元债发行主体** `CNUSBondIssuer` - 记录中资美元债券、发债主体之间的关系数据，包括债券wind代码、发债主体公司id以及关系类型等信息。
+- **中资美元债基本资料** `CNUSDBonddesc` - 记录中资企业发行的美元债信息
+- **主营及附注科目对应关系表** `AShareSalesSegmentMapping` - 记录中国A股主营及附注科目对应关系信息，包括主科目名称、子科目名称等。
+- **人民币中间价及中国银行外汇牌价** `TB_OBJECT_1233` - 
+- **人民币利率互换统计** `TB_OBJECT_1833` - 
+- **信托产品基本资料** `TB_OBJECT_3554` - 
+- **全球交易所信息表** `TB_OBJECT_0002` - 
+- **全球工作日安排** `GlobalWorkingDay` - 记录全球各国工作日信息
+- **全球市场交易时间** `GlobalMarketTradingTime` - 记录全球市场的交易时间
+- **公司基本资料** `TB_OBJECT_1018` - 
+- **公司曾用名** `CompanyPreviousNames` - 记录公司历次更名的数据，包括变动日期、更名原因等信息。
+- **公司机构代码表** `CompOrganizationcode` - 记录公司的组织机构代码、统一社会代码信息
+- **公司简介** `CompIntroduction` - 记录各种类型公司的基础信息。除上市公司外，还包括各类市场主体，如：债券发行人、大股东、关联方、交易方、中介机构、券商、银
+- **公告新闻栏目配置表** `zxfinancialcolumn` - 
+- **公告表** `companytxtinfo` - 
+- **公布重要指标** `TB_OBJECT_1158` - 
+- **分红** `TB_OBJECT_1093` - 
+- **利率互换收益率曲线** `IRSRateYield` - 记录利率互换收益率曲线
+- **利率互换行情** `CBondPricesIRS` - 记录外汇交易中心提供的银行间本币利率互换行情，包括固定-浮动和浮动-浮动
+- **券商代码表** `TB_OBJECT_1020` - 
+- **券商集合理财投资组合-持仓明细** `SAMFundStockPortfolio` - 记录券商集合理财公布的持仓明细
+- **发审委员基本资料** `IECMemberList` - 记录A股申请IPO时发审委相关委员的个人信息
+- **各国交易日** `TB_OBJECT_3500` - 
+- **含权债实际利率** `TB_OBJECT_1447` - 
+- **品种业务代码和简称** `TB_OBJECT_0014` - 
+- **回购标准券折算率** `CBondConversionRatio` - 记录交易所公布的有回购品种的国债、企债折算成标准券的比例
+- **回购标准券折算率** `CBondConversionRatio` - 记录交易所公布的有回购品种的国债、企债折算成标准券的比例
+- **国内保险业金融机构分类** `InsuranceFIClass` - 记录国内保险机构的行业分类
+- **国家及地区代码表** `Countryandareacode` - 记录国家及地区标准名称和ISO编码
+- **央行公开市场操作** `CBondRepo` - 记录央行在公开市场的回购操作情况
+- **存款准备金率(央行)** `CBondReserveRate` - 记录央行基准利率及存款准备金率信息
+- **存贷款利率(央行)** `CBondBenchmark` - 记录自1990年以来历次存、贷款利率调整信息
+- **新股发行** `TB_OBJECT_1095` - 
+- **沪股通只可卖出证券** `SHSCSELLMembers` - 记录沪股通只能卖出的股票列表
+- **沪股通成分股** `SHSCMembers` - 记录沪股通成份股进出信息
+- **法定存款利率** `TB_OBJECT_1255` - 
+- **浮息债基础利率属性** `TB_OBJECT_1641` - 
+- **浮息债票面利率** `TB_OBJECT_1430` - 
+- **深股通只可卖出证券** `SZSCSELLMembers` - 记录深股通只能卖出的股票列表
+- **深股通成分股** `SZSCMembers` - 记录深股通成份股进出信息
+- **特别处理** `TB_OBJECT_1123` - 
+- **理财产品基本资料** `TB_OBJECT_3552` - 
+- **类型编码表** `AShareTypeCode` - 记录类型字段数值、名称间的映射关系
+- **类型编码表** `AShareTypeCode` - 记录类型字段数值、名称间的映射关系
+- **股市负面新闻V2018** `StockNegativeNews2` - 记录2018年股市负面新闻信息，包括新闻标题、新闻内容、新闻来源、新闻链接等。
+- **股本** `TB_OBJECT_1084` - 
+- **股本2** `TB_OBJECT_1432` - 
+- **股转系统Wind兼容代码** `NEEQSWindCustomCode` - 
+- **股转系统公司简介** `NEEQSIntroduction` - 记录新三板公司的基础信息
+- **股转系统股票分层分类** `NEEQGradation` - 记录新三板股票的分层分类信息
+- **股转系统股票园区分类** `NEEQSPark` - 记录新三板股票的园区分类信息
+- **股转系统股票基本资料** `NEEQSDescription` - 记录新三板股票的基本资料
+- **股转系统股票日行情** `NEEQSEODPrices` - 记录新三板股票的日收盘行情
+- **自由流通股本** `TB_OBJECT_1931` - 
+- **证券** `TB_OBJECT_1090` - 
+- **证券停牌信息** `TB_OBJECT_1674` - 
+- **证券关系表** `RalatedSecuritiesCode` - 记录证券和证券之间的关系
+- **证券和证券关系表** `TB_OBJECT_0018` - 
+- **证券基本资料(Wind海外数据标准)** `GB_OBJECT_1001` - 
+- **证券持有人** `TB_OBJECT_1450` - 
+- **证券类型代码表** `TB_OBJECT_1024` - 
+- **证券类型代码配置表** `SecuritiesTypecode` - 证券类型和代码的配置表
+- **询价基本资料** `TB_OBJECT_1660` - 
+- **货币代码表** `Currencycode` - 记录各类货币的国际标准三位代码
+- **资金流向表** `TB_OBJECT_5046` - 
+- **金融企业分类** `FinancialInstitutionClassify` - 记录金融企业的分类数据，包括公司名称和企业类型。
+- **银行五级分类贷款明细** `BankLoan5LClassification` - 记录银行类公司的五级分类贷款明细
+- **银行间本币货币市场日行情** `CBondIBRMBMonDMarQuotation` - 记录银行间本币市场同业拆借各期限品种成交情况和债券回购行情数据
+- **陆港通卖空数据** `SHSCShortselling` - 记录沪股通卖空数据，包含成分股、可供卖空股数和卖空
+- **陆港通日交易统计** `SHSCDailyStatistics` - 记录沪、深港通每日交易统计情况
+- **陆港通日十大成交活跃股统计** `SHSCTop10ActiveStocks` - 记录沪、深港通每日十大成交活跃股成交信息，包含买入\卖出\成交金额
+- **陆港通机构持股** `SHSCmechanismownership` - 记录陆港通机构持股数据，包括持股数量、机构名称、截止日等。
+- **陆港通通道持股数量统计(中央结算系统)** `SHSCChannelholdings` - 记录沪、深港通标的股票各自通过通道持股的情况
+- **集合理财基本资料** `TB_OBJECT_1744` - 
+- **非上市保险专用指标** `UnlistedInsuranceIndicator` - 记录非上市保险公布的一些特殊的财务指标
+- **非上市券商专用指标** `UnlistedIBrokerIndicator` - 记录非上市券商公司的一些特殊的财务指标
+- **非上市银行专用指标** `UnlistedBankIndicator` - 记录非上市银行公布的一些特殊的财务指标
+- **非公开发行股票审核申报企业情况** `NOPUBLICSTOCKCompRFA` - 记录非公开发行股票审核申报企业数据，包括保荐机构、申请事项、进度等。
+- **高新技术企业分类** `HightechEnterprise` - 记录高新技术企业的分类数据，包括公司名称和企业类型。
+
+## 基金相关 (19张表)
+
+- **上市公司ESG评级数据(嘉实基金)（试用）** `HarvestFundESGRatingDatatest` - 
+- **上市公司ESG评级数据(嘉实基金细分指标明细)（试用）** `JSFundESGRatingDetailData` - 
+- **中国上市基金IOPV收盘净值** `CMFIOPVNAV` - 记录基金的IOPV收盘净值
+- **中国上市基金日行情** `ChinaClosedFundEODPrice` - 记录的是在上交所、深交所上市的所有的开放式和封闭式基金的行情。
+- **中国封闭式基金场内申购赎回** `ClosedFundPchRedm` - 记录封闭式基金场内申购赎回情况
+- **中国开放式基金场内申购赎回** `LOFPchRedm` - 记录开放式基金场内申购赎回情况
+- **中国货币式基金投资组合剩余期限(报告期)** `CMMFPortfolioPTM` - 记录货币式基金定期（季度）公布的投资组合剩余期限信息
+- **中国货币式基金日收益** `CMoneyMarketFIncome` - 记录货币市场基金每万份基金单位收益及最近七日收益所折算的年资产收益率
+- **中国货币式基金日收益(拆分)** `CMoneyMarketDailyFIncome` - 记录货币市场基金每万份基金每天的单位收益及最近七日收益所折算的年资产收益率
+- **中国货币式基金重要指标(报告期)** `CMMQuarterlydata` - 记录货币市场基金季度重要数据
+- **全球基金债券组合(分评级)** `FundBondportfolio` - 记录全球基金持有的不同评级等级的债券组合信息
+- **基金公告信息** `FundAnnInf` - 记录基金公司发布的公告详细信息
+- **基金公告文本** `FundAnnInfText` - 记录文本格式的基金公告
+- **基金公告栏目** `FundAnnColumn` - 记录基金公司公告栏目信息
+- **基金关联方持有份额** `CMFRelatedPartiesHolder` - 记录基金关联方持有该基金的份额数据，包括持有人名称、持有份额及持有比例等信息。
+- **基金基本资料和发行** `TB_OBJECT_1099` - 
+- **基金投资组合持股(债)明细** `TB_OBJECT_1102` - 
+- **基金投资组合重大变动** `TB_OBJECT_1532` - 
+- **基金申购与赎回情况** `TB_OBJECT_1495` - 
+
+## 指数相关 (24张表)
+
+- **Wind一致预测指数滚动指标** `AIndexConsensusRollingData` - 记录A股指数一致预测滚动指标，每日滚动生成
+- **Wind指数成份明细** `TB_OBJECT_1619` - 
+- **上市公司ESG评级数据(华证指数)(试用)** `SSIESGRatingDatatest` - 
+- **上证50指数权重** `AIndexSSE50Weight` - 记录上证50指数成份股的权重信息
+- **中信标普指数成份** `ASPCITICIndexWeight` - 记录中信标普指数的成份股明细数据
+- **中信标普指数行情** `ASPCITICIndexEOD` - 记录中信标普指数的日收盘行情
+- **中债-1-3年政策性金融债财富(总值)指数权重** `CBA1To3PBBIndexWeight` - 记录中债-1-3年政策性金融债财富(总值)指数成份权重数据
+- **中债-信用债总财富(总值)指数权重** `CBACreditBIndexTOTRTWeight` - 记录中债-信用债总财富(总值)指数成份权重数据
+- **中债登指数权重(废弃)** `CBIndexWeightCNBD` - 
+- **中债登指数行情** `CBondIndexEODCNBD` - 记录中债登指数的日收盘行情
+- **中国期权指数日行情** `ChinaOptionIndexEODPrices` - 记录中国期权指数的日收盘行情
+- **中国期货指数日行情** `CFutureIndexEODPrices` - 记录中国期货指数的日收盘行情
+- **中证1000指数权重** `AIndexCSI1000Weight` - 记录中证1000指数成份股的权重信息
+- **中证500指数权重** `AIndexCSI500Weight` - 记录中证500指数成份股的权重信息
+- **中证800指数权重** `AIndexCSI800Weight` - 记录中证800指数成份股的权重信息
+- **其他第三方商品期货指数行情** `ThirdPartyIndexEOD` - 记录除交易所、发布过批量指数的第三方指数之外的其他第三方商品期货指数日行情信息
+- **市场指数行情** `TB_OBJECT_1288` - 
+- **指数权重** `TB_OBJECT_1807` - 
+- **指数板块对照** `IndexContrastSector` - 记录指数对应成份板块
+- **申万指数成份日收盘权重** `ASWSIndexCloseWeight` - 记录A股申万指数成份日收盘权重信息
+- **申万指数成份明细** `SWIndexMembers` - 记录A股申万指数成份明细信息
+- **申万指数成份明细** `SWIndexMembers` - 记录A股申万指数成份明细信息
+- **申万指数行情** `ASWSIndexEOD` - 记录A股申万指数的日收盘行情
+- **股转系统指数日行情** `NEEQIndexEODPrices` - 记录股转系统指数的日收盘行情
+
+## 港股相关 (75张表)
+
+- **港股市场中介持股统计** `HKShareAgencyHoldings` - 记录港股通、中资机构、国际机构、香港本地机构等媒介或中介持有的港股数量
+- **港股通申万行业分类（一年更新一次）** `HKShareSWIndustriesClass` - 记录港股通的申万行业分类
+- **港股限售股流通日历** `HKShareFreeFloatCalendar` - 记录港股限售股流通日历数据，包括可流通日期、上市流通股份类型及冻结期限等信息。
+- **香港ETF日行情** `HKETFEODPrice` - 记录香港ETF基金的日收盘行情
+- **香港交易所交易日历** `HKEXCalendar` - 记录香港交易所的交易日信息
+- **香港和新加坡及海外中资股行情(Wind标准)** `GB_OBJECT_1038` - 
+- **香港基金日行情估值指标** `HKFundEODDerivativeIndex` - 记录香港基金的日估值和财务指标，如市值、市盈
+- **香港期权交易日历** `HKOptionCalendar` - 记录香港期权品种的交易日信息
+- **香港期权基本资料** `HKOptionDescription` - 记录香港期权的基本资料
+- **香港期权日行情** `HKOptionEODPrices` - 记录香港期权的日收盘行情
+- **香港期权标准合约属性** `HKOptionContpro` - 记录香港期权标准合约的属性信息
+- **香港期货保证金** `HKFuturesMargin` - 记录香港期货品种的保证金信息
+- **香港期货基本资料** `HKFuturesDescription` - 记录香港期货的基本资料
+- **香港期货日行情** `HKFuturesEODPrices` - 记录香港期货的日收盘行情
+- **香港期货标准合约属性** `HKFuturescontpro` - 记录香港期货标准合约的属性信息
+- **香港期货标准合约属性变更** `HKFuturesContProChange` - 记录香港期货标准合约的属性信息变动情况
+- **香港权证基本资料** `HKWarrantInfo` - 记录香港权证的基本资料
+- **香港权证街货量** `HKOutstandingWarrantVolume` - 记录香港联交所公布的收市后由公众投资者持有的权证数量。
+- **香港港股通成分股** `HKSCMembers` - 记录港股通的成分股明细数据
+- **香港牛熊证基本资料** `HKCBBCInfo` - 记录香港牛熊证的基本资料
+- **香港牛熊证日行情** `HKCBBCEODPrices` - 记录香港牛熊证的日收盘行情
+- **香港股票GICS行业成份(废弃)** `HKStockGICSIndustriesMembers` - 记录港股的GICS行业成份明细
+- **香港股票Wind一致预测个股指标** `HKStockConsensusindex` - 记录港交所个股一致预测指标，不定期生成，依据wind一致预测数据生成。
+- **香港股票Wind行业分类** `HKStockWindIndustriesMembers` - 记录港股的Wind行业分类信息
+- **香港股票上市公司基本资料** `HKCompanyInfo` - 记录港股公司的基本资料
+- **香港股票中介机构** `HKShareAgency` - 记录港股发行的相关中介机构
+- **香港股票代码变更表** `HKStockChangecode` - 记录港股代码的历次变更信息
+- **香港股票停复牌信息** `HKTransactionStatus` - 记录港股的停复牌信息
+- **香港股票公司名称变更** `HKChangeCompanyName` - 记录港股公司名称的历次变更情况
+- **香港股票利润表（简表）** `HKIncomeSimple` - 
+- **香港股票卖空成交量** `HKShareShortSellingTurnover` - 记录港股卖空的成交量
+- **香港股票发行数据** `HKShareIssuance` - 记录港股的发行信息
+- **香港股票发行数量** `HKShareCapitalization` - 记录港股的发行数量
+- **香港股票可卖空证券明细** `HKStockShortSellingList` - 记录港股可卖空的证券明细
+- **香港股票名称变更** `HKShareChangeName` - 记录港股名称的历次变更信息
+- **香港股票员工人数变更** `HKShareStaff` - 记录港股公司的员工人数变更情况
+- **香港股票基本资料** `HKShareDescription` - 记录港股的基本资料
+- **香港股票大股东** `HKShareInsideHolder` - 记录港股公司的大股东持股信息
+- **香港股票大股东增减持** `HKShareHolderTrade` - 记录港股公司的大股东增减持信息
+- **香港股票存托凭证份额** `HDRInfo` - 记录存托凭证份额及每份凭证对应基础证券数量
+- **香港股票实际控制人** `HKShareEquityRelationships` - 记录港股公司的股权关系、实际控制人信息
+- **香港股票恒生行业分类** `HKStockHSIndustriesMembers` - 记录港股的恒生行业分类信息
+- **香港股票投资评级明细** `HKAnalystRating` - 记录港股的投资评级明细数据
+- **香港股票指数基本资料** `HKIndexDescription` - 记录香港股票指数的基本资料
+- **香港股票指数成份股** `HKStockIndexMembers` - 记录香港股票指数对应成份股信息
+- **香港股票指数日行情** `HKIndexEODPrices` - 记录香港股票指数的日收盘行情
+- **香港股票指数板块代码** `HKStockIndexCode` - 记录香港股票指数对应的板块信息
+- **香港股票控股参股** `HKShareCompanyHoldShares` - 记录港股公司的控股参股信息
+- **香港股票日行情** `HKshareEODPrices` - 记录港股的日收盘行情
+- **香港股票日行情估值指标** `HKShareEODDerivativeIndex` - 记录港股的日估值和财务指标，如市值、市盈
+- **香港股票权益事件** `HKshareEvent` - 记录港股公司所有分红、配股、股份合并等可能导致股价变动的权益事项
+- **香港股票概念板块** `HKConceptualplate` - 记录港股公司所属的概念板块。
+- **香港股票概念板块分类** `HKShareConseption` - 记录港股的概念板块分类信息
+- **香港股票特别处理** `HKShareST` - 记录港股特别处理的实施和撤销、暂停/恢复上市，以及退市记录及原因
+- **香港股票现金流量表（简表）** `HKCashFlowSimple` - 
+- **香港股票盈利预测明细** `HKProfitForecast` - 记录港股的盈利预测明细数据
+- **香港股票管理层信息** `HKShareManagement` - 记录港股公司的管理层信息
+- **香港股票管理层持股及报酬** `HKShareManagementHoldReward` - 记录港股公司的管理层持股及报酬信息
+- **香港股票终止上市** `HKShareEndlist` - 记录港股终止上市信息
+- **香港股票股东大会议案网络投票表决明细** `HKShareInternetvoting` - 记录港股股东大会议案网络投票表决的明细信息
+- **香港股票股东大会通知** `HKShareholdersmeeting` - 记录港股股东大会的召开时间及审议事项
+- **香港股票股本结构** `HKEquityStruc` - 记录港股的股本变动情况
+- **香港股票自由流通股本** `HKShareFreeFloat` - 记录wind计算的港股自由流通股本
+- **香港股票行业分类编码** `HKStockIndustriesCode` - 记录行业板块和代码间的映射关系，是配置表
+- **香港股票行情日收益率** `HKShareYield` - 记录港股的周/月行情指标，如涨跌幅、成交量、成交额、换手率。记录全球股票的风险分析指标，如平均收益率、方差、标准差、BE
+- **香港股票证券未平仓卖空量** `HKShareUnsoldShortsale` - 记录港股未平仓卖空量
+- **香港股票诉讼事件** `HKShareProsecution` - 记录港股公司作为原告或被告的涉案情况和案件审理、判决、执行、上诉及二审判决情况
+- **香港股票财务指标** `HKFinancialIndicator` - 记录港股公司的财务指标，依据财务报表计算
+- **香港股票财报年结日变更** `CHGFinYearEndDT` - 记录港股财报年结日变更的情况
+- **香港股票资产负债表（简表）** `HKBalanceSheetSimple` - 
+- **香港股票违规事件** `HKShareIllegality` - 记录各级主管部门公布的对港股公司违规行为的调查结果与处理决定
+- **香港股票重大事件表** `HKShareMajorEvent` - 记录港股公司的重大事件信息
+- **香港股票面值及交易单位** `HKShareParvalueLotsize` - 记录港股的面值及交易单位信息
+- **香港衍生权证日行情** `HKWarrantEODPrices` - 记录香港权证的日收盘行情
+- **香港证券回购信息** `HKStockRepo` - 记录香港联交所的证券回购信息
+
+## 股权相关 (1张表)
+
+- **股权分置方案** `TB_OBJECT_1673` - 
+
+## 行业板块 (18张表)
+
+- **Wind行业成份明细** `TB_OBJECT_1576` - 
+- **中信标普GICS行业分类(废弃)** `AShareGICSIndustriesClass` - 记录中信标普300成份股4级行业及中标综指GICS2级行业分类
+- **中国券商集合理财投资组合-行业** `SAMFundIndPortfolio` - 记录券商集合理财公布的持股分属于各行业的组合。行业分类采用证监会标准
+- **中国存托凭证Wind概念板块** `CDRConseption` - 记录中国存托凭证Wind概念板块信息，包括Wind概念板块代码、Wind概念板块名称、纳入剔除日期等。
+- **中国存托凭证Wind行业分类** `CDRIndustriesClass` - 记录存托凭证发行公司的Wind行业分类
+- **中国存托凭证证监会新版行业分类** `CDRSECNIndustriesClass` - 记录存托凭证发行公司的证监会行业分类
+- **中国概念股wind兼容代码** `CCStockWindCustomCode` - 记录中国概念股Wind定义的唯一标识证券的代码
+- **全球行业板块(废弃)** `GICSCode` - 
+- **国内银行业金融机构分类(银监会)** `BankingFIClassCBRC` - 记录国内银行业各金融机构的银监会行业分类
+- **板块** `TB_OBJECT_1022` - 
+- **板块成份** `TB_OBJECT_1400` - 
+- **申万行业分类** `AShareSWIndustriesClass` - 记录A股申万行业分类信息
+- **申万行业成份明细** `TB_OBJECT_1476` - 
+- **股转系统股票Wind行业分类** `NEEQSIndustriesClass` - 记录新三板股票的Wind行业分类
+- **股转系统股票证监会行业分类** `NEEQSSECIndustriesClass` - 记录新三板股票的证监会行业分类
+- **行业代码** `AShareIndustriesCode` - 记录板块列表，包括证监会行业分类、上交所行业分类、地域板块、概念板块、同系公司5套体系近千个板块
+- **银行业存款结构** `CBankDepositStructure` - 记录银行类公司的存款结构，如存款平均余额、存款利息支出等
+- **银行业贷款结构** `CBankLoanStructure` - 记录银行类公司的贷款结构，如贷款利息收入、不良贷款余额等
+
+## 衍生品 (49张表)
+
+- **Wind中国期权衍生指标** `WindChinaOptionValuation` - 记录中国期权品种Wind盘后16:30计算的期权衍生指标，比如Delta、Theta、Gamma等。
+- **中国商品期货成交及持仓** `CCommodityFuturesPositions` - 记录中国商品期货的成交及持仓信息
+- **中国商品期货日行情** `CCommodityFuturesEODPrices` - 记录中国商品期货的日收盘行情
+- **中国国债期货交易日行情** `CBondFuturesEODPrices` - 记录中国国债期货的日收盘行情
+- **中国国债期货可交割券第三方估值** `CBondFThirdPartyValuation` - 记录中债、中证等第三方估值数据计算的国债期货IRR等衍生指标信息
+- **中国国债期货可交割券衍生指标** `CbondFValuation` - 记录中国国债期货的可交割券衍生指标，如交割利息、区间利息、基差等
+- **中国国债期货成交及持仓** `CBondFuturesPositions` - 记录中国国债期货的成交及持仓信息
+- **中国国债期货最便宜可交割券** `CbondFCTD` - 记录中国国债期货的最便宜可交割券信息
+- **中国国债期货标的券** `CbondFSubjectcvf` - 记录中国国债期货的标的券信息
+- **中国期权交易日历** `ChinaOptionCalendar` - 记录中国期权的交易日信息
+- **中国期权会员交易统计** `ChinaOptionMemberStatistics` - 记录中国期权会员成交量与持仓量等数据，分认购与认沽
+- **中国期权基本资料** `ChinaOptionDescription` - 记录中国期权的基本资料
+- **中国期权日交易统计** `ChinaOptionDailyStatistics` - 记录中国期权每日的交易情况信息
+- **中国期权日行情** `ChinaOptionEODPrices` - 记录中国期权的日收盘行情
+- **中国期权曾用名** `ChinaOptionPreviousName` - 记录期权历次更名记录
+- **中国期权月合约属性变动表** `COptionDescriptionchange` - 记录中国期权月合约属性变动的信息
+- **中国期权标准合约属性** `ChinaOptionContpro` - 记录中国期权标准合约的相关属性
+- **中国期权标准合约属性变更** `COptionContProChange` - 记录期权标准合约属性变更情况
+- **中国期权衍生指标** `ChinaOptionValuation` - 记录中国期权涨跌停限制及分析指标
+- **中国期权隐含波动率** `COptionImpliedVolatility` - 记录中国期权隐含波动率的数据，包括标准合约代码、波动率类型、期限及隐含波动率等信息。
+- **中国期货Wind代码变更表** `CFuturesChangeWindcode` - 
+- **中国期货Wind兼容代码** `CFuturesWindCustomCode` - 
+- **中国期货交割仓库基本资料** `CFuturesDeliveryWHInfo` - 记录中国期货交易所公布的期货交割仓库基本资料，包括标准合约代码、办公地址、是否基准库等。
+- **中国期货交割意向申报** `CFuturesDeclarationOfDI` - 记录中国期货品种交割意向申报情况，包括会员公司ID、申报卖方交割量、申报买方交割量等。
+- **中国期货交割数据** `CFuturesDelivery` - 记录中国期货交易所内品种的交割数据，包括交割类型、交割金额、交割结算价等。
+- **中国期货交易交割手续费** `CfuturesDeliveryFee` - 记录中国期货交易所公布的期货交割手续费，包括月合约证券ID、交易手续费额、交易手续费率等。
+- **中国期货交易所单边市状态** `CFuturesunilateralMakt` - 记录中国期货交易所期货品种单边市交易状态，包括期货wind代码、交易所、单边市状态、连续单边市天数等。
+- **中国期货交易所标准产品代码** `FuturesExchangeproductcode` - 记录中国期货各品种交易所标准产品代码
+- **中国期货交易日历** `CFuturesCalendar` - 记录中国期货相关品种的交易日信息
+- **中国期货保证金比例** `CFuturesmarginratio` - 记录中国期货品种的保证金比例信息
+- **中国期货公司简介** `CFuturesIntroduction` - 
+- **中国期货基本资料** `CFuturesDescription` - 记录中国期货相关品种的基本资料
+- **中国期货套保持仓** `CFuturesHedgingPositions` - 记录商品期货套期保值持仓数据
+- **中国期货套利合约关系表** `CFuturesArbitrageContract` - 记录期货套利合约的关系信息
+- **中国期货库存(仓单)** `CFuturesInstock` - 记录中国期货品种的仓单库存信息
+- **中国期货库存报告** `CFuturesWarehouseStocks` - 记录中国期货品种的入仓、出仓、注销仓单等情况
+- **中国期货月合约持仓限制** `CFuturesPositionLimit` - 记录中国期货品种月合约持仓数量限制的变化信息
+- **中国期货标准合约价格波动限制变更** `CFuturesPriceChangeLimit` - 记录中国期货标准合约价格波动限制变更信息
+- **中国期货标准合约属性** `CFuturesContPro` - 记录中国期货标准合约的属性信息
+- **中国期货标准合约属性变更** `CFuturesContProChange` - 记录中国期货标准合约的属性信息的变更情况
+- **中国期货类型编码表** `CFuturesTypeCode` - 
+- **中国期货行业代码** `CFuturesIndustriesCode` - 
+- **中国期货连续(主力)合约和月合约映射表** `CfuturesContractMapping` - 记录中国期货连续(主力)合约和月合约间的关系信息
+- **中国股指期货成交及持仓** `CIndexFuturesPositions` - 记录中国股指期货的成交及持仓信息
+- **中国股指期货日行情** `CIndexFuturesEODPrices` - 记录中国股指期货的日收盘行情
+- **国债期货可交割券转换因子** `TB_OBJECT_3591` - 
+- **外汇期权Delta计量参数** `ForexOptionDelta` - 记录中国货币网公布的外汇期权Delta计量参数
+- **期货合约基本资料** `TB_OBJECT_3511` - 
+- **期货市场** `FuturesNews` - 记录期货市场的相关新闻
+
+## 评级预测 (12张表)
+
+- **Wind一致预测个股滚动指标** `AShareConsensusRollingData` - 记录A股个股一致预测滚动指标，每日滚动生成
+- **上市公司ESG评级数据(华证细分指标明细)(试用)** `SSIESGRatingDetailsDatatest` - 
+- **上市公司ESG评级数据(商道融绿)(试用)** `SynTaoESGRatingDatatest` - 
+- **上市公司ESG评级数据(商道融绿细分指标明细)(试用)** `AShareESGRatingData1test` - 
+- **上市公司ESG评级数据(社会价值投资联盟)(试用)** `CASVIESGRatingDatatest` - 
+- **上市公司ESG评级数据(社投盟细分指标明细)(试用)** `AShareESGRatingDatatest` - 
+- **中国优先股主体信用评级** `CPSIssuerRating` - 记录优先股的主体信用评级信息
+- **中国优先股信用评级** `CPSRating` - 记录优先股的信用评级
+- **主体信用评级** `TB_OBJECT_1734` - 
+- **华证ESG尾部风险名单(试用)** `SSIESGTailRiskListtest` - 
+- **华证ESG风险预警名单(试用)** `SSIESGRiskWarningListtest` - 
+- **国家主权信用评级** `SovereignCreditRating` - 记录国家主权债务评级等
+
+## 财务相关 (24张表)
+
+- **中债登估值(资产支持证券)** `CBondAnalysisCNBD6` - 记录中债登对交易所资产支持证券和银行间资产支持票据的估值
+- **中国券商集合理财财务指标** `SAMFundFinancialIndicator` - 记录集合理财产品相关财务指标，如本期单位净收益、期末资产净值等
+- **中国券商集合理财资产负债表** `SAMFundBalanceSheet` - 记录集合理财股票投资、负债、未分配利润等财务信息
+- **中国存托凭证利润表** `CDRIncome` - 记录存托凭证发行公司的利润表，根据2007年1月1日以后实施的会计准则编制
+- **中国存托凭证现金流量表** `CDRCashFlow` - 记录存托凭证发行公司的现金流量表，根据2007年1月1日以后实施的会计准则编制
+- **中国存托凭证财务指标** `CDRFinancialIndicator` - "记录中国存托凭证财务指标，包括wind代码、息税前利润、毛利润、总资产净利率等。"
+- **中国存托凭证资产负债表** `CDRBalanceSheet` - 记录存托凭证发行公司的资产负债表，根据2007年1月1日以后实施的会计准则编制
+- **财务衍生指标表** `TB_OBJECT_5034` - 
+- **财务附注项目类别配置表** `FinancialNoteCategory` - 记录财务附注辅助表中的项目类别
+- **资产支持证券交易数据** `ABSTransaction` - 记录资产支持证券的交易数据
+- **资产支持证券分档基本资料** `ABSSubfiledata` - 记录资产支持证券的分档基本资料
+- **资产支持证券基本资料** `ABSDescription` - 记录资产支持证券的基本资料
+- **资产支持证券基本资料** `ABSDescription` - 记录资产支持证券的基本资料
+- **资产支持证券本息兑付** `ABSPayment` - 记录资产支持证券的本息兑付
+- **资产负债表** `TB_OBJECT_1040` - 
+- **非上市保险利润表** `UnlistedInsuranceIncome` - 记录非上市保险的利润表，根据2007年1月1日以后实施的会计准则编制
+- **非上市保险现金流量表** `UnlistedInsuranceCashFlow` - 记录非上市保险的现金流量表，根据2007年1月1日以后实施的会计准则编制
+- **非上市保险资产负债表** `UnlistedInsuranceBalanceSheet` - 记录非上市保险的资产负债表，根据2007年1月1日以后实施的会计准则编制
+- **非上市券商利润表** `UnlistedBrokerIncome` - 记录非上市券商的利润表，根据2007年1月1日以后实施的会计准则编制
+- **非上市券商现金流量表** `UnlistedBrokerCashFlow` - 记录非上市券商的现金流量表，根据2007年1月1日以后实施的会计准则编制
+- **非上市券商资产负债表** `UnlistedBrokerBalanceSheet` - 记录非上市券商的资产负债表，根据2007年1月1日以后实施的会计准则编制
+- **非上市银行利润表** `UnlistedBankIncome` - 记录非上市银行的利润表，根据2007年1月1日以后实施的会计准则编制
+- **非上市银行现金流量表** `UnlistedBankCashFlow` - 记录非上市银行的现金流量表，根据2007年1月1日以后实施的会计准则编制
+- **非上市银行资产负债表** `UnlistedBankBalanceSheet` - 记录非上市银行的资产负债表，根据2007年1月1日以后实施的会计准则编制

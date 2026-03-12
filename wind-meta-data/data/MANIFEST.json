@@ -1,0 +1,56 @@
+﻿[
+    {
+        "file_name":  "wind_stock_L1_index.md",
+        "domain":  "stock",
+        "layer":  "L1",
+        "size_bytes":  94477,
+        "sha256":  "0fd2dd3bb0af3a01b3b0ff79690653581852dbff97252122237c9d088cf27cac",
+        "source_path":  "D:\\Dropbox\\创金合信\\0. 零售网金\\蚂蚁选品上下架\\wind_stock_L1_index.md",
+        "imported_at":  "2026-03-12T00:00:00+08:00"
+    },
+    {
+        "file_name":  "wind_stock_L2_summary.md",
+        "domain":  "stock",
+        "layer":  "L2",
+        "size_bytes":  241029,
+        "sha256":  "2f771c2b05f29bbc6cccb8ef79381bdc99f7272f670a9c2518c17f55c5044791",
+        "source_path":  "D:\\Dropbox\\创金合信\\0. 零售网金\\蚂蚁选品上下架\\wind_stock_L2_summary.md",
+        "imported_at":  "2026-03-12T00:00:00+08:00"
+    },
+    {
+        "file_name":  "wind_stock_L3_full.json",
+        "domain":  "stock",
+        "layer":  "L3",
+        "size_bytes":  3888035,
+        "sha256":  "60710c1d6f450ddcf2aa0461cbf26e4bf0f8a8596dcacd6f2bb84628a6e5c015",
+        "source_path":  "D:\\Dropbox\\创金合信\\0. 零售网金\\蚂蚁选品上下架\\wind_stock_L3_full.json",
+        "imported_at":  "2026-03-12T00:00:00+08:00"
+    },
+    {
+        "file_name":  "wind_fund_L1_index.md",
+        "domain":  "fund",
+        "layer":  "L1",
+        "size_bytes":  52862,
+        "sha256":  "36534aab30750d8e3fcc2273d693d24aa695a3258783b29cadc90035f6028f90",
+        "source_path":  "D:\\Dropbox\\创金合信\\0. 零售网金\\蚂蚁选品上下架\\wind_fund_L1_index.md",
+        "imported_at":  "2026-03-12T00:00:00+08:00"
+    },
+    {
+        "file_name":  "wind_fund_L2_summary.md",
+        "domain":  "fund",
+        "layer":  "L2",
+        "size_bytes":  134284,
+        "sha256":  "4a4ebb92ed6afd7a0f1ca17ee5ae2a3148c9f67045e6c44d839daf295890bf42",
+        "source_path":  "D:\\Dropbox\\创金合信\\0. 零售网金\\蚂蚁选品上下架\\wind_fund_L2_summary.md",
+        "imported_at":  "2026-03-12T00:00:00+08:00"
+    },
+    {
+        "file_name":  "wind_fund_L3_full.json",
+        "domain":  "fund",
+        "layer":  "L3",
+        "size_bytes":  2365491,
+        "sha256":  "3d26301318f0b070f2dd80f700fe3346f6e2c1647b05daf2433a5c0b75aceb0a",
+        "source_path":  "D:\\Dropbox\\创金合信\\0. 零售网金\\蚂蚁选品上下架\\wind_fund_L3_full.json",
+        "imported_at":  "2026-03-12T00:00:00+08:00"
+    }
+]
