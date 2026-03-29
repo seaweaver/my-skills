@@ -1,6 +1,6 @@
 ---
 name: cf-quant-web
-description: 查询量化策略持仓、导入交易信号、查看策略信息或绩效指标。Use when querying strategy positions, importing trading signals, looking up strategies, or checking performance metrics via the cf_quant_web local backend.
+description: Use when querying strategy positions, importing trading signals, looking up strategy metadata, checking performance metrics, or creating backups through the local cf_quant_web HTTP backend.
 ---
 
 # CF Quant Web
@@ -32,6 +32,7 @@ http://127.0.0.1:8000
 | 2 | 导入交易信号 | `POST /api/signals/batch` 等 |
 | 3 | 查询策略信息 | `GET /api/strategies` |
 | 4 | 查看绩效指标 | `GET /api/performance/metrics/{strategy_id}` |
+| 5 | 数据库备份 | `POST /api/backup` / `GET /api/backup/list` |
 
 不要用本技能处理交割单导入、对账匹配或其他手工流程。
 
@@ -100,20 +101,64 @@ curl -s "http://127.0.0.1:8000/api/positions?strategy_code=nice-us"
 
 | 方式 | 端点 | 适用场景 |
 |------|------|---------|
-| JSON 批量 | `POST /api/signals/batch` | Agent 已解析好结构化数据 |
+| JSON 批量 | `POST /api/signals/batch` | Agent 已解析好结构化数据，首选 |
 | 文本粘贴 | `POST /api/signals/import-text` | 用户直接粘贴信号文本 |
 | 文件上传 | `POST /api/signals/import` | 用户提供 txt/csv 文件 |
 
-### 前置准备
+### 幂等导入硬规则
 
-1. 如果只知道 `strategy_code`，先解析策略 ID：
+下面这些规则是强制项，不是建议项：
+
+1. 导入前必须先查重，不能直接调用 `POST /api/signals/batch`、`POST /api/signals/import-text` 或 `POST /api/signals/import`。
+2. 查重失败、策略不存在、或批内存在冲突时，必须停止导入并向用户说明原因。
+3. 重复判定键固定为：`strategy_id + signal_date + security_code + direction`。
+4. 只要后端已存在任意状态的同键信号（`PENDING`、`EXECUTED`、`CANCELLED` 等），就视为“已导入”，直接跳过，不要重复发送 `POST`。
+5. 如果所有候选信号都已存在，允许“只查询、不导入”，并明确告诉用户：`已存在，未重复导入`。
+6. Agent 对外汇报统一使用：
+   - `已跳过 N 条重复`
+   - `准备导入 M 条新增`
+   - 如果 `M=0`，明确说 `已存在，未重复导入`
+
+### 标准导入流程
+
+无论最终使用 JSON、文本粘贴还是文件上传，都先按下面流程执行：
+
+1. 如果用户只给了 `strategy_code`，先查策略：
    ```bash
    curl -s "http://127.0.0.1:8000/api/strategies/code/nice-us"
    ```
-2. 标准化证券代码（见下方规则）
-3. 构造请求体
+2. 取到 `strategy_id` 后，再处理候选信号；如果策略不存在，立即停止，不要猜。
+3. 先把所有证券代码标准化后再查重，不要依赖后端兜底。
+4. 先做批内去重和冲突检查。
+5. 再调用 `GET /api/signals` 查询后端已有信号。
+6. 只把未命中的增量信号组装进最终的导入请求。
+
+### 批内去重与冲突处理
+
+批内先按同一组 key：`strategy_id + signal_date + security_code + direction` 分组。
+
+- 同键且 `expected_price`、`expected_quantity`、`signal_name`、`scale`、`remark` 全部一致：折叠为 1 条。
+- 同键但上述字段有任意不一致：视为冲突，必须停止并让用户确认，不能私自选一条继续导入。
+- 对文本粘贴或文件导入，先完成解析和标准化，再应用同一套规则。
+
+### 导入前查重步骤
+
+对每一条候选信号，按下面顺序执行：
+
+1. 获取或确认 `strategy_id`
+2. 标准化 `security_code`
+3. 查询：
+   ```bash
+   curl -s "http://127.0.0.1:8000/api/signals?strategy_id=1&signal_date=2026-03-12&security_code=NVDA&limit=1000"
+   ```
+4. 在返回结果里按 `direction` 精确比对
+5. 命中同键同方向记录则跳过；未命中才允许进入导入请求
+
+> `GET /api/signals` 的查询参数里没有单独的 `direction` 过滤，所以必须先按 `strategy_id + signal_date + security_code` 查询，再在返回结果里按 `direction` 做精确匹配。
 
 ### 方式 A：JSON 批量（`POST /api/signals/batch`）
+
+JSON 批量是首选。只有在完成上面的查重步骤后，才允许提交增量数据。
 
 请求体：
 
@@ -138,7 +183,7 @@ curl -s "http://127.0.0.1:8000/api/positions?strategy_code=nice-us"
 |------|------|------|
 | `strategy_id` | 是 | 策略 ID |
 | `signal_date` | 是 | 信号日期 YYYY-MM-DD |
-| `security_code` | 是 | 证券代码 |
+| `security_code` | 是 | 证券代码，必须先由 Agent 标准化 |
 | `direction` | 是 | `BUY` 或 `SELL` |
 | `expected_price` | 否 | 预期价格 |
 | `expected_quantity` | 否 | 预期数量 |
@@ -151,6 +196,8 @@ curl -s "http://127.0.0.1:8000/api/positions?strategy_code=nice-us"
 
 > **自动计算数量**：如果提供了 `expected_price` 但未提供 `expected_quantity`，后端会用 `策略.position_size / expected_price` 自动计算，并按市场规则取整（A 股取整到 100，美股取整到 1）。
 
+增量导入示例：
+
 ```bash
 curl -s -X POST "http://127.0.0.1:8000/api/signals/batch" \
   -H "Content-Type: application/json" \
@@ -159,11 +206,23 @@ curl -s -X POST "http://127.0.0.1:8000/api/signals/batch" \
 
 ### 方式 B：文本粘贴（`POST /api/signals/import-text`）
 
+仅当用户给的是原始文本，且你无法先转成结构化 JSON 时使用。即便走文本入口，也必须先做：
+
+1. 解析出候选信号
+2. 标准化证券代码
+3. 批内去重
+4. 查询已有信号
+5. 只有确认存在新增时才执行导入
+
 ```bash
 curl -s -X POST "http://127.0.0.1:8000/api/signals/import-text" \
   -H "Content-Type: application/json" \
   -d '{"text":"NVDA BUY 120.5\nAAPL SELL 185.0"}'
 ```
+
+### 方式 C：文件上传（`POST /api/signals/import`）
+
+仅当用户明确提供 txt/csv 文件且不适合先转结构化 JSON 时使用。文件内容同样要先执行“解析 -> 标准化 -> 批内去重 -> 查询已有 -> 仅导入增量”。
 
 ### 响应结构（三种方式通用）
 
@@ -180,11 +239,27 @@ curl -s -X POST "http://127.0.0.1:8000/api/signals/import-text" \
 
 部分失败时 `errors` 会包含具体错误信息（最多 10 条）。
 
+### 幂等导入示例
+
+示例 1：同一信号二次执行
+
+1. 第一次查询未命中，导入 1 条新增。
+2. 第二次查询命中同键同方向信号。
+3. 不再调用 `POST`，直接汇报：`已跳过 1 条重复，已存在，未重复导入`。
+
+示例 2：混合批次部分已存在
+
+1. 候选信号共 5 条。
+2. 查重后发现 2 条已存在，3 条为新增。
+3. 最终只提交这 3 条新增。
+4. 对外汇报：`已跳过 2 条重复，准备导入 3 条新增`。
+
 ### 信号管理端点
 
 | 端点 | 说明 |
 |------|------|
 | `GET /api/signals?strategy_id=1&start_date=2026-03-01` | 查询信号列表（limit 默认 100，最大 1000） |
+| `GET /api/signals?strategy_id=1&signal_date=2026-03-12&security_code=NVDA&limit=1000` | 导入前查重的推荐查询方式 |
 | `POST /api/signals/{id}/cancel` | 取消待执行信号（仅 PENDING） |
 | `DELETE /api/signals/{id}` | 删除信号（仅 PENDING/EXECUTED） |
 
@@ -243,7 +318,7 @@ curl -s "http://127.0.0.1:8000/api/performance/metrics/1"
 
 ## 证券代码标准化规则
 
-Agent 发送请求前应自行标准化代码，后端也会做一次：
+Agent 在导入前必须先自行标准化代码，再做查重；不要依赖后端兜底。
 
 ### 美股
 
@@ -260,8 +335,14 @@ Agent 发送请求前应自行标准化代码，后端也会做一次：
 | `000001.XSHE` | `SZ000001` | `.XSHE` → `SZ` 前缀 |
 | `600000.XSHG` | `SH600000` | `.XSHG` → `SH` 前缀 |
 | `SZ000001` | `SZ000001` | 已有前缀则保留 |
+| `SH600000` | `SH600000` | 已有前缀则保留 |
 | `600000`（纯 6 位） | `SH600000` | `6` 开头 → SH |
 | `000001`（纯 6 位） | `SZ000001` | `0`/`3` 开头 → SZ |
+
+导入前查重时，必须使用标准化后的结果作为 key。例如：
+
+- `74NVDA`、`nvda`、`NVDA` 统一按 `NVDA` 查重
+- `002694.XSHE`、`SZ002694` 统一按 `SZ002694` 查重
 
 ---
 
@@ -289,5 +370,63 @@ Agent 发送请求前应自行标准化代码，后端也会做一次：
 
 - 后端不可用 → 报告具体的连接错误
 - 策略代码不存在 → 停止操作，报告给用户，不要猜测
+- 查重接口失败 → 停止导入，报告给用户，不要在未知状态下继续
+- 批内同键冲突 → 停止导入，列出冲突项让用户确认
 - 源文件有歧义行 → 展示问题行让用户确认，不要自动跳过
 - 批量导入部分失败 → 完整展示所有 error 项
+
+---
+
+## 能力 5：数据库备份
+
+### 触发备份
+
+`POST /api/backup`
+
+无需请求体。后端调用 mysqldump 导出整个 pms 数据库为 SQL 文件。
+
+```bash
+curl -s -X POST "http://127.0.0.1:8000/api/backup"
+```
+
+#### 响应结构
+
+```json
+{
+  "success": true,
+  "message": "备份完成: pms_2026-03-13_221500.sql",
+  "data": {
+    "filename": "pms_2026-03-13_221500.sql",
+    "path": "D:/Dropbox/Project/cf_quant_web/pms_2026-03-13_221500.sql",
+    "size_kb": 142.5,
+    "elapsed_seconds": 1.23
+  }
+}
+```
+
+### 列出已有备份
+
+`GET /api/backup/list`
+
+```bash
+curl -s "http://127.0.0.1:8000/api/backup/list"
+```
+
+#### 响应结构
+
+```json
+{
+  "total": 3,
+  "backups": [
+    {
+      "filename": "pms_2026-03-13_221500.sql",
+      "size_kb": 142.5,
+      "modified_at": "2026-03-13 22:15:00"
+    }
+  ]
+}
+```
+
+### 展示重点
+
+向用户汇报时聚焦：`filename`、`size_kb`、备份是否成功。列表展示时用表格呈现。
