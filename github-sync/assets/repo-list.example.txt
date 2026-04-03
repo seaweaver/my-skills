@@ -1,0 +1,9 @@
+# Version 1 keeps the real repository list inside scripts/sync_repos.ps1.
+# This file is documentation only.
+
+D:\Dropbox\Project\my-skills
+D:\iCloud\iCloudDrive\iCloud~md~obsidian\iCloudNote
+D:\Dropbox\Project\cf_quant
+D:\Dropbox\Project\cf_quant_web
+D:\Dropbox\Project\cf_quant_weixin
+D:\Dropbox\Project\data_project

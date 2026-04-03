@@ -19,6 +19,9 @@ my-skills/
 ├── doc-coauthoring/       # 文档合著工作流
 ├── docx/                  # Word 文档操作
 ├── frontend-design/       # 前端界面设计
+├── github-sync/           # 多本地 Git 仓库同步
+├── obsidian-cli/          # 官方 Obsidian CLI 自动化
+├── obsidian-keeper/       # Obsidian 笔记治理
 ├── pdf/                   # PDF 文件处理
 ├── pptx/                  # PowerPoint 演示文稿
 ├── prompt-engineering-patterns/  # 提示工程模式

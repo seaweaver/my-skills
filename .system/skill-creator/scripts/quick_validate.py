@@ -10,17 +10,6 @@ from pathlib import Path
 import yaml
 
 MAX_SKILL_NAME_LENGTH = 64
-ALLOWED_PROPERTIES = {
-    "allowed-tools",
-    "author",
-    "description",
-    "license",
-    "metadata",
-    "name",
-    "tags",
-    "triggers",
-    "version",
-}
 
 
 def validate_skill(skill_path):
@@ -31,9 +20,7 @@ def validate_skill(skill_path):
     if not skill_md.exists():
         return False, "SKILL.md not found"
 
-    # Skills in this repo are UTF-8 markdown files; relying on the Windows
-    # locale codec breaks validation for Chinese and other non-ASCII content.
-    content = skill_md.read_text(encoding="utf-8-sig")
+    content = skill_md.read_text()
     if not content.startswith("---"):
         return False, "No YAML frontmatter found"
 
@@ -50,9 +37,11 @@ def validate_skill(skill_path):
     except yaml.YAMLError as e:
         return False, f"Invalid YAML in frontmatter: {e}"
 
-    unexpected_keys = set(frontmatter.keys()) - ALLOWED_PROPERTIES
+    allowed_properties = {"name", "description", "license", "allowed-tools", "metadata"}
+
+    unexpected_keys = set(frontmatter.keys()) - allowed_properties
     if unexpected_keys:
-        allowed = ", ".join(sorted(ALLOWED_PROPERTIES))
+        allowed = ", ".join(sorted(allowed_properties))
         unexpected = ", ".join(sorted(unexpected_keys))
         return (
             False,
