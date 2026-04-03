@@ -49,6 +49,9 @@ $singlePathList = @(Get-RelativePathsFromStatus -StatusLines @('?? report\sample
 Assert-Equal -Actual $singlePathList.Count -Expected 1 -Message 'Single status lines should still return an array-like path list.'
 Assert-Equal -Actual $singlePathList[0] -Expected 'report\sample.sql' -Message 'Single status lines should preserve the relative path.'
 
+$singleSummary = Get-ChangeSummary -StatusLines @('?? report\sample.sql') -NameStatusLines @('A report\sample.sql') -DiffStatLines @(' report/sample.sql | 1 +')
+Assert-Equal -Actual $singleSummary.TotalChangedFiles -Expected 1 -Message 'Single-file changes should still produce a valid summary.'
+
 $report = Format-SyncReport -Results @(
     [pscustomobject]@{
         RepoName = 'my-skills'

@@ -193,7 +193,7 @@ function Test-LargeFiles {
 
     $largeFiles = @()
     $threshold = [int64]$script:GitHubSyncConfig.LargeFileThresholdBytes
-    $paths = Get-RelativePathsFromStatus -StatusLines $StatusLines
+    $paths = @(Get-RelativePathsFromStatus -StatusLines $StatusLines)
 
     foreach ($relativePath in $paths) {
         $fullPath = Join-Path $RepoPath $relativePath
@@ -354,7 +354,7 @@ function Get-ChangeSummary {
         [string[]]$DiffStatLines
     )
 
-    $paths = Get-RelativePathsFromStatus -StatusLines $StatusLines
+    $paths = @(Get-RelativePathsFromStatus -StatusLines $StatusLines)
     $categoryCounts = @{
         docs = 0
         scripts = 0
