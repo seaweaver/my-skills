@@ -90,6 +90,6 @@ Return only the final summary report.
 - `D:\Dropbox\Project\my-skills`
 - `D:\iCloud\iCloudDrive\iCloud~md~obsidian\iCloudNote`
 - `D:\Dropbox\Project\cf_quant`
-- `D:\Dropbox\Project\cf_quant_web`
+- `D:\cf_quant_web`
 - `D:\Dropbox\Project\cf_quant_weixin`
 - `D:\Dropbox\Project\data_project`

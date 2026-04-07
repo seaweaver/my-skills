@@ -20,6 +20,7 @@ my-skills/
 ├── docx/                  # Word 文档操作
 ├── frontend-design/       # 前端界面设计
 ├── github-sync/           # 多本地 Git 仓库同步
+├── jisilu-hot-news/       # 集思录 7 天热帖采集与整理
 ├── obsidian-cli/          # 官方 Obsidian CLI 自动化
 ├── obsidian-keeper/       # Obsidian 笔记治理
 ├── pdf/                   # PDF 文件处理

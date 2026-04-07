@@ -10,7 +10,7 @@ $script:GitHubSyncConfig = @{
         @{ Name = 'my-skills'; Path = 'D:\Dropbox\Project\my-skills' },
         @{ Name = 'iCloudNote'; Path = 'D:\iCloud\iCloudDrive\iCloud~md~obsidian\iCloudNote' },
         @{ Name = 'cf_quant'; Path = 'D:\Dropbox\Project\cf_quant' },
-        @{ Name = 'cf_quant_web'; Path = 'D:\Dropbox\Project\cf_quant_web' },
+        @{ Name = 'cf_quant_web'; Path = 'D:\cf_quant_web' },
         @{ Name = 'cf_quant_weixin'; Path = 'D:\Dropbox\Project\cf_quant_weixin' },
         @{ Name = 'data_project'; Path = 'D:\Dropbox\Project\data_project' }
     )
