@@ -1,0 +1,529 @@
+{
+  "report_date": "2026-04-08",
+  "fetched_count": 30,
+  "selected_count": 12,
+  "overview": {
+    "recurring_keywords": [
+      "stock-strategy",
+      "convertible-bond",
+      "fund-etf",
+      "dividend-income",
+      "arbitrage",
+      "new-share"
+    ],
+    "consensus_points": [
+      "可转债条款博弈、下修和风险识别仍是社区最稳定的高频主题。",
+      "高股息与吃息策略讨论明显增多，核心分歧在于安全性与估值。",
+      "保守理财、存款与资金安全话题明显升温。"
+    ],
+    "divergent_topics": [
+      "辞职后，全职投资的你们都在做什么？",
+      "人类的悲欢并不相通，投资亏钱让人更有同情心吗？",
+      "各位投资者:您是怎么“孝顺”自己父母的？"
+    ]
+  },
+  "selected_topics": [
+    {
+      "title": "辞职后，全职投资的你们都在做什么？",
+      "url": "https://www.jisilu.cn/question/520025",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 15324,
+      "topic_like_users": 31,
+      "score": 180,
+      "core_issue": "辞职后，全职投资的你们都在做什么？",
+      "op_summary": "本人10年左右的工作经历（社保），也有过短暂的两次创业经历，近两次的职业道路让我感受到了瓶颈",
+      "top_comments": [
+        {
+          "author": "sadblue1986",
+          "like_count": 114,
+          "agree_user_count": 114,
+          "summary": "能全资投资有两个前提，一是资本金充足，二是有了相对不错的收益率",
+          "published_info": "2026-04-05 10:27 来自广东"
+        },
+        {
+          "author": "l93868",
+          "like_count": 79,
+          "agree_user_count": 79,
+          "summary": "看了大家的讨论，蛮有感触",
+          "published_info": "2026-04-06 22:22 来自北京"
+        },
+        {
+          "author": "szhj2006",
+          "like_count": 75,
+          "agree_user_count": 75,
+          "summary": "我把空闲的公寓改成了交易室，朋友赞助的茶桌，一排电脑，一个上下床，我的好朋友多，几乎每天都有来喝茶吹牛的，中午就吃麦当劳睡午觉，打打三角洲英雄联盟，太美好了",
+          "published_info": "2026-04-03 10:20 来自山东"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [],
+      "published_at": "2026-04-02 12:28"
+    },
+    {
+      "title": "人类的悲欢并不相通，投资亏钱让人更有同情心吗？",
+      "url": "https://www.jisilu.cn/question/520041",
+      "category": "其他",
+      "tags": [
+        "投资",
+        "战争",
+        "亏钱",
+        "共情",
+        "同情心"
+      ],
+      "reply_count": 0,
+      "views": 6474,
+      "topic_like_users": 10,
+      "score": 124,
+      "core_issue": "人类的悲欢并不相通，投资亏钱让人更有同情心吗？",
+      "op_summary": "截止今天收盘，今年账户的浮盈接近归零了，那种得到了又失去的痛苦，难以言表",
+      "top_comments": [
+        {
+          "author": "luckzpz",
+          "like_count": 25,
+          "agree_user_count": 25,
+          "summary": "其实股价还在高位，牛市三重顶过不去的话，漫漫三年熊市是很难熬的，现在只是开始 当然如果指数过4200，连续守住三天，我的判断就错了",
+          "published_info": "2026-04-02 19:35 来自江苏"
+        },
+        {
+          "author": "陪伴成长",
+          "like_count": 18,
+          "agree_user_count": 18,
+          "summary": "根据历史经验，投资亏损容易产生文学家",
+          "published_info": "2026-04-02 18:14 来自上海"
+        },
+        {
+          "author": "凡先生",
+          "like_count": 17,
+          "agree_user_count": 17,
+          "summary": "菩萨畏因，凡人畏果",
+          "published_info": "2026-04-05 12:31修改 来自江苏"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [],
+      "published_at": "2026-04-02 17:51"
+    },
+    {
+      "title": "各位投资者:您是怎么“孝顺”自己父母的？",
+      "url": "https://www.jisilu.cn/question/520074",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 6741,
+      "topic_like_users": 21,
+      "score": 123,
+      "core_issue": "各位投资者:您是怎么“孝顺”自己父母的？",
+      "op_summary": "我的父母今年都65岁了，按照农村的说法，73，84，阎王不接自己去，在这世界上最多也就活个20年了",
+      "top_comments": [
+        {
+          "author": "yingsaiyu",
+          "like_count": 89,
+          "agree_user_count": 89,
+          "summary": "七年前骗他们说给他们各买了一份保险，每月有780元保险金，通过公司户发放，近几年赚了点，每人现在各涨到3800元，他们也觉得有退休金了！爸妈也安心了许多！",
+          "published_info": "2026-04-03 20:12 来自浙江"
+        },
+        {
+          "author": "zjl307",
+          "like_count": 77,
+          "agree_user_count": 77,
+          "summary": "父母大半辈子在农村干农活，我和弟一直在外打工，工资几千元",
+          "published_info": "2026-04-04 00:01 来自广东"
+        },
+        {
+          "author": "西什库",
+          "like_count": 66,
+          "agree_user_count": 66,
+          "summary": "带他们做了一些他们一辈子没做过的事 带他们看了歌剧，看了脱口秀，吃了黑珍珠餐厅，拍了全家福，做了体检，做了按摩，去了沙漠，骑了骆驼 带他们坐了飞机，他们还以为飞机上都像电视里演的一样只有一排排座位，第一次知道还能在飞机上...",
+          "published_info": "2026-04-03 20:11修改 来自北京"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-03 14:15"
+    },
+    {
+      "title": "今天低下头，做了一个最基础的理财工作，哎",
+      "url": "https://www.jisilu.cn/question/520105",
+      "category": "债券/可转债",
+      "tags": [],
+      "reply_count": 0,
+      "views": 12413,
+      "topic_like_users": 14,
+      "score": 118,
+      "core_issue": "今天低下头，做了一个最基础的理财工作，哎",
+      "op_summary": "帮丈母娘家做存款规划，资金量几十个吧，查询了本地十多家银行，选了三四个候选对象 目标是三年期银行定期存款利率 问下来 四大行基本上都是1.5%每年 股份行1.8左右 部分更小的地区银行可能接近2个点 另外还有存款是否可部分提前支取，是否有礼品等选项 折腾两天，其实也就比她原来计划...",
+      "top_comments": [
+        {
+          "author": "caishendao",
+          "like_count": 23,
+          "agree_user_count": 23,
+          "summary": "千万别废力不讨好",
+          "published_info": "2026-04-05 11:39 来自山东"
+        },
+        {
+          "author": "newbison",
+          "like_count": 21,
+          "agree_user_count": 21,
+          "summary": "千万别帮老年人做股票投资",
+          "published_info": "2026-04-05 21:09 来自上海"
+        },
+        {
+          "author": "过眼云烟",
+          "like_count": 16,
+          "agree_user_count": 16,
+          "summary": "老老实实存四大行吧，多一千块也改变不了啥，各种银行跑来跑去油钱也几十上百吧，老人去取也麻烦",
+          "published_info": "2026-04-05 06:27 来自陕西"
+        }
+      ],
+      "analyst_note": "重点是高股息策略的风险收益匹配。行动上应检查盈利稳定性、估值、监管风险和利率环境。",
+      "themes": [
+        "dividend-income",
+        "asset-allocation",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-04 21:34"
+    },
+    {
+      "title": "生猪:无人敢退的产能消耗战",
+      "url": "https://www.jisilu.cn/question/520019",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 9129,
+      "topic_like_users": 16,
+      "score": 106,
+      "core_issue": "生猪:无人敢退的产能消耗战",
+      "op_summary": "当下的生猪行业，正陷入一场无人能破的猜疑链死局",
+      "top_comments": [
+        {
+          "author": "抄底专业户",
+          "like_count": 33,
+          "agree_user_count": 33,
+          "summary": "毫不客气地说，楼主这个标题和内容人云亦云浮于表面",
+          "published_info": "2026-04-05 07:39 来自广西"
+        },
+        {
+          "author": "ishuguang",
+          "like_count": 27,
+          "agree_user_count": 27,
+          "summary": "@魏小狗 只有扩张才能保持市场规模 扩张是个风险很大的行为，一旦坚持不下去则杠杆损失会让企业快速破产，最近的例子就是正邦",
+          "published_info": "2026-04-03 10:31 来自上海"
+        },
+        {
+          "author": "赵甲",
+          "like_count": 11,
+          "agree_user_count": 11,
+          "summary": "现在搞建筑的农民工大多没活干了，在农村生活着想着没事儿干，就抓两个猪崽喂着，名曰:是自己家养的土猪肉，过年杀了猪放冰箱可以吃上一年不用花钱",
+          "published_info": "2026-04-02 19:45 来自湖北"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-02 11:13"
+    },
+    {
+      "title": "龙大再分析！下修条款宽松，随时可再次计时下修",
+      "url": "https://www.jisilu.cn/question/520037",
+      "category": "债券/可转债",
+      "tags": [
+        "龙大转债"
+      ],
+      "reply_count": 0,
+      "views": 8349,
+      "topic_like_users": 9,
+      "score": 102,
+      "core_issue": "龙大再分析！下修条款宽松，随时可再次计时下修",
+      "op_summary": "风险与机遇并存 1、下修条款宽松，随时可以修改不下修期限，再次计时下修",
+      "top_comments": [
+        {
+          "author": "myronZhou",
+          "like_count": 9,
+          "agree_user_count": 9,
+          "summary": "老赖风气逐渐从个人，企业开始绵延到上市公司，学东时，岭南一个公告，“没钱兑付，我要违约”，你们拿他也没办法，就目前的风气发展，履约的反而是傻子",
+          "published_info": "2026-04-02 19:35 来自四川"
+        },
+        {
+          "author": "知足即是幸福",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "单从人性方面来说，1.我要是大股东肯定不会下修，下修就意味着质押爆仓，失去公司控制权，宁愿拖到最后，看看这三个月是不是有奇迹，2.掏空公司是必然的，这是人性，这么多上市公司大股东破产的，有哪个没掏空上市公司，就看掏空到什...",
+          "published_info": "2026-04-02 18:14 来自河北"
+        },
+        {
+          "author": "铁骨素心",
+          "like_count": 7,
+          "agree_user_count": 7,
+          "summary": "从大股东的角度：下修是马上崩，不下修再赖几个月 到时候能还多少是多少，还不了天也不得塌",
+          "published_info": "2026-04-02 19:04 来自四川"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "fund-etf",
+        "arbitrage",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-02 15:59"
+    },
+    {
+      "title": "大佬们，我不想努力了。全仓梭哈工农中建四大行吃息有什么风险吗？",
+      "url": "https://www.jisilu.cn/question/520098",
+      "category": "股票",
+      "tags": [],
+      "reply_count": 0,
+      "views": 9083,
+      "topic_like_users": 3,
+      "score": 99,
+      "core_issue": "大佬们，我不想努力了",
+      "op_summary": "按4%的股息率，也可以躺平了吧？ 四大行属于大而不能倒的存在，所以我没选股份制银行",
+      "top_comments": [
+        {
+          "author": "imaocxh",
+          "like_count": 39,
+          "agree_user_count": 39,
+          "summary": "我觉得，你拿不住的",
+          "published_info": "2026-04-05 16:50 来自广东"
+        },
+        {
+          "author": "都星哲733",
+          "like_count": 20,
+          "agree_user_count": 20,
+          "summary": "银行出事的时候，先杀股东，再杀优先股，再杀存款保险，再杀企业存款，保住个人存款兑付，稳定 这个是股东分股息承担的风险 大而不能倒说的是保障存款，不是保障股东权益",
+          "published_info": "2026-04-05 14:14 来自湖南"
+        },
+        {
+          "author": "周期为王",
+          "like_count": 20,
+          "agree_user_count": 20,
+          "summary": "风险就是你把K线拉开， 像2018—2023连跌五年，最后熬不住割肉",
+          "published_info": "2026-04-05 07:13 来自福建"
+        }
+      ],
+      "analyst_note": "重点是高股息策略的风险收益匹配。行动上应检查盈利稳定性、估值、监管风险和利率环境。",
+      "themes": [
+        "fund-etf",
+        "dividend-income"
+      ],
+      "published_at": "2026-04-04 16:44"
+    },
+    {
+      "title": "转债市场要崩",
+      "url": "https://www.jisilu.cn/question/520030",
+      "category": "债券/可转债",
+      "tags": [],
+      "reply_count": 0,
+      "views": 6597,
+      "topic_like_users": 2,
+      "score": 96,
+      "core_issue": "转债市场要崩",
+      "op_summary": "龙大，东时，宏图都在暴跌",
+      "top_comments": [
+        {
+          "author": "luckzpz",
+          "like_count": 18,
+          "agree_user_count": 18,
+          "summary": "真有这等好事？",
+          "published_info": "2026-04-02 19:33 来自江苏"
+        },
+        {
+          "author": "杭州开股东会",
+          "like_count": 9,
+          "agree_user_count": 9,
+          "summary": "求崩，再不崩真的能买的好少",
+          "published_info": "2026-04-02 19:08 来自浙江"
+        },
+        {
+          "author": "整顿机构",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "3个月，好几个要违约的",
+          "published_info": "2026-04-02 15:25 来自北京"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-02 14:34"
+    },
+    {
+      "title": "伊朗的股民现在是什么样的心情？",
+      "url": "https://www.jisilu.cn/question/520011",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 6476,
+      "topic_like_users": 4,
+      "score": 89,
+      "core_issue": "伊朗的股民现在是什么样的心情？",
+      "op_summary": "2026年3月7日，伊朗经济部长宣布股市将继续关闭直至另行通知，这是基于伊朗最高证券委员会的决定",
+      "top_comments": [
+        {
+          "author": "孔曼子",
+          "like_count": 57,
+          "agree_user_count": 57,
+          "summary": "刀都架脖子上了，你还惦记着自己口袋里的那俩钢镚儿，这是啥格局啊",
+          "published_info": "2026-04-02 16:13 来自四川"
+        },
+        {
+          "author": "shshchen",
+          "like_count": 31,
+          "agree_user_count": 31,
+          "summary": "1944年日本鬼子控制下的上海股市，1947年蒋介石控制下的上海股市，都是大牛市",
+          "published_info": "2026-04-02 12:40 来自上海"
+        },
+        {
+          "author": "魔豆",
+          "like_count": 27,
+          "agree_user_count": 27,
+          "summary": "一个土耳其的朋友说 你们的股市还不如伊朗呢 不是量化割就是老村长贪腐巨大",
+          "published_info": "2026-04-02 13:50 来自天津"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-02 09:51"
+    },
+    {
+      "title": "2026-4-7 可转债 调仓",
+      "url": "https://www.jisilu.cn/question/520127",
+      "category": "债券/可转债",
+      "tags": [],
+      "reply_count": 0,
+      "views": 2451,
+      "topic_like_users": 7,
+      "score": 88,
+      "core_issue": "2026-4-7 可转债 调仓",
+      "op_summary": "投资是一场人气竞赛，在人气最旺的时候买进是最危险的，在那个时候，一切利好因素和观点都已经计入价格中，而且再也不会有新的买家出现. . 最安全，获利潜力最大的投资，是在没人喜欢的时候买进，假以时日，一旦品种受到欢迎，那么它的价格只可能一个方向变化：上涨 ！ 目前个人现阶段转债仓位占...",
+      "top_comments": [
+        {
+          "author": "qgj8848",
+          "like_count": 23,
+          "agree_user_count": 23,
+          "summary": "@捡钢镚 目前为止，全是卖出操作... 是的，股市自有其自身规律，目前上不去只能往下走，特别是转债对应的小票，虚高",
+          "published_info": "2026-04-07 12:12 来自安徽"
+        },
+        {
+          "author": "捡钢镚",
+          "like_count": 15,
+          "agree_user_count": 15,
+          "summary": "目前为止，全是卖出操作...",
+          "published_info": "2026-04-07 10:22 来自广东"
+        },
+        {
+          "author": "捡钢镚",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "转债全天成交了599.9亿，指数上涨了0.59%，A股成交了16238亿... 下午也是卖出，全天净减仓了10.7万元... 今天是普小涨，没有太好的调仓机会，先减仓少少...",
+          "published_info": "2026-04-07 15:02 来自广东"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "fund-etf",
+        "arbitrage",
+        "dividend-income",
+        "new-share",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-07 08:26"
+    },
+    {
+      "title": "龙大今天会提议下修么",
+      "url": "https://www.jisilu.cn/question/519989",
+      "category": "债券/可转债",
+      "tags": [],
+      "reply_count": 0,
+      "views": 5882,
+      "topic_like_users": 4,
+      "score": 88,
+      "core_issue": "龙大今天会提议下修么",
+      "op_summary": "不敢多加，追了300张，赌下修",
+      "top_comments": [
+        {
+          "author": "销户保平安",
+          "like_count": 9,
+          "agree_user_count": 9,
+          "summary": "cis@szse.cn 请深交所督促山东龙大美食股份有限公司妥善解决转债到期兑付危机 深交所 目前山东龙大美食股份有限公司发行的龙大转债出现兑付风险传闻，公司没有进行有效处置，促进转股，请深交所督促公司采取积极措施促进转...",
+          "published_info": "2026-04-02 11:57 来自广西"
+        },
+        {
+          "author": "shaneqi",
+          "like_count": 7,
+          "agree_user_count": 7,
+          "summary": "可以搜搜当时全筑，正邦，中装的帖子，跟现在的氛围一样",
+          "published_info": "2026-04-02 11:13 来自北京"
+        },
+        {
+          "author": "云青",
+          "like_count": 6,
+          "agree_user_count": 6,
+          "summary": "@销户保平安 恐慌过去，放量 了 加仓 已经干到3000张了",
+          "published_info": "2026-04-02 13:50 来自上海"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond"
+      ],
+      "published_at": "2026-04-01 15:28"
+    },
+    {
+      "title": "2026-4-2 可转债 调仓",
+      "url": "https://www.jisilu.cn/question/520006",
+      "category": "债券/可转债",
+      "tags": [],
+      "reply_count": 0,
+      "views": 2527,
+      "topic_like_users": 4,
+      "score": 81,
+      "core_issue": "2026-4-2 可转债 调仓",
+      "op_summary": "投资是一场人气竞赛，在人气最旺的时候买进是最危险的，在那个时候，一切利好因素和观点都已经计入价格中，而且再也不会有新的买家出现. . 最安全，获利潜力最大的投资，是在没人喜欢的时候买进，假以时日，一旦品种受到欢迎，那么它的价格只可能一个方向变化：上涨 ！ 目前个人现阶段转债仓位占...",
+      "top_comments": [
+        {
+          "author": "捡钢镚",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "转债全天缩量673亿，又回到了600亿的区间了... 其实很多品种也跌不太动了，有些僵持，当然也可能是今天跌不动了，明天继续... 看样子中东美伊冲突不结束，股市好不了，这个观念越来越多的被认同了... 全天净加仓了14...",
+          "published_info": "2026-04-02 15:01 来自广东"
+        },
+        {
+          "author": "捡钢镚",
+          "like_count": 7,
+          "agree_user_count": 7,
+          "summary": "午盘转债成交了444亿，比昨日少52亿，指数下跌了1.29%，A股成交了11970亿，比昨日少1400亿... 转债平开低走，回吐昨日大部分涨幅了... 昨天虽然知道转债未稳，但是也没有多卖出一些，主要依靠网格在卖，还是...",
+          "published_info": "2026-04-02 11:40 来自广东"
+        },
+        {
+          "author": "捡钢镚",
+          "like_count": 6,
+          "agree_user_count": 6,
+          "summary": "@我是一个新用户 早上才说了，要克制，加这么多",
+          "published_info": "2026-04-02 15:06 来自广东"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "fund-etf",
+        "arbitrage",
+        "new-share",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-02 08:29"
+    }
+  ],
+  "topic_fetch_errors": [],
+  "topic_parse_errors": []
+}
