@@ -13,8 +13,8 @@ Use this skill to standardize session handoff and resume work without re-scannin
 - `handover resume`
 - `handover`
 
-Use `write` when the current session is ending and you need to preserve state.  
-Use `resume` when a new session should continue from existing handoff files.  
+Use `write` when the current session is ending and you need to preserve state.
+Use `resume` when a new session should continue from existing handoff files.
 For plain `handover`, infer mode only if the signal is clear:
 
 - active thread with real work already done -> `write`
@@ -75,8 +75,8 @@ When updating `AGENTS.md` or `README.md`, use these exact markers:
 - `<!-- handover:readme:begin -->`
 - `<!-- handover:readme:end -->`
 
-If the block already exists, replace only the block body.  
-If the block does not exist, append a new block at the end of the file.  
+If the block already exists, replace only the block body.
+If the block does not exist, append a new block at the end of the file.
 Do not rewrite the rest of the file.
 
 ## Output
