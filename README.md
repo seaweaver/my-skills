@@ -1,6 +1,6 @@
 # my-skills
 
-Claude Code Agent Skills 集合仓库 — 包含 21 个独立技能和 14 个 Superpowers 增强技能。
+Claude Code Agent Skills 集合仓库 — 包含 22 个独立技能和 14 个 Superpowers 增强技能。
 
 ## 技能列表
 
@@ -13,6 +13,7 @@ Claude Code Agent Skills 集合仓库 — 包含 21 个独立技能和 14 个 Su
 | docx | Word 文档创建/编辑/操作 |
 | frontend-design | 高质量前端界面设计与生成 |
 | github-sync | 多本地 Git 仓库批量同步到 GitHub |
+| handover | 会话接力、HANDOVER.md 覆盖写入与知识沉淀 |
 | jisilu-hot-news | 集思录近 7 天热帖采集、研报落盘与简版摘要 |
 | obsidian-cli | 官方 Obsidian CLI 自动化 |
 | obsidian-keeper | Obsidian vault 治理与清理 |
