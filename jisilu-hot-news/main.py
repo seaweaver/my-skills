@@ -38,7 +38,21 @@ def parse_args():
     return parser.parse_args()
 
 
+def configure_console_encoding() -> None:
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+        if stream is None:
+            continue
+        reconfigure = getattr(stream, "reconfigure", None)
+        if callable(reconfigure):
+            try:
+                reconfigure(encoding="utf-8", errors="replace")
+            except Exception:
+                pass
+
+
 def main():
+    configure_console_encoding()
     args = parse_args()
     report_date = date.today().isoformat()
     output_dir = Path(args.output_dir)
