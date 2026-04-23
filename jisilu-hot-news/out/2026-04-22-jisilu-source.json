@@ -1,0 +1,535 @@
+{
+  "report_date": "2026-04-22",
+  "fetched_count": 30,
+  "selected_count": 12,
+  "overview": {
+    "recurring_keywords": [
+      "convertible-bond",
+      "stock-strategy",
+      "fund-etf",
+      "闻泰科技",
+      "闻泰转债",
+      "arbitrage"
+    ],
+    "consensus_points": [
+      "可转债条款博弈、下修和风险识别仍是社区最稳定的高频主题。",
+      "高股息与吃息策略讨论明显增多，核心分歧在于安全性与估值。"
+    ],
+    "divergent_topics": [
+      "回忆一下转债史上的活久见",
+      "如果一个中国投资者只投资标普500指数基金，未来会很惨吗",
+      "东方纳斯达克是创业板指，不是恒生科技！"
+    ]
+  },
+  "selected_topics": [
+    {
+      "title": "回忆一下转债史上的活久见",
+      "url": "https://www.jisilu.cn/question/520418",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 8911,
+      "topic_like_users": 123,
+      "score": 162,
+      "core_issue": "回忆一下转债史上的活久见",
+      "op_summary": "投机可转债多年，遇到了一桩又一桩活久见的奇葩事，以下汇总了一部分，大家看个热闹",
+      "top_comments": [
+        {
+          "author": "qgj8848",
+          "like_count": 14,
+          "agree_user_count": 14,
+          "summary": "还有两个市场不一样的计税方式，这些都证明世界就是个草台班子",
+          "published_info": "2026-04-17 22:31 来自浙江"
+        },
+        {
+          "author": "e老实和尚",
+          "like_count": 14,
+          "agree_user_count": 14,
+          "summary": "山鹰最好，为了自买自转一波又一波拉到120元，吃到了好几十差价",
+          "published_info": "2026-04-18 10:32 来自北京"
+        },
+        {
+          "author": "文明守望",
+          "like_count": 14,
+          "agree_user_count": 14,
+          "summary": "LZ真是见多识广",
+          "published_info": "2026-04-17 09:38 来自上海"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "arbitrage",
+        "dividend-income",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-17 08:37"
+    },
+    {
+      "title": "如果一个中国投资者只投资标普500指数基金，未来会很惨吗",
+      "url": "https://www.jisilu.cn/question/520466",
+      "category": "基金",
+      "tags": [],
+      "reply_count": 0,
+      "views": 8535,
+      "topic_like_users": 16,
+      "score": 161,
+      "core_issue": "如果一个中国投资者只投资标普500指数基金，未来会很惨吗",
+      "op_summary": "一觉醒来，发现美股基本新高了 无语了 前阵子本来觉得要崩了 这是过去十几年的走势 我们看不到未来，只能看到过去 过去十几年回报应该是满分的 那么未来呢 如果一个中国投资者，他自己不炒股，不买a股基金，不跟大v组合，闲钱只投资国内标普500 QD指数基金，他未来一二十年会过的很惨吗...",
+      "top_comments": [
+        {
+          "author": "Trading212",
+          "like_count": 65,
+          "agree_user_count": 65,
+          "summary": "肯定很惨，除了赚钱啥也没有学到",
+          "published_info": "2026-04-18 15:02 来自卢森堡"
+        },
+        {
+          "author": "花过水无痕",
+          "like_count": 39,
+          "agree_user_count": 39,
+          "summary": "标普500的汰弱留强熵减效果过去漫长时间是经受考验了的，游戏规则制定和执行也是更为有效的 中美两个市场的KPI指标也本质不同，一个是资本给投资者回报，一个是为企业融资",
+          "published_info": "2026-04-18 17:10修改 来自湖北"
+        },
+        {
+          "author": "孔曼子",
+          "like_count": 36,
+          "agree_user_count": 36,
+          "summary": "无论你的观点如何，可能都不得不承认一点，那就是现在的美国领导人，那种对国际规则的天然蔑视，对盟友利益的随意践踏，还有对军事霸权的病态迷恋，都是和二战之后任何一届的美国领导人，甚至包括他自己的上一届，完全不同的",
+          "published_info": "2026-04-19 21:32 来自四川"
+        }
+      ],
+      "analyst_note": "重点是配置逻辑与持仓承受力。行动上应核对估值区间、行业暴露和回撤假设。",
+      "themes": [
+        "fund-etf"
+      ],
+      "published_at": "2026-04-18 14:40"
+    },
+    {
+      "title": "东方纳斯达克是创业板指，不是恒生科技！",
+      "url": "https://www.jisilu.cn/question/520436",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 8797,
+      "topic_like_users": 33,
+      "score": 148,
+      "core_issue": "东方纳斯达克是创业板指，不是恒生科技！",
+      "op_summary": "纳指有美股七姐妹，咱们创业板也有七姐妹(宁德时代，阳光电源，中际旭创，新易盛，天孚通信，胜宏科技，东方财富)，关键是这七姐妹不受各种制裁，不像恒生科技，处处受人拿捏",
+      "top_comments": [
+        {
+          "author": "e老实和尚",
+          "like_count": 23,
+          "agree_user_count": 23,
+          "summary": "创业板 卒",
+          "published_info": "2026-04-18 11:27 来自北京"
+        },
+        {
+          "author": "一窍不通",
+          "like_count": 22,
+          "agree_user_count": 22,
+          "summary": "我现在还记得毛大师当初说完纳斯达克，之后纳指连跌一个多月，说完小市值，小市值立马迎来了闪崩",
+          "published_info": "2026-04-17 15:47 来自天津"
+        },
+        {
+          "author": "毛之川",
+          "like_count": 15,
+          "agree_user_count": 15,
+          "summary": "创业板指数不怕制裁，都是硬通货",
+          "published_info": "2026-04-19 18:37 来自浙江"
+        }
+      ],
+      "analyst_note": "重点是配置逻辑与持仓承受力。行动上应核对估值区间、行业暴露和回撤假设。",
+      "themes": [
+        "fund-etf"
+      ],
+      "published_at": "2026-04-17 13:06"
+    },
+    {
+      "title": "闻泰转债，送钱了",
+      "url": "https://www.jisilu.cn/question/520507",
+      "category": "债券/可转债",
+      "tags": [
+        "可转债",
+        "闻泰科技",
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 15652,
+      "topic_like_users": 78,
+      "score": 146,
+      "core_issue": "闻泰转债，送钱了",
+      "op_summary": "现在已经98块钱了，低于100了，溢价才2%，又是低价，又是低溢价",
+      "top_comments": [
+        {
+          "author": "持有封基",
+          "like_count": 20,
+          "agree_user_count": 20,
+          "summary": "真的佩服，马上就涨",
+          "published_info": "2026-04-22 11:20 来自上海"
+        },
+        {
+          "author": "毛之川",
+          "like_count": 17,
+          "agree_user_count": 17,
+          "summary": "豆包说，如果ST，要跌到85-90",
+          "published_info": "2026-04-21 20:33 来自浙江"
+        },
+        {
+          "author": "boeing767",
+          "like_count": 13,
+          "agree_user_count": 13,
+          "summary": "@buhao 怎么还有人信AI的，查查上交所的规定就知道*ST需要在一月就提前预告的，现在没预告，所以不会*ST，也就意味着审计不会是否定意见或者是无法表示意见",
+          "published_info": "2026-04-21 23:16 来自北京"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "arbitrage"
+      ],
+      "published_at": "2026-04-20 11:01"
+    },
+    {
+      "title": "A8到A9花了多长时间",
+      "url": "https://www.jisilu.cn/question/520502",
+      "category": "股票",
+      "tags": [],
+      "reply_count": 0,
+      "views": 7038,
+      "topic_like_users": 8,
+      "score": 133,
+      "core_issue": "A8到A9花了多长时间",
+      "op_summary": "07年上大学入市，15年经历第一波完整的牛市，资产差点到A7，19年第一次稳定站在A7上面，并且满仓无心理压力",
+      "top_comments": [
+        {
+          "author": "tracyoasis",
+          "like_count": 30,
+          "agree_user_count": 30,
+          "summary": "普通人a7-a8 还是很常见的，a8-a9基本是一辈子越不过去的坎",
+          "published_info": "2026-04-20 10:46 来自上海"
+        },
+        {
+          "author": "lulia",
+          "like_count": 17,
+          "agree_user_count": 17,
+          "summary": "@红军战士 看你描述，我比楼主略大2，3岁吧",
+          "published_info": "2026-04-20 16:40 来自上海"
+        },
+        {
+          "author": "ppanchor",
+          "like_count": 17,
+          "agree_user_count": 17,
+          "summary": "我也觉得A8到A9看不到头，和楼主经历类似，但早一些，在19年达到A8，从那以后投资心态越来越保守，到25才第一次爬升到A8.3，我觉得按我现在这种心态，到60岁，最多爬升到A8.6，A9无望，但再让我像A7-A8那个时...",
+          "published_info": "2026-04-21 14:37 来自福建"
+        }
+      ],
+      "analyst_note": "重点是配置逻辑与持仓承受力。行动上应核对估值区间、行业暴露和回撤假设。",
+      "themes": [
+        "fund-etf"
+      ],
+      "published_at": "2026-04-20 08:45"
+    },
+    {
+      "title": "闻泰转债这种跌法还分析啥基本面啊！",
+      "url": "https://www.jisilu.cn/question/520383",
+      "category": "债券/可转债",
+      "tags": [
+        "闻泰科技",
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 10292,
+      "topic_like_users": 32,
+      "score": 132,
+      "core_issue": "闻泰转债这种跌法还分析啥基本面啊！",
+      "op_summary": "看走势就是阶梯下杀，连续6天阴线，天天新低",
+      "top_comments": [
+        {
+          "author": "封基越放越醇",
+          "like_count": 27,
+          "agree_user_count": 27,
+          "summary": "85.966亿的盘子，大盘债只能靠基本面转好才有投资价值",
+          "published_info": "2026-04-17 10:15 来自河南"
+        },
+        {
+          "author": "封基越放越醇",
+          "like_count": 21,
+          "agree_user_count": 21,
+          "summary": "这种问题债想找好预期，4月份只有转股价值跌破85后下修计数开始才能有（再次下修预期） 中期预期就是4月30日的年报和季报公布（靴子落地） 也许最近10天能产生一个好的买点",
+          "published_info": "2026-04-21 10:20 来自河南"
+        },
+        {
+          "author": "封基越放越醇",
+          "like_count": 18,
+          "agree_user_count": 18,
+          "summary": "@锅大 大佬，投资收益就是来源于不确定性，如果等年报出来了有确定性了，可能也就没普通人什么事了",
+          "published_info": "2026-04-21 15:19修改 来自河南"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond"
+      ],
+      "published_at": "2026-04-16 12:23"
+    },
+    {
+      "title": "闻泰转债跌破面值了，你们还在怕什么？",
+      "url": "https://www.jisilu.cn/question/520438",
+      "category": "债券/可转债",
+      "tags": [
+        "闻泰科技",
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 9436,
+      "topic_like_users": 0,
+      "score": 118,
+      "core_issue": "闻泰转债跌破面值了，你们还在怕什么？",
+      "op_summary": "今天跌破100了，我觉得机会大于风险！",
+      "top_comments": [
+        {
+          "author": "毛之川",
+          "like_count": 36,
+          "agree_user_count": 36,
+          "summary": "闻泰转债，送钱了",
+          "published_info": "2026-04-19 18:44 来自浙江"
+        },
+        {
+          "author": "兜里响当当",
+          "like_count": 15,
+          "agree_user_count": 15,
+          "summary": "股价说明一切，一直下跌只有一个解释，那就是闻泰年报会ST，股市有一个非常有意思的地方，那就是大资金比你知道信息的更早、更深入",
+          "published_info": "2026-04-17 15:50 来自陕西"
+        },
+        {
+          "author": "seeker24680",
+          "like_count": 15,
+          "agree_user_count": 15,
+          "summary": "思路是这样的：没问题的话它为什么要跌破面值？",
+          "published_info": "2026-04-17 14:54 来自广东"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond"
+      ],
+      "published_at": "2026-04-17 13:40"
+    },
+    {
+      "title": "看到集思录讨论闻泰转债的太多，也凑个热闹，计算下如何抄底，欢迎批评",
+      "url": "https://www.jisilu.cn/question/520387",
+      "category": "债券/可转债",
+      "tags": [
+        "闻泰科技",
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 8710,
+      "topic_like_users": 13,
+      "score": 106,
+      "core_issue": "看到集思录讨论闻泰转债的太多，也凑个热闹，计算下如何抄底，欢迎批评",
+      "op_summary": "闻泰的基本面不说了，反正我认为到期收回108及第5年的1.8是不会有问题的，我一般在集思录有人发帖送钱了的贴子都会关注一下，这次讨论的人太多了，仅仅关注就不够了，应该稍微参与一下了",
+      "top_comments": [
+        {
+          "author": "毛之川",
+          "like_count": 40,
+          "agree_user_count": 40,
+          "summary": "闻泰转债，送钱了",
+          "published_info": "2026-04-19 18:46 来自浙江"
+        },
+        {
+          "author": "qgj8848",
+          "like_count": 35,
+          "agree_user_count": 35,
+          "summary": "神棍下，闻泰今年会成为仅次于国投白银的套利标的",
+          "published_info": "2026-04-17 22:17 来自浙江"
+        },
+        {
+          "author": "如佛",
+          "like_count": 20,
+          "agree_user_count": 20,
+          "summary": "机构全卖了以后，靠散户来拉升价格也是很难的，所以不用急着抄底，况且如今外面机会那么多，先晾着它可能是更好的操作",
+          "published_info": "2026-04-16 16:03 来自浙江"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "fund-etf",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-16 13:55"
+    },
+    {
+      "title": "闻泰转债，不要怕，浮亏不是亏",
+      "url": "https://www.jisilu.cn/question/520566",
+      "category": "其他",
+      "tags": [
+        "闻泰科技",
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 3023,
+      "topic_like_users": 11,
+      "score": 102,
+      "core_issue": "闻泰转债，不要怕，浮亏不是亏",
+      "op_summary": "闻泰转债核心优势+违约评估完整版 到期前绝无退市/暂停上市风险 转债2027年7月28日到期，连续非标触发暂停上市最早在2028年，时间线完全错开；公司营收、净资产均远超退市红线，存续期内只可能戴*ST，不会退市、不会暂停上市",
+      "top_comments": [
+        {
+          "author": "天书",
+          "like_count": 21,
+          "agree_user_count": 21,
+          "summary": "guys，你们的讨论也在影响AI，感觉是个很奇怪的循环",
+          "published_info": "2026-04-22 10:27修改 来自加拿大"
+        },
+        {
+          "author": "luckzpz",
+          "like_count": 13,
+          "agree_user_count": 13,
+          "summary": "现在盘面上卖出的机构，难道他们都不知道楼主说的这些内容吗",
+          "published_info": "2026-04-21 22:07 来自江苏"
+        },
+        {
+          "author": "毛之川",
+          "like_count": 11,
+          "agree_user_count": 11,
+          "summary": "你问的豆包和我问的不是一个结果，豆包说还要跌，然后让我赶紧割肉",
+          "published_info": "2026-04-22 09:11 来自浙江"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "dividend-income",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-21 17:53"
+    },
+    {
+      "title": "A股大水牛",
+      "url": "https://www.jisilu.cn/question/520402",
+      "category": "股票",
+      "tags": [],
+      "reply_count": 0,
+      "views": 5297,
+      "topic_like_users": 16,
+      "score": 100,
+      "core_issue": "A股大水牛",
+      "op_summary": "截止2026年4月16日，A股5500家公司，TTM PE<20的只有638只，占比不足12%…… 亏损股（TTM PE<0）：1490只；泡沫化估值股（TTM PE>80） : 1287只，合计2777只，占比超一半…… 放眼全球，谁与争锋？",
+      "top_comments": [
+        {
+          "author": "eugeneshi",
+          "like_count": 20,
+          "agree_user_count": 20,
+          "summary": "本来就是大水牛，银行存款都1字头了，存与不存基本没区别",
+          "published_info": "2026-04-16 19:36 来自江苏"
+        },
+        {
+          "author": "nevermind2019",
+          "like_count": 20,
+          "agree_user_count": 20,
+          "summary": "说明有 1490 家公司即将困境反转，1287 家公司将维持高速成长，只有 638 家公司处于衰退",
+          "published_info": "2026-04-16 21:22 来自湖南"
+        },
+        {
+          "author": "优游涵泳",
+          "like_count": 14,
+          "agree_user_count": 14,
+          "summary": "经济现状如何，不用说用眼睛看就知道",
+          "published_info": "2026-04-16 18:50 来自上海"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [],
+      "published_at": "2026-04-16 17:14"
+    },
+    {
+      "title": "我对茅台2025年年报的分析",
+      "url": "https://www.jisilu.cn/question/520442",
+      "category": "股票",
+      "tags": [],
+      "reply_count": 0,
+      "views": 5774,
+      "topic_like_users": 9,
+      "score": 98,
+      "core_issue": "我对茅台2025年年报的分析",
+      "op_summary": "茅台2025年营收和利润都下滑了，大势所趋，独木难支，茅台也不例外",
+      "top_comments": [
+        {
+          "author": "投资无限",
+          "like_count": 15,
+          "agree_user_count": 15,
+          "summary": "没了金融属性，回归消费属性",
+          "published_info": "2026-04-17 16:30 来自河南"
+        },
+        {
+          "author": "dhhlys",
+          "like_count": 12,
+          "agree_user_count": 12,
+          "summary": "茅台就是老登的labubu而已",
+          "published_info": "2026-04-18 10:20 来自四川"
+        },
+        {
+          "author": "花过水无痕",
+          "like_count": 10,
+          "agree_user_count": 10,
+          "summary": "79年之前出生的居民，娱乐约等于聚众餐饮，80年之后，娱乐方式大幅多样化，对白酒甚至深恶痛绝（大多数）",
+          "published_info": "2026-04-18 12:31修改 来自湖北"
+        }
+      ],
+      "analyst_note": "重点是高股息策略的风险收益匹配。行动上应检查盈利稳定性、估值、监管风险和利率环境。",
+      "themes": [
+        "dividend-income",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-17 14:35"
+    },
+    {
+      "title": "2026-4-21 可转债 调仓",
+      "url": "https://www.jisilu.cn/question/520535",
+      "category": "债券/可转债",
+      "tags": [],
+      "reply_count": 0,
+      "views": 2691,
+      "topic_like_users": 6,
+      "score": 90,
+      "core_issue": "2026-4-21 可转债 调仓",
+      "op_summary": "投资是一场人气竞赛，在人气最旺的时候买进是最危险的，在那个时候，一切利好因素和观点都已经计入价格中，而且再也不会有新的买家出现 .. 最安全，获利潜力最大的投资，是在没人喜欢的时候买进，假以时日，一旦品种受到欢迎，那么它的价格只可能一个方向变化：上涨 ！ 目前个人现阶段转债仓位占...",
+      "top_comments": [
+        {
+          "author": "daimozs",
+          "like_count": 13,
+          "agree_user_count": 13,
+          "summary": "@陈荣富 不明白为什么这么多人去买闻泰，不是说君子不立危墙之下吗？ 这是因为市场机会很少，好不容易看到一个有利可图的标的可以赚钱，不得要上仓位么",
+          "published_info": "2026-04-21 16:50 来自广东"
+        },
+        {
+          "author": "捡钢镚",
+          "like_count": 9,
+          "agree_user_count": 9,
+          "summary": "转债全天成交了749亿，指数下跌了0.37%，A股成交了24268亿... 今天闻泰被砸塌了，毛师威武，个人今天买了闻泰190张，底在何方也不知道，只是又被套的多了些... 全天净卖出了9.6万元...",
+          "published_info": "2026-04-21 15:05 来自广东"
+        },
+        {
+          "author": "捡钢镚",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "@苏小小刀 闻泰95了 又小买了30张...",
+          "published_info": "2026-04-21 09:47 来自广东"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "fund-etf",
+        "arbitrage",
+        "new-share",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-21 08:21"
+    }
+  ],
+  "topic_fetch_errors": [],
+  "topic_parse_errors": []
+}
