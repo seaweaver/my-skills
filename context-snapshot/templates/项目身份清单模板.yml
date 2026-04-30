@@ -1,0 +1,25 @@
+# 放置位置：<项目根目录>/context/manifest.yml
+# 作用：为知识快照提供稳定项目身份与中文展示名。
+
+# 稳定机器 ID。建议 ASCII、短横线分隔；一旦导入 wiki 后尽量不要改。
+project_id: retail-marketing-data-workbench
+
+# 中文展示名。用于快照 title、H1，以及后续 wiki 中的项目知识快照命名。
+project_name: 零售营销域数据分析工作台
+
+# 中文简称。可选，用于摘要、索引或场景页展示。
+project_short_name: 营销域数据工作台
+
+# 技术项目代码或源仓库名。保留目录名、系统代号等追溯信息。
+project_code: data_project
+
+# 文件名前缀。可省略；省略时默认使用 project_name。
+snapshot_prefix: 零售营销域数据分析工作台
+
+# 业务域。可选，用于 wiki 分类、标签和后续跨项目合并。
+domain: 零售营销域
+
+# 搜索别名。建议同时保留中文俗称与技术目录名。
+aliases:
+  - data_project
+  - 营销域数据项目

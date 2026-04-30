@@ -1,0 +1,9 @@
+{
+  "api_base_url": "http://agent.cjhxfund.com:8091",
+  "query_prefix": "/query_permission",
+  "export_prefix": "/output_report",
+  "default_export_type": "EXCEL2007",
+  "timeout": 30,
+  "export_timeout": 120,
+  "token_path": "~/.smartbi/token.json"
+}

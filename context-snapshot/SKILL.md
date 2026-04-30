@@ -65,10 +65,92 @@ Produce exactly one primary output markdown file per export.
 Default file naming pattern:
 
 ```text
-<项目标识>-知识快照-<YYYY-MM-DD>-<commit短哈希>.md
+<项目显示名或项目标识>-知识快照-<YYYY-MM-DD>-<commit短哈希>.md
 ```
 
 If the user specifies a different output path or naming convention, follow that.
+
+## Project Identity and Chinese Naming
+
+Prefer a Chinese business-facing project name for snapshot titles and filenames.
+
+If the project directory name is technical or unclear, do not let the directory
+name become the human-facing snapshot name.
+
+Preferred identity source order:
+
+1. Explicit exporter CLI arguments
+2. Existing `context/manifest.yml` only if the project already maintains one
+3. Semantic inference from `context/tables.md`, `context/rules.md`, and `context/dictionary.md`
+4. README H1 as a display-name fallback only
+5. Project directory name
+
+Do not add `context/manifest.yml` to a source project just to satisfy a one-off
+export unless the user explicitly wants that project to maintain an identity
+file.
+
+Project identity is metadata for naming, tracing, and downstream search. It is
+not part of the knowledge fact set. The fact boundary remains
+`context/tables.md`, `context/rules.md`, and `context/dictionary.md`.
+
+Default no-project-mutation command:
+
+```powershell
+$p = Get-Item -LiteralPath 'D:\path\to\project'
+python scripts/export_context_snapshot.py --project-root $p.FullName
+```
+
+The exporter should infer a Chinese display name from the context files when
+they contain stable semantic headings. For example, `营销域物理模型定义` and
+`营销域业务逻辑库` imply `营销域数据分析项目`.
+
+Explicit override command:
+
+```powershell
+$p = Get-Item -LiteralPath 'D:\path\to\project'
+python scripts/export_context_snapshot.py `
+  --project-root $p.FullName `
+  --project-name '营销域数据分析项目' `
+  --project-code 'data_project' `
+  --snapshot-prefix '营销域数据分析项目' `
+  --domain '营销域' `
+  --alias 'data_project'
+```
+
+Use explicit CLI identity arguments only when the inferred name is wrong or the
+user has provided a preferred name.
+
+The Python exporter applies these values deterministically; do not ask the model
+to freehand rewrite the final snapshot body after export.
+
+Minimal manifest example:
+
+```yaml
+project_id: retail-marketing-data-workbench
+project_name: 零售营销域数据分析工作台
+project_short_name: 营销域数据工作台
+project_code: data_project
+snapshot_prefix: 零售营销域数据分析工作台
+domain: 零售营销域
+aliases:
+  - data_project
+  - 营销域数据项目
+```
+
+Use the reusable template in
+[templates/项目身份清单模板.yml](templates/项目身份清单模板.yml) when initializing a
+project manifest.
+
+Field semantics:
+- `project_id`: stable machine-readable identity; use ASCII when possible
+- `project_name`: Chinese display name used in `title`, frontmatter, and H1
+- `project_code`: technical project code or source repository name
+- `snapshot_prefix`: filename prefix; defaults to `project_name`
+- `domain`: business domain for later wiki classification
+- `aliases`: Chinese and technical names that downstream wiki search may need
+
+If no manifest exists, the exporter remains backward-compatible and falls back to
+the project directory name.
 
 ## Required Inputs
 
@@ -76,6 +158,17 @@ All three files are required:
 - `context/tables.md`
 - `context/rules.md`
 - `context/dictionary.md`
+
+Optional project identity file:
+- `context/manifest.yml`, `context/manifest.yaml`, or `context/manifest.json`
+
+Optional project identity arguments:
+- `--project-name`
+- `--project-id`
+- `--project-code`
+- `--snapshot-prefix`
+- `--domain`
+- `--alias`
 
 If any required file is missing, stop and report the gap clearly.
 
@@ -233,6 +326,8 @@ The snapshot frontmatter must include at least:
 - `project_id`
 - `project_name`
 - `project_code`
+- `source_repo_name`
+- `snapshot_prefix`
 - `snapshot_id`
 - `snapshot_date`
 - `snapshot_sequence`
@@ -248,6 +343,11 @@ The snapshot frontmatter must include at least:
 - `status`
 
 `source_files` should normally list only the three context files.
+
+When available, also include:
+- `project_short_name`
+- `domain`
+- `project_aliases`
 
 For non-git projects:
 - `source_branch` may be `n/a`
@@ -301,6 +401,7 @@ Before declaring the export complete, verify all of the following:
 - No placeholder blocks remain in the snapshot
 - No item is reduced to a one-line summary plus `source_refs`
 - The script generated the file successfully
+- If a Chinese project name is supplied or inferred from context files, the output filename and frontmatter use it
 - The output file can be opened and sampled locally
 
 ## Common Mistakes
@@ -311,6 +412,8 @@ Before declaring the export complete, verify all of the following:
 - Keeping only one-line descriptions for complex rules
 - Using `source_refs` as a substitute for the missing body of the rule
 - Leaving template sample blocks in the final export
+- Using a technical folder name such as `data_project` as the human-facing project name when a Chinese context-derived, CLI, manifest, or README name is available
+- Adding `context/manifest.yml` to a source project when the user only wanted a one-off export identity
 
 ## Quick Decision Rule
 

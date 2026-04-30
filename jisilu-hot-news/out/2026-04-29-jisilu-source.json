@@ -1,0 +1,536 @@
+{
+  "report_date": "2026-04-29",
+  "fetched_count": 30,
+  "selected_count": 12,
+  "overview": {
+    "recurring_keywords": [
+      "convertible-bond",
+      "闻泰转债",
+      "闻泰科技",
+      "asset-allocation",
+      "stock-strategy",
+      "arbitrage"
+    ],
+    "consensus_points": [
+      "可转债条款博弈、下修和风险识别仍是社区最稳定的高频主题。",
+      "高股息与吃息策略讨论明显增多，核心分歧在于安全性与估值。",
+      "保守理财、存款与资金安全话题明显升温。"
+    ],
+    "divergent_topics": [
+      "警惕“爱国叙事”掩盖下的上市公司利益输送",
+      "一个作弊的游戏，你能坚持玩下去吗？",
+      "钱多换不来钱少的快乐"
+    ]
+  },
+  "selected_topics": [
+    {
+      "title": "警惕“爱国叙事”掩盖下的上市公司利益输送",
+      "url": "https://www.jisilu.cn/question/520702",
+      "category": "债券/可转债",
+      "tags": [
+        "杂项",
+        "闻泰科技",
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 13477,
+      "topic_like_users": 40,
+      "score": 156,
+      "core_issue": "警惕“爱国叙事”掩盖下的上市公司利益输送",
+      "op_summary": "近期，闻泰科技围绕半导体供应链安全与国产替代的讨论热度较高，其公开叙事主要集中于：为应对地缘政治风险、保障自主可控，公司需大力建设国内晶圆产能、强化供应链自主能力",
+      "top_comments": [
+        {
+          "author": "copchen",
+          "like_count": 15,
+          "agree_user_count": 15,
+          "summary": "殖人何其坏也，洋人打一巴掌，还得自己找原因是不是今天穿的衣服惹洋人不开心了",
+          "published_info": "2026-04-27 10:03 来自上海"
+        },
+        {
+          "author": "sunkan",
+          "like_count": 13,
+          "agree_user_count": 13,
+          "summary": "@陈华明聪 我有点画面感，赚中国的钱，骂中国人煞笔，翻墙舔国外或者润出去国外消费 站在云端看问题，就事论事，不要动不动就舔呀、跪呀、润呀，从太空看地球，本来没有什么国境线",
+          "published_info": "2026-04-27 12:50 来自浙江"
+        },
+        {
+          "author": "Alpha伊卡洛斯",
+          "like_count": 12,
+          "agree_user_count": 12,
+          "summary": "关联交易犯法吗？请问",
+          "published_info": "2026-04-26 22:06 来自浙江"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [
+        "convertible-bond"
+      ],
+      "published_at": "2026-04-25 06:57"
+    },
+    {
+      "title": "一个作弊的游戏，你能坚持玩下去吗？",
+      "url": "https://www.jisilu.cn/question/520713",
+      "category": "其他",
+      "tags": [
+        "凯利公式"
+      ],
+      "reply_count": 0,
+      "views": 12174,
+      "topic_like_users": 146,
+      "score": 149,
+      "core_issue": "一个作弊的游戏，你能坚持玩下去吗？",
+      "op_summary": "消失的亿万富翁这本书，里面有个游戏",
+      "top_comments": [
+        {
+          "author": "骆驼1978",
+          "like_count": 26,
+          "agree_user_count": 26,
+          "summary": "但实际上，凯利公式这套逻辑很难在资本市场运用起来",
+          "published_info": "2026-04-27 08:46修改 来自广东"
+        },
+        {
+          "author": "Romi",
+          "like_count": 25,
+          "agree_user_count": 25,
+          "summary": "这个游戏太有意思了，忍不住用Trae搞代码测试了一下（顺便说，Trae比前几个月进步很大），我按初始金额100，达到10倍或者超过200轮停止",
+          "published_info": "2026-04-26 10:57修改 来自浙江"
+        },
+        {
+          "author": "cai263",
+          "like_count": 23,
+          "agree_user_count": 23,
+          "summary": "GEMINI给我的答案： 当然有",
+          "published_info": "2026-04-26 20:33 来自湖南"
+        }
+      ],
+      "analyst_note": "重点是配置逻辑与持仓承受力。行动上应核对估值区间、行业暴露和回撤假设。",
+      "themes": [
+        "fund-etf",
+        "asset-allocation",
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-25 18:11"
+    },
+    {
+      "title": "钱多换不来钱少的快乐",
+      "url": "https://www.jisilu.cn/question/520744",
+      "category": "新股",
+      "tags": [
+        "套利",
+        "新股",
+        "联讯仪器"
+      ],
+      "reply_count": 0,
+      "views": 6324,
+      "topic_like_users": 9,
+      "score": 128,
+      "core_issue": "钱多换不来钱少的快乐",
+      "op_summary": "股市获利的源泉之一是价值的不对等交换，赚钱就是用更少的钱换取更多的钱",
+      "top_comments": [
+        {
+          "author": "宿不移",
+          "like_count": 50,
+          "agree_user_count": 50,
+          "summary": "又是别野，又是大肉股，闷骚憋不住，偏要说出来让大家都羡慕嫉妒恨",
+          "published_info": "2026-04-27 16:21 来自上海"
+        },
+        {
+          "author": "钟爱一玉",
+          "like_count": 41,
+          "agree_user_count": 41,
+          "summary": "哈哈，有钱人的生活就是这么朴实无华且枯燥",
+          "published_info": "2026-04-27 22:43 来自北京"
+        },
+        {
+          "author": "zaqscxzse",
+          "like_count": 35,
+          "agree_user_count": 35,
+          "summary": "这不挺正常吗？ 你要是有40万，中了40万，家人都会兴奋 你要是有4000万，中了40万，家人有什么可兴奋的，还不够一天的账户波动 原来没钱的时候，我买东西还货比三家，只买满足最基础功能的物品，还领支付宝红包，银行红包...",
+          "published_info": "2026-04-27 17:03修改 来自北京"
+        }
+      ],
+      "analyst_note": "重点是高股息策略的风险收益匹配。行动上应检查盈利稳定性、估值、监管风险和利率环境。",
+      "themes": [
+        "arbitrage",
+        "dividend-income",
+        "new-share"
+      ],
+      "published_at": "2026-04-27 14:22"
+    },
+    {
+      "title": "关于价值投资，我有一事不明！",
+      "url": "https://www.jisilu.cn/question/520681",
+      "category": "股票",
+      "tags": [
+        "价值投资"
+      ],
+      "reply_count": 0,
+      "views": 7493,
+      "topic_like_users": 3,
+      "score": 102,
+      "core_issue": "关于价值投资，我有一事不明！",
+      "op_summary": "价值投资的大师一直强调的是，买价投类的股票最重要的是市盈率，也就是未来的赚钱能力",
+      "top_comments": [
+        {
+          "author": "lance77",
+          "like_count": 62,
+          "agree_user_count": 62,
+          "summary": "橘生淮南则为橘，生于淮北则为枳，叶徒相似，其实味不同",
+          "published_info": "2026-04-26 21:20 来自上海"
+        },
+        {
+          "author": "zhangsheng123",
+          "like_count": 43,
+          "agree_user_count": 43,
+          "summary": "我们不妨换个投资视角： 经典理论说价格围绕价值上下波动，但在现实市场中，价格本质上是围绕预期上下波动",
+          "published_info": "2026-04-25 13:27 来自广东"
+        },
+        {
+          "author": "ylshxajh",
+          "like_count": 20,
+          "agree_user_count": 20,
+          "summary": "一家公司如果过去赚到的钱都不能兑现到股价上，或者说不能直接分配给投资者，那么你凭什么认为未来赚到的钱就能让投资人受益呢？ 过去赚的钱已经体现在股价上了 如果两家公司都是10倍市盈率，A公司市值是100亿，B公司市值是10...",
+          "published_info": "2026-04-25 15:36修改 来自北京"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [
+        "stock-strategy"
+      ],
+      "published_at": "2026-04-24 14:11"
+    },
+    {
+      "title": "三房厉害了，无法表示意见",
+      "url": "https://www.jisilu.cn/question/520793",
+      "category": "债券/可转债",
+      "tags": [
+        "三房转债"
+      ],
+      "reply_count": 0,
+      "views": 3850,
+      "topic_like_users": 22,
+      "score": 100,
+      "core_issue": "三房厉害了，无法表示意见",
+      "op_summary": "看他这一连串不下修，还以为他是王者呢",
+      "top_comments": [
+        {
+          "author": "可期可梦",
+          "like_count": 16,
+          "agree_user_count": 16,
+          "summary": "三房居然死在闻泰前面了？完全出乎意料",
+          "published_info": "2026-04-28 21:16 来自上海"
+        },
+        {
+          "author": "星星之火",
+          "like_count": 11,
+          "agree_user_count": 11,
+          "summary": "三房大股东质押率高，历史上有过占有上市公司资金，连年亏损，负债率高，股价低的时候接近1元，这些缺点，够我们拉黑N遍了，控股股东债务违约暴雷后还有无数次出逃的机会",
+          "published_info": "2026-04-28 22:00修改 来自湖南"
+        },
+        {
+          "author": "treelh",
+          "like_count": 9,
+          "agree_user_count": 9,
+          "summary": "上市公司应该知道会被出非意见，未提前公告风险",
+          "published_info": "2026-04-28 21:03 来自重庆"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond"
+      ],
+      "published_at": "2026-04-28 20:52"
+    },
+    {
+      "title": "从60平小家到600平别墅",
+      "url": "https://www.jisilu.cn/question/520743",
+      "category": "其他",
+      "tags": [
+        "别墅"
+      ],
+      "reply_count": 0,
+      "views": 4991,
+      "topic_like_users": 47,
+      "score": 96,
+      "core_issue": "从60平小家到600平别墅",
+      "op_summary": "很久没有更新了，随便写写，仅限集思录聊聊",
+      "top_comments": [
+        {
+          "author": "不戒",
+          "like_count": 11,
+          "agree_user_count": 11,
+          "summary": "不太理解，前晚还蜗居在60平方老破小",
+          "published_info": "2026-04-27 19:12修改 来自浙江"
+        },
+        {
+          "author": "魔术师6967",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "jsl大佬真多",
+          "published_info": "2026-04-27 15:22 来自广东"
+        },
+        {
+          "author": "鼎级外星人",
+          "like_count": 7,
+          "agree_user_count": 7,
+          "summary": "@goodxx 60一下到600，这么突然的吗 60平米小户型直接到600平别墅",
+          "published_info": "2026-04-27 18:34 来自重庆"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [],
+      "published_at": "2026-04-27 14:05"
+    },
+    {
+      "title": "大家有什么好书推荐吗",
+      "url": "https://www.jisilu.cn/question/520715",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 6704,
+      "topic_like_users": 21,
+      "score": 85,
+      "core_issue": "大家有什么好书推荐吗",
+      "op_summary": "1、大人的可以，小朋友的也可以（给我家娃） 2、投资的可以，好玩的也可以，像我最近既看了《因为独特》（关于泡泡玛特），也看了《亏成首富从游戏开始》（看了电视剧以后翻了同名小说） 3、集友们推荐后，假如我看过也觉得好的一本打赏一个币聊表心意 4、币的打赏可能有点慢，因为我要把书看过...",
+      "top_comments": [
+        {
+          "author": "ylshxajh",
+          "like_count": 18,
+          "agree_user_count": 18,
+          "summary": "薛兆丰经济学讲义 纳瓦尔宝典 以日为鉴：衰退时代生存指南 都是生活实用型知识",
+          "published_info": "2026-04-25 22:43修改 来自北京"
+        },
+        {
+          "author": "ylshxajh",
+          "like_count": 17,
+          "agree_user_count": 17,
+          "summary": "@抄底专业户 求书： 时常在想，人活百年终究是死，人类也终将毁灭，那么活着的意义是什么呢",
+          "published_info": "2026-04-26 17:25 来自北京"
+        },
+        {
+          "author": "丁一白",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "格调 保罗福塞尔",
+          "published_info": "2026-04-26 14:48 来自浙江"
+        }
+      ],
+      "analyst_note": "这类讨论更适合作为风险提示或情绪观察。行动上应回到数据、规则和仓位管理，不直接追随论坛热度。",
+      "themes": [],
+      "published_at": "2026-04-25 20:08"
+    },
+    {
+      "title": "闻泰的鬼故事都有哪些",
+      "url": "https://www.jisilu.cn/question/520624",
+      "category": "债券/可转债",
+      "tags": [
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 8597,
+      "topic_like_users": 5,
+      "score": 79,
+      "core_issue": "闻泰的鬼故事都有哪些",
+      "op_summary": "综合好几个帖子和下面的回复，总结了一下目前讲的鬼故事有如下： 1 年报审计会出无法表示意见或否定意见，导致*ST，公司会退市",
+      "top_comments": [
+        {
+          "author": "保本第一",
+          "like_count": 13,
+          "agree_user_count": 13,
+          "summary": "@fockds118 对等反制，没收荷兰在华资产就行 荷兰愿意在华投资的，这些人和中国利益绑定，勉强算亲华，荷兰反华的干你，你不想办法打击这些人，掉头干亲善的",
+          "published_info": "2026-04-28 21:07 来自安徽"
+        },
+        {
+          "author": "knower",
+          "like_count": 12,
+          "agree_user_count": 12,
+          "summary": "@yjh2175 拿不到荷兰的数据，怎么并表啊？这个重要数据，并不进来，审计报告只能无法表示意见",
+          "published_info": "2026-04-23 17:43 来自湖南"
+        },
+        {
+          "author": "haitun2011",
+          "like_count": 9,
+          "agree_user_count": 9,
+          "summary": "@可转债老韭菜 看空的兄弟们，求求你们把手上的筹码全部丢出来我接行不行？ 80多亿还不够你接啊，厉害，资产过百亿哥啊",
+          "published_info": "2026-04-23 11:03修改 来自广东"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "dividend-income"
+      ],
+      "published_at": "2026-04-23 09:01"
+    },
+    {
+      "title": "今年好难做啊",
+      "url": "https://www.jisilu.cn/question/520688",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 5648,
+      "topic_like_users": 2,
+      "score": 76,
+      "core_issue": "今年好难做啊",
+      "op_summary": "感觉去年像捡钱，不管是宽基还是折价封基，转债还是要约套利，都很好做",
+      "top_comments": [
+        {
+          "author": "趋势交易者",
+          "like_count": 14,
+          "agree_user_count": 14,
+          "summary": "斗胆预测，股灾就在眼前，史诗级的疯狂造就史诗级的股灾",
+          "published_info": "2026-04-27 11:12修改 来自上海"
+        },
+        {
+          "author": "灿烂的阴天",
+          "like_count": 12,
+          "agree_user_count": 12,
+          "summary": "+1，低风险路径1月份之后好像处处碰壁，尤其是4月份之后体验极差，跑输指数10个点",
+          "published_info": "2026-04-24 17:30 来自辽宁"
+        },
+        {
+          "author": "chenjuying",
+          "like_count": 11,
+          "agree_user_count": 11,
+          "summary": "你看的东西， 想买的， 都是别人喂的信息",
+          "published_info": "2026-04-25 03:05 来自江苏"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond",
+        "arbitrage"
+      ],
+      "published_at": "2026-04-24 15:50"
+    },
+    {
+      "title": "大家猜猜闻泰正股被*ST有多少个跌停板，转债最低跌到多少",
+      "url": "https://www.jisilu.cn/question/520763",
+      "category": "其他",
+      "tags": [],
+      "reply_count": 0,
+      "views": 3745,
+      "topic_like_users": 1,
+      "score": 63,
+      "core_issue": "大家猜猜闻泰正股被*ST有多少个跌停板，转债最低跌到多少",
+      "op_summary": "RT",
+      "top_comments": [
+        {
+          "author": "全都是泡沫A",
+          "like_count": 12,
+          "agree_user_count": 12,
+          "summary": "之前还送钱，现在送鬼故事了？",
+          "published_info": "2026-04-28 12:32 来自江苏"
+        },
+        {
+          "author": "集思小子",
+          "like_count": 6,
+          "agree_user_count": 6,
+          "summary": "看正股目前走势，st可能性不大",
+          "published_info": "2026-04-28 14:15 来自上海"
+        },
+        {
+          "author": "huxj2015",
+          "like_count": 4,
+          "agree_user_count": 4,
+          "summary": "不知道，做好最坏的打算吧，价格清零............跌到0.001元就买一亿张............................",
+          "published_info": "2026-04-29 07:50 来自四川"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond"
+      ],
+      "published_at": "2026-04-28 10:03"
+    },
+    {
+      "title": "闻泰转债不见赌了",
+      "url": "https://www.jisilu.cn/question/520761",
+      "category": "其他",
+      "tags": [
+        "闻泰科技",
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 3887,
+      "topic_like_users": 2,
+      "score": 62,
+      "core_issue": "闻泰转债不见赌了",
+      "op_summary": "不是说非标到80吗？保留意见的话是不是还能回到130或118？那这是不是又能赌一把了？香的臭的哪个波动率大？",
+      "top_comments": [
+        {
+          "author": "quick140",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "@无所不用其极 要赌也等st后再赌，你难道还赌他不会st 如果所有资金都认为百分百会st的话，st后赌就不如现在赌",
+          "published_info": "2026-04-28 17:16 来自移动"
+        },
+        {
+          "author": "lixinfeng02",
+          "like_count": 7,
+          "agree_user_count": 7,
+          "summary": "闻泰已经进入我大赌的范围，会买入10%仓位，现在3%",
+          "published_info": "2026-04-28 20:23 来自辽宁"
+        },
+        {
+          "author": "twinssft",
+          "like_count": 5,
+          "agree_user_count": 5,
+          "summary": "其实如果不能拿到荷兰账目，安世又占闻泰一多半资产，这种有可能重大损失的情况下，审计大概率要无法表示意见",
+          "published_info": "2026-04-28 22:20 来自北京"
+        }
+      ],
+      "analyst_note": "重点是条款、下修、赎回或价格博弈。行动上应跟踪公告、转股价值、溢价率与触发条件，避免只看情绪。",
+      "themes": [
+        "convertible-bond"
+      ],
+      "published_at": "2026-04-28 09:46"
+    },
+    {
+      "title": "容诚会计师事务所的黑历史",
+      "url": "https://www.jisilu.cn/question/520680",
+      "category": "其他",
+      "tags": [
+        "闻泰科技",
+        "闻泰转债"
+      ],
+      "reply_count": 0,
+      "views": 2216,
+      "topic_like_users": 7,
+      "score": 58,
+      "core_issue": "容诚会计师事务所的黑历史",
+      "op_summary": "查了点闻泰科技新换的容诚会计师事务所的资料，过往历史可以说是劣迹斑斑，最早的名称是华普天健，涉及到的问题有：乐视网造假案、新力金融造假案，2019年前还有其他多次监管记录",
+      "top_comments": [
+        {
+          "author": "huanhappy2017",
+          "like_count": 12,
+          "agree_user_count": 12,
+          "summary": "这么黑，那属于重大利好啊，就怕碰到一个不黑的审计",
+          "published_info": "2026-04-24 15:22 来自上海"
+        },
+        {
+          "author": "shuifeng2009",
+          "like_count": 8,
+          "agree_user_count": 8,
+          "summary": "我说闻泰怎么换审计呢，原来容诚有这样的历史，那这把闻泰稳了，至少是个加强调事项的无保留，甚至可能直接无保留",
+          "published_info": "2026-04-25 08:47 来自江西"
+        },
+        {
+          "author": "luckzpz",
+          "like_count": 7,
+          "agree_user_count": 7,
+          "summary": "楼主是担心这个会计师事务所出标准无保留吗？",
+          "published_info": "2026-04-24 22:23 来自江苏"
+        }
+      ],
+      "analyst_note": "重点是保守配置与资金安全。行动上应结合利率、存款保险边界和资金使用期限。",
+      "themes": [
+        "convertible-bond",
+        "asset-allocation"
+      ],
+      "published_at": "2026-04-24 14:11"
+    }
+  ],
+  "topic_fetch_errors": [],
+  "topic_parse_errors": []
+}

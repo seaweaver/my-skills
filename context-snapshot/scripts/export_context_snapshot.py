@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import re
 import subprocess
 import sys
@@ -12,6 +13,21 @@ from pathlib import Path
 
 
 SOURCE_FILES = ("tables.md", "rules.md", "dictionary.md")
+
+
+@dataclass(frozen=True)
+class ProjectIdentity:
+    project_id: str
+    project_name: str
+    project_code: str
+    source_repo_name: str
+    snapshot_prefix: str
+    project_short_name: str | None
+    domain: str | None
+    aliases: list[str]
+    manifest_path: Path | None
+    identity_source: str
+    identity_source_ref: str | None
 
 
 @dataclass
@@ -68,6 +84,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--snapshot-date", default=str(date.today()), help="Snapshot date in YYYY-MM-DD format.")
     parser.add_argument("--include-placeholders", action="store_true", help="Keep placeholder/template blocks.")
     parser.add_argument("--compare-base", help="Optional explicit previous snapshot path for diff comparison.")
+    parser.add_argument("--project-id", help="Stable project identity for snapshot_id and local IDs.")
+    parser.add_argument("--project-name", help="Chinese/business-facing project display name.")
+    parser.add_argument("--project-short-name", help="Optional short display name.")
+    parser.add_argument("--project-code", help="Technical project code or source repository name.")
+    parser.add_argument("--snapshot-prefix", help="Filename prefix. Defaults to project_name.")
+    parser.add_argument("--domain", help="Business domain for downstream wiki classification.")
+    parser.add_argument("--alias", dest="aliases", action="append", default=[], help="Project alias; may be repeated.")
     return parser.parse_args()
 
 
@@ -79,6 +102,293 @@ def ensure_required_inputs(context_dir: Path) -> None:
     missing = [name for name in SOURCE_FILES if not (context_dir / name).exists()]
     if missing:
         raise FileNotFoundError(f"Missing required context files: {', '.join(missing)}")
+
+
+def unquote_scalar(value: str) -> str:
+    value = value.strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+        return value[1:-1]
+    return value
+
+
+def parse_inline_list(value: str) -> list[str]:
+    stripped = value.strip()
+    if not (stripped.startswith("[") and stripped.endswith("]")):
+        return []
+    body = stripped[1:-1].strip()
+    if not body:
+        return []
+    return [unquote_scalar(item.strip()) for item in body.split(",") if item.strip()]
+
+
+def parse_simple_yaml(path: Path) -> dict[str, object]:
+    """Parse the small flat manifest format without adding a PyYAML dependency."""
+    result: dict[str, object] = {}
+    current_list_key: str | None = None
+    for raw_line in read_text(path).splitlines():
+        if not raw_line.strip() or raw_line.lstrip().startswith("#"):
+            continue
+        stripped = raw_line.strip()
+        if current_list_key and raw_line[:1].isspace() and stripped.startswith("- "):
+            result.setdefault(current_list_key, [])
+            assert isinstance(result[current_list_key], list)
+            result[current_list_key].append(unquote_scalar(stripped[2:].strip()))
+            continue
+        current_list_key = None
+        if ":" not in stripped:
+            continue
+        key, value = stripped.split(":", 1)
+        key = key.strip().lstrip("\ufeff")
+        value = value.strip()
+        if not value:
+            result[key] = []
+            current_list_key = key
+            continue
+        if value.startswith("[") and value.endswith("]"):
+            result[key] = parse_inline_list(value)
+        else:
+            result[key] = unquote_scalar(value)
+    return result
+
+
+def load_project_manifest(context_dir: Path) -> tuple[dict[str, object], Path | None]:
+    for filename in ("manifest.yml", "manifest.yaml", "manifest.json"):
+        path = context_dir / filename
+        if not path.exists():
+            continue
+        if path.suffix == ".json":
+            data = json.loads(read_text(path))
+            if not isinstance(data, dict):
+                raise ValueError(f"Project manifest must be a JSON object: {path}")
+            return data, path
+        return parse_simple_yaml(path), path
+    return {}, None
+
+
+def infer_readme_title(project_root: Path) -> tuple[str | None, Path | None]:
+    for filename in ("README.md", "readme.md"):
+        path = project_root / filename
+        if not path.exists():
+            continue
+        for line in read_text(path).splitlines()[:80]:
+            stripped = line.strip()
+            if stripped.startswith("# ") and not stripped.startswith("## "):
+                title = stripped[2:].strip()
+                return (title or None), path
+    return None, None
+
+
+def clean_heading_text(line: str) -> str:
+    text = re.sub(r"^#+\s*", "", line.strip())
+    text = re.sub(r"\s+", " ", text)
+    return text.strip(" -:：")
+
+
+def context_headings(context_dir: Path) -> list[tuple[str, int, str]]:
+    headings: list[tuple[str, int, str]] = []
+    for filename in SOURCE_FILES:
+        text = read_text(context_dir / filename)
+        for idx, line in enumerate(text.splitlines()[:160], start=1):
+            stripped = line.strip()
+            if not stripped.startswith("#"):
+                continue
+            heading = clean_heading_text(stripped)
+            if not heading or "[" in heading or "]" in heading:
+                continue
+            level = len(stripped) - len(stripped.lstrip("#"))
+            # H1/H2 carry project/domain semantics more reliably than item headings.
+            if level <= 2:
+                headings.append((filename, idx, heading))
+    return headings
+
+
+def scope_from_heading(heading: str) -> str | None:
+    suffixes = (
+        "物理模型定义",
+        "业务逻辑库",
+        "业务规则库",
+        "规则库",
+        "数据字典",
+        "字典",
+        "表结构定义",
+        "数据对象说明",
+        "指标体系",
+        "指标口径",
+        "上下文",
+        "Context",
+    )
+    for suffix in suffixes:
+        if heading.endswith(suffix):
+            scope = heading[: -len(suffix)].strip(" -:：")
+            if scope:
+                return scope
+    domain_match = re.search(r"([\u4e00-\u9fff]{2,12}域)", heading)
+    if domain_match:
+        return domain_match.group(1)
+    if heading.endswith(("项目", "场景", "专题", "主题")):
+        return heading
+    return None
+
+
+def project_name_from_scope(scope: str) -> str:
+    if scope.endswith("项目"):
+        return scope
+    if scope.endswith("域"):
+        return f"{scope}数据分析项目"
+    if scope.endswith(("场景", "专题", "主题")):
+        return scope
+    if any(token in scope for token in ("数据", "分析", "指标", "报表", "模型")):
+        return f"{scope}项目"
+    return f"{scope}项目"
+
+
+def infer_context_identity(context_dir: Path) -> dict[str, object]:
+    headings = context_headings(context_dir)
+    scored: dict[str, dict[str, object]] = {}
+    for filename, line_no, heading in headings:
+        scope = scope_from_heading(heading)
+        if not scope:
+            continue
+        bucket = scored.setdefault(scope, {"score": 0, "refs": [], "headings": []})
+        # H1 titles across multiple files are the strongest signal.
+        bucket["score"] = int(bucket["score"]) + (3 if line_no <= 5 else 1)
+        bucket["refs"].append(f"context/{filename}#L{line_no}")
+        bucket["headings"].append(heading)
+
+    if not scored:
+        return {}
+
+    scope, payload = sorted(
+        scored.items(),
+        key=lambda item: (int(item[1]["score"]), len(item[1]["refs"]), -len(item[0])),
+        reverse=True,
+    )[0]
+    project_name = project_name_from_scope(scope)
+    refs = list(dict.fromkeys(str(ref) for ref in payload["refs"]))
+    headings_used = list(dict.fromkeys(str(item) for item in payload["headings"]))
+    aliases = [scope, project_name, *headings_used]
+    return {
+        "project_name": project_name,
+        "project_short_name": scope,
+        "snapshot_prefix": project_name,
+        "domain": scope if scope.endswith("域") else None,
+        "aliases": list(dict.fromkeys(alias for alias in aliases if alias)),
+        "identity_source_ref": ", ".join(refs),
+    }
+
+
+def as_string(manifest: dict[str, object], *keys: str) -> str | None:
+    for key in keys:
+        value = manifest.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return None
+
+
+def as_list(manifest: dict[str, object], *keys: str) -> list[str]:
+    for key in keys:
+        value = manifest.get(key)
+        if isinstance(value, list):
+            return [str(item).strip() for item in value if str(item).strip()]
+        if isinstance(value, str) and value.strip():
+            return [item.strip() for item in re.split(r"[,，]", value) if item.strip()]
+    return []
+
+
+def safe_filename_part(value: str) -> str:
+    cleaned = re.sub(r'[<>:"/\\|?*\x00-\x1f]+', "-", value).strip().strip(".")
+    return re.sub(r"\s+", " ", cleaned) or "项目"
+
+
+def load_project_identity(project_root: Path, context_dir: Path, args: argparse.Namespace) -> ProjectIdentity:
+    manifest, manifest_path = load_project_manifest(context_dir)
+    context_identity = infer_context_identity(context_dir)
+    readme_title, readme_path = infer_readme_title(project_root)
+    source_repo_name = project_root.name
+    project_name = (
+        args.project_name
+        or as_string(manifest, "project_name", "display_name", "name", "中文项目名")
+        or str(context_identity.get("project_name") or "")
+        or readme_title
+        or source_repo_name
+    )
+    project_id = (
+        args.project_id
+        or as_string(manifest, "project_id", "stable_id", "id")
+        or source_repo_name.replace("_", "-")
+    )
+    project_code = (
+        args.project_code
+        or as_string(manifest, "project_code", "source_project_code", "code")
+        or source_repo_name
+    )
+    snapshot_prefix = (
+        args.snapshot_prefix
+        or as_string(manifest, "snapshot_prefix", "snapshot_name", "filename_prefix")
+        or str(context_identity.get("snapshot_prefix") or "")
+        or project_name
+    )
+    aliases = as_list(manifest, "aliases", "project_aliases", "别名")
+    for alias in context_identity.get("aliases", []):
+        if isinstance(alias, str) and alias and alias not in aliases:
+            aliases.append(alias)
+    for alias in args.aliases:
+        if alias and alias not in aliases:
+            aliases.append(alias)
+    if readme_title and readme_title not in aliases:
+        aliases.append(readme_title)
+    for alias in (source_repo_name, project_code):
+        if alias and alias not in aliases:
+            aliases.append(alias)
+    has_cli_identity = any(
+        (
+            args.project_id,
+            args.project_name,
+            args.project_short_name,
+            args.project_code,
+            args.snapshot_prefix,
+            args.domain,
+            args.aliases,
+        )
+    )
+    if has_cli_identity:
+        identity_source = "command-line"
+        identity_source_ref = "exporter CLI arguments"
+    elif manifest_path:
+        identity_source = "manifest"
+        identity_source_ref = manifest_path.relative_to(project_root).as_posix()
+    elif context_identity:
+        identity_source = "context-inferred"
+        identity_source_ref = str(context_identity.get("identity_source_ref") or "context/*.md")
+    elif readme_path and readme_title:
+        identity_source = "readme-title"
+        identity_source_ref = readme_path.relative_to(project_root).as_posix()
+    else:
+        identity_source = "directory-name"
+        identity_source_ref = source_repo_name
+    return ProjectIdentity(
+        project_id=project_id,
+        project_name=project_name,
+        project_code=project_code,
+        source_repo_name=source_repo_name,
+        snapshot_prefix=safe_filename_part(snapshot_prefix),
+        project_short_name=(
+            args.project_short_name
+            or as_string(manifest, "project_short_name", "short_name", "简称")
+            or str(context_identity.get("project_short_name") or "")
+            or None
+        ),
+        domain=(
+            args.domain
+            or as_string(manifest, "domain", "business_domain", "业务域")
+            or str(context_identity.get("domain") or "")
+            or None
+        ),
+        aliases=aliases,
+        manifest_path=manifest_path,
+        identity_source=identity_source,
+        identity_source_ref=identity_source_ref,
+    )
 
 
 def run_git(project_root: Path, args: list[str]) -> str:
@@ -242,70 +552,111 @@ def parse_dictionary_sections(text: str) -> dict[str, list[str]]:
 
 
 def parse_tables(text: str, include_placeholders: bool) -> tuple[list[TableBlock], int]:
-    item_heading = re.compile(
+    # Pattern A: [ObjectName] (TABLE_NAME) [- platform] — original bracket format
+    heading_bracket = re.compile(
         r"^(?:##\s+\d+\.|###\s+\d+\.\d+)\s+\[(?P<object_name>[^\]]+)\]\s+\((?P<table_name>[^)]+)\)(?:\s*-\s*(?P<heading_platform>.*))?\s*$"
     )
-    domain_heading = re.compile(r"^##\s+(?!\d+\.\s+\[)(?P<domain>.+?)\s*$")
+    # Pattern B: ## N. ObjectName：TABLE_NAME [(ChineseDesc)]
+    heading_colon = re.compile(
+        r"^##\s+\d+\.\s+(?P<object_name>.+?)[：:]\s*(?P<table_name>[A-Z][A-Z0-9_]+)\s*(?:\((?P<extra>[^)]*)\))?\s*$"
+    )
+    # Pattern C: ### N.N ObjectName — TABLE_NAME
+    heading_dash = re.compile(
+        r"^###\s+\d+\.\d+\s+(?P<object_name>.+?)\s+[—\-]\s+(?P<table_name>[A-Za-z][A-Za-z0-9_]*)\s*$"
+    )
+    domain_heading = re.compile(r"^##\s+(?:\d+\.\s+)?(?P<domain>.+?)\s*$")
     boundary_heading = re.compile(r"^(?:##|###)\s+")
+    non_domain_keywords = ("INSERT", "MERGE", "已知缺口", "字段映射", "聚合规则")
+
     lines = text.splitlines()
     blocks: list[TableBlock] = []
     skipped = 0
     idx = 0
     current_domain = "未分类"
 
+    table_matchers = [
+        (heading_bracket, lambda m: (m.group("object_name").strip(), m.group("table_name").strip(), (m.group("heading_platform") or "").strip())),
+        (heading_colon, lambda m: (m.group("object_name").strip(), m.group("table_name").strip(), "")),
+        (heading_dash, lambda m: (m.group("object_name").strip(), m.group("table_name").strip(), "")),
+    ]
+
+    def _detect_platform(body_text: str) -> str:
+        if "大数据平台" in body_text:
+            return "大数据平台"
+        if "Doris" in body_text:
+            return "Doris"
+        if any(kw in body_text for kw in ("Oracle", "CJHX_", "STAGE.", "DW.", "CJHX_DWMS", "CJHX_DSCL", "CJHX_SMI", "WINDFS")):
+            return "Oracle"
+        return "未显式说明"
+
+    def _has_sub_tables(start: int) -> bool:
+        for j in range(start, len(lines)):
+            future = lines[j]
+            if future.startswith("## "):
+                return False
+            if future.startswith("### ") and re.match(r"\d+\.\d+", future[4:].strip()):
+                return True
+        return False
+
     while idx < len(lines):
         line = lines[idx]
+
+        # 1) Try table heading patterns first
+        matched = False
+        for pattern, extractor in table_matchers:
+            match = pattern.match(line)
+            if not match:
+                continue
+            object_name, table_name, heading_platform = extractor(match)
+            start_line = idx + 1
+            body_lines: list[str] = []
+            idx += 1
+            while idx < len(lines) and not boundary_heading.match(lines[idx]):
+                body_lines.append(lines[idx])
+                idx += 1
+            body = "\n".join(body_lines).strip()
+
+            if not include_placeholders and is_placeholder_table(object_name, table_name, body):
+                skipped += 1
+                matched = True
+                break
+
+            pk_raw = extract_bullet_value(body, "主键")
+            key_fields = extract_identifier_list(pk_raw)
+            platform = heading_platform or _detect_platform(body)
+
+            blocks.append(
+                TableBlock(
+                    canonical_key=table_name,
+                    object_name=object_name,
+                    table_name=table_name,
+                    domain=current_domain,
+                    line_ref=f"context/tables.md#L{start_line}",
+                    platform=platform,
+                    business_role=extract_bullet_value(body, "业务用途") or "未显式说明",
+                    key_fields=[item for item in key_fields if item],
+                    body=body,
+                    content_hash=short_hash(table_name, object_name, body),
+                )
+            )
+            matched = True
+            break
+
+        if matched:
+            continue
+
+        # 2) Try domain heading (## with optional number)
         domain_match = domain_heading.match(line)
         if domain_match:
-            current_domain = domain_match.group("domain").strip()
+            domain_text = domain_match.group("domain").strip()
+            if not any(kw in domain_text for kw in non_domain_keywords):
+                if _has_sub_tables(idx + 1):
+                    current_domain = domain_text
             idx += 1
             continue
 
-        match = item_heading.match(line)
-        if not match:
-            idx += 1
-            continue
-
-        object_name = match.group("object_name").strip()
-        table_name = match.group("table_name").strip()
-        heading_platform = (match.group("heading_platform") or "").strip()
-        start_line = idx + 1
-        body_lines: list[str] = []
         idx += 1
-        while idx < len(lines) and not boundary_heading.match(lines[idx]):
-            body_lines.append(lines[idx])
-            idx += 1
-        body = "\n".join(body_lines).strip()
 
-        if not include_placeholders and is_placeholder_table(object_name, table_name, body):
-            skipped += 1
-            continue
-
-        pk_raw = extract_bullet_value(body, "主键")
-        key_fields = extract_identifier_list(pk_raw)
-        platform = heading_platform or "未显式说明"
-        if platform == "未显式说明":
-            for body_line in body.splitlines():
-                stripped = body_line.strip()
-                if "大数据平台" in stripped:
-                    platform = "大数据平台"
-                elif "Oracle" in stripped:
-                    platform = "Oracle"
-
-        blocks.append(
-            TableBlock(
-                canonical_key=table_name,
-                object_name=object_name,
-                table_name=table_name,
-                domain=current_domain,
-                line_ref=f"context/tables.md#L{start_line}",
-                platform=platform,
-                business_role=extract_bullet_value(body, "业务用途") or "未显式说明",
-                key_fields=[item for item in key_fields if item],
-                body=body,
-                content_hash=short_hash(table_name, object_name, body),
-            )
-        )
     return blocks, skipped
 
 
@@ -451,22 +802,42 @@ def extract_rule_relationships(
     return rule_to_tables, rule_to_dictionary
 
 
-def build_output_path(project_root: Path, snapshot_date: str, commit: str, explicit_output: str | None) -> Path:
+def build_output_path(
+    project_root: Path,
+    snapshot_date: str,
+    commit: str,
+    explicit_output: str | None,
+    identity: ProjectIdentity,
+) -> Path:
     if explicit_output:
         return Path(explicit_output)
     exports_dir = project_root / "context" / "exports"
     exports_dir.mkdir(parents=True, exist_ok=True)
-    return exports_dir / f"{project_root.name}-知识快照-{snapshot_date}-{commit}.md"
+    return exports_dir / f"{identity.snapshot_prefix}-知识快照-{snapshot_date}-{commit}.md"
 
 
-def find_previous_snapshot(project_root: Path, current_output: Path, explicit_compare_base: str | None) -> Path | None:
+def find_previous_snapshot(
+    project_root: Path,
+    current_output: Path,
+    explicit_compare_base: str | None,
+    identity: ProjectIdentity,
+) -> Path | None:
     if explicit_compare_base:
         candidate = Path(explicit_compare_base)
         return candidate if candidate.exists() else None
     exports_dir = project_root / "context" / "exports"
     if not exports_dir.exists():
         return None
-    candidates = [path for path in exports_dir.glob(f"{project_root.name}-知识快照-*.md") if path.resolve() != current_output.resolve()]
+    prefixes = [identity.snapshot_prefix]
+    legacy_prefix = project_root.name
+    if legacy_prefix not in prefixes:
+        prefixes.append(legacy_prefix)
+    candidates = [
+        path
+        for path in exports_dir.glob("*.md")
+        if path.resolve() != current_output.resolve()
+        and any(path.name.startswith(f"{prefix}-知识快照-") for prefix in prefixes)
+    ]
     if not candidates:
         return None
     return sorted(candidates, key=lambda path: path.stat().st_mtime, reverse=True)[0]
@@ -682,6 +1053,7 @@ def render_diff_section(
 
 def render_snapshot(
     project_root: Path,
+    identity: ProjectIdentity,
     snapshot_date: str,
     branch: str,
     commit: str,
@@ -705,8 +1077,8 @@ def render_snapshot(
     previous_frontmatter: dict[str, str],
     diff_summary: dict[str, dict[str, list[str]]],
 ) -> str:
-    project_name = project_root.name
-    project_id = project_name.replace("_", "-")
+    project_name = identity.project_name
+    project_id = identity.project_id
     exported_at = datetime.now().replace(microsecond=0).isoformat()
     snapshot_id = f"{project_id}:{snapshot_date}:{commit}"
     previous_snapshot_name = previous_snapshot.name if previous_snapshot else ""
@@ -723,7 +1095,17 @@ def render_snapshot(
     append("type: project_context_snapshot")
     append(f"project_id: {project_id}")
     append(f"project_name: {project_name}")
-    append(f"project_code: {project_id}")
+    if identity.project_short_name:
+        append(f"project_short_name: {identity.project_short_name}")
+    append(f"project_code: {identity.project_code}")
+    append(f"source_repo_name: {identity.source_repo_name}")
+    append(f"snapshot_prefix: {identity.snapshot_prefix}")
+    if identity.domain:
+        append(f"domain: {identity.domain}")
+    if identity.aliases:
+        append("project_aliases:")
+        for alias in identity.aliases:
+            append(f"  - {alias}")
     append(f"snapshot_id: {snapshot_id}")
     append(f"snapshot_date: {snapshot_date}")
     append(f"snapshot_sequence: {snapshot_sequence}")
@@ -746,6 +1128,12 @@ def render_snapshot(
     append("")
     append("## 导出边界")
     append("")
+    append(f"- 项目中文名称：`{identity.project_name}`。")
+    append(f"- 稳定项目 ID：`{identity.project_id}`；源仓库目录名：`{identity.source_repo_name}`。")
+    if identity.domain:
+        append(f"- 业务域：`{identity.domain}`。")
+    append(f"- 项目身份来源：`{identity.identity_source}` / `{identity.identity_source_ref}`。")
+    append("- 项目身份仅用于快照命名、版本追踪与下游检索，不扩展知识事实源。")
     append("- 仅以 `context/tables.md`、`context/rules.md`、`context/dictionary.md` 为事实源。")
     append("- 本快照是自包含事实文档，后续 wiki 应能仅基于本文件完成 ingest。")
     append("- `source_refs` 仅用于追溯，不用于承载缺失事实。")
@@ -889,16 +1277,17 @@ def main() -> int:
     project_root = Path(args.project_root).resolve()
     context_dir = project_root / "context"
     ensure_required_inputs(context_dir)
+    identity = load_project_identity(project_root, context_dir, args)
 
     branch, commit = get_git_info(project_root)
-    output_path = build_output_path(project_root, args.snapshot_date, commit, args.output)
-    previous_snapshot = find_previous_snapshot(project_root, output_path, args.compare_base)
+    output_path = build_output_path(project_root, args.snapshot_date, commit, args.output, identity)
+    previous_snapshot = find_previous_snapshot(project_root, output_path, args.compare_base, identity)
 
     tables_text = read_text(context_dir / "tables.md")
     rules_text = read_text(context_dir / "rules.md")
     dictionary_text = read_text(context_dir / "dictionary.md")
 
-    tables_preamble = extract_global_preamble(tables_text, r"^(?:##\s+\d+\.\s+\[|###\s+\d+\.\d+\s+\[)")
+    tables_preamble = extract_global_preamble(tables_text, r"^##\s+\d+\.\s+")
     rules_preamble = extract_global_preamble(rules_text, r"^##\s+\[")
     dictionary_preamble = extract_global_preamble(dictionary_text, r"^###\s+")
 
@@ -916,6 +1305,7 @@ def main() -> int:
 
     snapshot = render_snapshot(
         project_root=project_root,
+        identity=identity,
         snapshot_date=args.snapshot_date,
         branch=branch,
         commit=commit,

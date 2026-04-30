@@ -40,7 +40,7 @@ description: 渐进式 URL 抓取，采用四层回退机制 - WebFetch、Curl�
 
 ## Core Capability
 
-**Four-Tier Progressive Escalation:**
+**Five-Step Progressive Escalation (with mirror fallback):**
 
 ```
 START
@@ -50,6 +50,10 @@ Tier 1 (WebFetch) --> Success? --> Return content
   No
   |
 Tier 2 (Curl) --> Success? --> Return content
+  |
+  No
+  |
+Tier 2.5 (Jina AI mirror) --> Success? --> Return content
   |
   No
   |
@@ -79,6 +83,13 @@ Report failure + alternatives
 - **Speed:** ~3-7 seconds
 - **Cost:** Free
 - **Works for:** Sites with basic user-agent filtering
+
+### Tier 2.5: Jina AI Mirror (`r.jina.ai`)
+- **Tool:** HTTP fetch to `https://r.jina.ai/http://https://target-url`
+- **Speed:** ~2-10 seconds
+- **Cost:** Free
+- **Works for:** Public forum/article pages when direct access is blocked by Cloudflare or anti-bot, but a readable mirrored markdown copy is available
+- **Caveat:** May return partial page context or surrounding posts rather than a perfectly isolated target post; verify against nearby anchors/post numbers when precision matters
 
 ### Tier 3: Browser Automation (Playwright)
 - **Tool:** Browser skill's Playwright automation
@@ -113,7 +124,18 @@ Report failure + alternatives
 2. Success in 3 seconds
 3. Return markdown content
 
-### Example 2: JavaScript Site (Tier 3 Success)
+### Example 2: Cloudflare-Protected Forum Post (Tier 2.5 Success)
+
+**User:** "Fetch https://linux.do/t/topic/1926833/1204"
+
+**Process:**
+1. Tier 1 fails (bot protection)
+2. Tier 2 fails (403 / Cloudflare)
+3. Tier 2.5 succeeds via `https://r.jina.ai/http://https://linux.do/t/topic/1926833/1204`
+4. Extract target post from mirrored markdown and note any confidence limits
+5. Return concise summary
+
+### Example 3: JavaScript Site (Tier 3 Success)
 
 **User:** "Fetch https://spa-app.com"
 
@@ -123,7 +145,7 @@ Report failure + alternatives
 3. Tier 3 succeeds with Playwright
 4. Return markdown content
 
-### Example 3: Protected Site (Tier 4 Success)
+### Example 4: Protected Site (Tier 4 Success)
 
 **User:** "Can't access https://protected-site.com"
 
@@ -134,7 +156,20 @@ Report failure + alternatives
 4. Tier 4 succeeds with Bright Data
 5. Return markdown content
 
-### Example 4: Direct Tier Request
+### Example 5: WeChat Article (mp.weixin.qq.com) Mobile-UA Shortcut
+
+**User:** "Read this WeChat article https://mp.weixin.qq.com/s/..."
+
+**Process:**
+1. Browser / mirror may hit `环境异常` / CAPTCHA and look fully blocked.
+2. Before escalating further, try **direct HTTP fetch with a mobile Safari UA** via terminal/Python requests.
+3. Parse `#activity-name`, `meta[property="og:title"]`, `meta[name="description"]`, `#js_name`, `#js_author_name`, and `#js_content` from the returned HTML.
+4. If article HTML loads, treat this as a successful retrieval even if browser automation is blocked.
+5. Only escalate if the direct mobile-UA fetch also fails.
+
+**Why this matters:** WeChat sometimes blocks browser automation and Jina mirror access with CAPTCHA, while the raw article HTML is still retrievable with a realistic mobile UA.
+
+### Example 6: Direct Tier Request
 
 **User:** "Use Bright Data to fetch https://any-site.com"
 

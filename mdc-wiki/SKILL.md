@@ -64,6 +64,7 @@ wiki/
 │   ├── articles/
 │   ├── papers/
 │   ├── transcripts/
+│   ├── knowledge-snapshots/
 │   └── assets/
 ├── entities/
 ├── concepts/
@@ -215,7 +216,27 @@ Examples of raw source capture:
 - URL to `raw/articles/`
 - PDF to `raw/papers/`
 - Transcript or pasted notes to `raw/transcripts/`
+- Self-contained knowledge snapshots to `raw/knowledge-snapshots/`
 - Images and diagrams to `raw/assets/`
+
+When the source is a self-contained knowledge snapshot artifact:
+- Preserve the full snapshot under `raw/knowledge-snapshots/`
+- Treat it as already-structured source material rather than re-summarizing it from scratch
+- Use its internal structure, source trail, version notes, and change notes when present
+- Match repeated snapshots by stable identity such as `project_id`, `snapshot_id`, `source_content_hash`, and item-level `canonical_key`
+- Treat filename or title changes as metadata updates when the stable identity and content hash indicate the same source knowledge
+- Update existing project, table, rule, concept, and query pages before creating new pages
+- Create or update only the stable, reusable wiki pages that pass `SCHEMA.md` thresholds
+- Do not automatically split the entire snapshot into pages
+
+Do not create duplicate pages merely because a later snapshot has a different
+filename, display title, or language. For structured data-project snapshots,
+typical merge keys are:
+- Project pages: `project_id`
+- Raw version equivalence: `source_content_hash`
+- Data-object pages: table name, view name, or item `canonical_key`
+- Rule pages: rule ID or item `canonical_key`
+- Dictionary/concept pages: namespace, term group, or item `canonical_key`
 
 If a single ingest would touch many existing pages, pause and confirm scope first.
 
